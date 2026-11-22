@@ -18,6 +18,7 @@ import io
 import json
 import os
 import shutil
+import subprocess
 import sys
 import tempfile
 import time
@@ -36,7 +37,10 @@ POLICIES = ["random", "reconciliation", "flag_all", "oracle", "scripted_auditor"
 
 def _split(name: str) -> Dict[str, Any]:
     from .harness import load_split
-    return load_split(name)
+    try:
+        return load_split(name)
+    except FileNotFoundError:
+        raise SystemExit(f"error: unknown split '{name}' (use a name from configs/splits or a path to a .json file)") from None
 
 
 # ------------------------------------------------------------------ generate
@@ -89,6 +93,9 @@ def validate_root(root: Path) -> Dict[str, Any]:
 def cmd_validate(a) -> int:
     s = validate_root(Path(a.root))
     print(f"validated {s['episodes']} episodes, ok: {s['ok']}")
+    if not s["episodes"]:
+        print(f"error: no episodes found under {a.root}", file=sys.stderr)
+        return 1
     for r in s["results"]:
         if not r["ok"]:
             print("FAIL", r.get("episode_id"), r.get("errors", [])[:5])
@@ -132,7 +139,26 @@ def cmd_baselines(a) -> int:
     return 0
 
 
+def policy_load_error(name: str) -> str:
+    """Load the policy in a guarded policy process, never in the evaluator's. Empty string if it loads."""
+    from .remote import policy_env
+    if name == "oracle":
+        return ""
+    try:
+        p = subprocess.run([sys.executable, "-m", "auditenv.agent_runner", "--policy", name, "--check"],
+                           stdin=subprocess.DEVNULL, capture_output=True, text=True, encoding="utf-8", errors="replace",
+                           env=policy_env(), cwd=os.getcwd(), timeout=30)
+    except subprocess.TimeoutExpired:
+        return "loading took longer than 30 s"
+    return "" if p.returncode == 0 else (p.stderr.strip().splitlines() or ["cannot load"])[-1]
+
+
 def cmd_evaluate(a) -> int:
+    for name in a.policy:
+        err = policy_load_error(name)
+        if err:
+            print(f"error: policy '{name}' cannot be loaded: {err}", file=sys.stderr)
+            return 2
     out = run_baselines(a.split, isolated=True, policies=a.policy)
     out["split"] = Path(a.split).name
     print(f"split={out['split']} closed mode, environment and evaluator in a separate process")
@@ -308,6 +334,8 @@ def demo(split_name: str = "dev", index: int = 5, out: Path | None = None, strea
     from .env import AuditEnv
     from .policies import ScriptedAuditor
     split = _split(split_name)
+    if not 1 <= index <= len(split["episodes"]):
+        raise SystemExit(f"error: --index must be between 1 and {len(split['episodes'])}")
     e = split["episodes"][index - 1]
     env = AuditEnv(mode="train", secret=split.get("secret", ""))
     obs, info = env.reset(seed=e["seed"], config=e["config"])
@@ -369,22 +397,24 @@ def cmd_check(a) -> int:
         if str(ROOT) not in sys.path:
             sys.path.insert(0, str(ROOT))
         suite = unittest.defaultTestLoader.discover(str(ROOT / "tests"), top_level_dir=str(ROOT))
+
+        def test_ids(node):
+            if isinstance(node, unittest.TestSuite):
+                return [i for child in node for i in test_ids(child)]
+            return [node.id()]
+
+        jury_ids = {i for i in test_ids(suite) if i.startswith("tests.test_judge_adapter.")}
         res = unittest.TextTestRunner(stream=buf, verbosity=1).run(suite)
         ok = res.wasSuccessful()
         stage("unit tests", ok, f"{res.testsRun} tests, {len(res.failures)} failures, {len(res.errors)} errors, "
                                 f"{len(res.expectedFailures)} expected failures")
         if not ok:
             print(buf.getvalue()[-4000:])
-    # 1b. the jury check definitions through judge_adapter.py (blocks 1-4)
-    if not a.skip_tests:
-        buf = io.StringIO()
-        suite = unittest.defaultTestLoader.loadTestsFromName("tests.test_judge_adapter")
-        res = unittest.TextTestRunner(stream=buf, verbosity=0).run(suite)
+        # 1b. the jury check definitions (blocks 1-4): reported from the same run, not executed twice
+        failed_ids = {getattr(t, "test_case", t).id() for t, _ in res.failures + res.errors}
         stage("jury check definitions via judge_adapter.py: C01-C20 contract, D01-D20 matrix, 20 matcher/reward "
-              "tests + M01-M12, 20 paired checks through episode_dir", res.wasSuccessful(),
-              f"{res.testsRun} tests, {len(res.failures) + len(res.errors)} failed")
-        if not res.wasSuccessful():
-            print(buf.getvalue()[-4000:])
+              "tests + M01-M12, 20 paired checks through episode_dir", bool(jury_ids) and not failed_ids & jury_ids,
+              f"{len(jury_ids)} tests, {len(failed_ids & jury_ids)} failed")
     # 2. reproducibility of committed episodes
     with tempfile.TemporaryDirectory() as td:
         same = True

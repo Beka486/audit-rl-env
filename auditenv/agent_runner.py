@@ -33,15 +33,25 @@ def load_policy(name: str):
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="auditenv.agent_runner")
     ap.add_argument("--policy", required=True, help="built-in policy name or module:Class")
+    ap.add_argument("--check", action="store_true", help="only verify that the policy loads, then exit")
     args = ap.parse_args(argv)
     if args.policy == "oracle":
         raise SystemExit("the oracle is evaluator-only and cannot run in the agent process")
+    if args.check:
+        try:
+            policy = load_policy(args.policy)
+            if not (callable(getattr(policy, "reset", None)) and callable(getattr(policy, "act", None))):
+                raise TypeError("a policy needs reset(seed) and act(observation)")
+        except Exception as exc:
+            print(f"{type(exc).__name__}: {exc}"[:300], file=sys.stderr)
+            return 2
+        return 0
     policy = load_policy(args.policy)
     out = sys.stdout
     sys.stdout = sys.stderr  # a policy that prints must not corrupt the protocol
 
     def send(obj: Dict[str, Any]) -> None:
-        out.write(json.dumps(obj, ensure_ascii=False) + "\n")
+        out.write(json.dumps(obj) + "\n")  # ASCII on the wire: no locale dependence
         out.flush()
 
     for line in sys.stdin:
@@ -68,4 +78,6 @@ def main(argv=None) -> int:
 
 
 if __name__ == "__main__":  # pragma: no cover
+    from auditenv.policy_guard import install
+    install()  # only in a dedicated process: the hook cannot be removed
     sys.exit(main())

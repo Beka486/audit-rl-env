@@ -33,6 +33,7 @@ from __future__ import annotations
 import copy
 import json
 import os
+import secrets
 import sys
 import tempfile
 from pathlib import Path
@@ -55,7 +56,7 @@ def _append_log(record: Dict[str, Any]) -> None:
     path = evaluator_log_path()
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     with open(path, "a", encoding="utf-8") as fh:
-        fh.write(json.dumps(record, sort_keys=True, ensure_ascii=False) + "\n")
+        fh.write(json.dumps(record, sort_keys=True) + "\n")
 
 
 def _team_config(config: Optional[Dict[str, Any]]) -> Dict[str, Any]:
@@ -83,8 +84,9 @@ class JudgeEnv:
         from auditenv.remote import RemoteAuditEnv
         self._log = evaluator_log_path()
         Path(self._log).parent.mkdir(parents=True, exist_ok=True)
+        self._log_key = secrets.token_hex(32)  # known to this client and its evaluator process only
         self._remote = RemoteAuditEnv(self._log, mode="eval", secret=os.environ.get("AUDITENV_SECRET", ""),
-                                      time_limit_s=time_limit_s)
+                                      time_limit_s=time_limit_s, log_key=self._log_key)
         self._closed = True
 
     # -- reset
@@ -158,18 +160,18 @@ class JudgeEnv:
         elif kind == "truncated":
             error = {"code": obs.get("reason", "time_limit"),
                      "message": "The 60 s episode time limit was reached; the final answer is empty."}
-        if obs.get("episode_end") and error is None and kind != "error":
-            pass  # step limit: the 100th action's own result is returned, truncated=True
         return {"result": result, "error": error, "remaining_steps": remaining}
 
     # -- jury-side helpers (never handed to a policy)
     def last_evaluation(self) -> Optional[Dict[str, Any]]:
-        """Last grade written by the evaluator process (closed and train runs)."""
+        """Last authentic grade of this environment's evaluator process (closed and train runs).
+        Lines of other runs and forged lines in a shared log are ignored."""
+        from auditenv.logauth import latest
         try:
             lines = Path(self._log).read_text(encoding="utf-8").splitlines()
         except OSError:
             return None
-        return json.loads(lines[-1]) if lines else None
+        return latest(lines, self._log_key)
 
     def close(self) -> None:
         self._remote.close()
@@ -199,6 +201,8 @@ def score_episode(episode_dir: str, findings: dict, inspection_steps: int) -> di
     {"return": -1, other keys null}; the full grade (with the error) goes to the evaluator log."""
     from auditenv.episode import Episode
     from auditenv.grader import Grader
+    if isinstance(inspection_steps, bool) or int(inspection_steps) < 0:
+        raise ValueError("inspection_steps must be a non-negative integer")
     ep = Episode.load(episode_dir)
     try:
         payload = json.loads(json.dumps(findings, ensure_ascii=False))

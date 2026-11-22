@@ -48,7 +48,6 @@ def _tokenize(expr: str) -> List[Tuple[str, str]]:
             i = j
             continue
         raise CalcError("calculator_syntax", "Only digits, '.', '+', '-', '*', '/', '(' , ')' and spaces are allowed.")
-        # unreachable
     if len(toks) > MAX_TOKENS:
         raise CalcError("calculator_limit", f"Expression has more than {MAX_TOKENS} tokens.")
     return toks
@@ -103,7 +102,9 @@ class _Parser:
                 raise CalcError("calculator_syntax", "Missing ')'.")
             return v
         if t[0] == "num":
-            return Decimal(t[1])
+            v = Decimal(t[1])
+            _bound(v)
+            return v
         raise CalcError("calculator_syntax", "Unexpected token.")
 
 

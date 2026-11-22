@@ -91,6 +91,7 @@ class AuditEnv:
 
     def reset(self, seed: Optional[int] = None, config: Optional[Dict[str, Any]] = None,
               options: Optional[Dict[str, Any]] = None) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+        started = self._clock()  # the time limit counts from the start of reset
         config = copy.deepcopy(config) if config else {}
         if options and "config" in options and not config:
             config = copy.deepcopy(options["config"])
@@ -101,7 +102,7 @@ class AuditEnv:
                 ep, _ = apply_transform(ep, config["transform"])
         else:
             ep = generate_episode(0 if seed is None else seed, config, secret=self._secret)
-        self._load(ep)
+        self._load(ep, started)
         self._run_record = {"env_version": ENV_VERSION, "seed": seed, "config": copy.deepcopy(config)}
         obs = {
             "kind": "reset",
@@ -116,7 +117,7 @@ class AuditEnv:
         info = {"env_version": ENV_VERSION, "schema_version": SCHEMA_VERSION, "mode": self.mode}
         return _json_copy(obs), info
 
-    def _load(self, ep: Episode) -> None:
+    def _load(self, ep: Episode, started: float) -> None:
         self._episode = ep
         public = ep.public()
         self._store = RecordStore(public)
@@ -124,7 +125,7 @@ class AuditEnv:
         self._steps = 0
         self._done = False
         self._last_flags = (False, False)
-        self._t0 = self._clock()
+        self._t0 = started
 
     # ------------------------------------------------------------------- step
     def step(self, action: Any) -> Tuple[Dict[str, Any], float, bool, bool, Dict[str, Any]]:

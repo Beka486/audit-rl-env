@@ -123,6 +123,20 @@ def run_suite(policy_name: str, split: Dict[str, Any], mode: str = "eval", isola
 
 
 # ----------------------------------------------------------------- diagnosis
+def submitted_payload(action: Any) -> Optional[Dict[str, Any]]:
+    """The findings object of a final action in any accepted form (object or JSON text)."""
+    if isinstance(action, (str, bytes)):
+        try:
+            action = json.loads(action)
+        except (ValueError, RecursionError):
+            return None
+    if not isinstance(action, dict) or action.get("action") != "submit":
+        return None
+    args = action.get("args")
+    payload = args.get("findings") if isinstance(args, dict) else None
+    return payload if isinstance(payload, dict) else None
+
+
 def diagnose(episode, findings_payload: Optional[Dict[str, Any]], grade: Dict[str, Any]) -> Dict[str, Any]:
     """Measured failure analysis for one graded episode (evaluator-side)."""
     from .grader import Grader
@@ -228,9 +242,7 @@ def summarize(results: List[Dict[str, Any]], episodes=None) -> Dict[str, Any]:
     if episodes is not None:
         fn_t, fp_r, tp_t = Counter(), Counter(), Counter()
         for r, ep in zip(results, episodes):
-            fa = r.get("final_action") or {}
-            payload = fa.get("args", {}).get("findings") if fa.get("action") == "submit" else None
-            d = diagnose(ep, payload if isinstance(payload, dict) else None, r["grade"])
+            d = diagnose(ep, submitted_payload(r.get("final_action")), r["grade"])
             fn_t.update(d["fn_by_type"])
             fp_r.update(d["fp_reasons"])
             tp_t.update(d["tp_by_type"])

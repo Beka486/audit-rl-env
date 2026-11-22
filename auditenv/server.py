@@ -27,22 +27,29 @@ def main(argv=None) -> int:
     ap.add_argument("--time-limit", type=float, default=60.0)
     args = ap.parse_args(argv)
     secret = os.environ.pop("AUDITENV_SECRET", "")
+    log_key = os.environ.pop("AUDITENV_LOG_KEY", "")
     from .env import AuditEnv
+    from .logauth import seal
     from .policies.oracle import oracle_findings
     env = AuditEnv(mode=args.mode, secret=secret, time_limit_s=args.time_limit)
     out = sys.stdout
     sys.stdout = sys.stderr  # nothing but protocol lines may reach the pipe
     log = open(args.evaluator_log, "a", encoding="utf-8")
+    sequence = 0
 
     def send(obj: Dict[str, Any]) -> None:
-        out.write(json.dumps(obj, ensure_ascii=False) + "\n")
+        out.write(json.dumps(obj) + "\n")  # ASCII on the wire: no locale dependence
         out.flush()
 
     def stepped(action: Any) -> Dict[str, Any]:
+        nonlocal sequence
         before = len(env.evaluator_log)
         obs, reward, term, trunc, info = env.step(action)
         if len(env.evaluator_log) > before:  # a new grade (not a step after the end of the episode)
             ev = env.last_evaluation()
+            if log_key:
+                sequence += 1
+                ev = seal(ev, sequence, log_key)
             log.write(json.dumps(ev, sort_keys=True) + "\n")
             log.flush()
             os.fsync(log.fileno())
