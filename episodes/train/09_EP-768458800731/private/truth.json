@@ -1,0 +1,307 @@
+{
+  "episode_id": "EP-768458800731",
+  "issues": [
+    {
+      "affected_ids": [
+        "SF/2026/02391",
+        "SF/2026/02393"
+      ],
+      "currency": "KZT",
+      "description": "The same invoice (same customer, currency, line items and total) is booked twice.",
+      "evidence_sets": [
+        [
+          "DOC-A96CGF9H",
+          "DOC-ZKBPVYHA",
+          "GL147836863",
+          "GL242148504"
+        ],
+        [
+          "DOC-A96CGF9H",
+          "DOC-ZKBPVYHA",
+          "GL147836863",
+          "GL382470182"
+        ],
+        [
+          "DOC-A96CGF9H",
+          "DOC-ZKBPVYHA",
+          "GL147836863",
+          "GL393385509"
+        ],
+        [
+          "DOC-A96CGF9H",
+          "DOC-ZKBPVYHA",
+          "GL242148504",
+          "GL456898272"
+        ],
+        [
+          "DOC-A96CGF9H",
+          "DOC-ZKBPVYHA",
+          "GL242148504",
+          "GL727493874"
+        ],
+        [
+          "DOC-A96CGF9H",
+          "DOC-ZKBPVYHA",
+          "GL382470182",
+          "GL456898272"
+        ],
+        [
+          "DOC-A96CGF9H",
+          "DOC-ZKBPVYHA",
+          "GL382470182",
+          "GL727493874"
+        ],
+        [
+          "DOC-A96CGF9H",
+          "DOC-ZKBPVYHA",
+          "GL393385509",
+          "GL456898272"
+        ],
+        [
+          "DOC-A96CGF9H",
+          "DOC-ZKBPVYHA",
+          "GL393385509",
+          "GL727493874"
+        ]
+      ],
+      "expected_amount_minor": 108760000,
+      "interaction_id": null,
+      "issue_id": "ISS-01",
+      "tolerance_minor": 0,
+      "type": "duplicate_invoice",
+      "variant": null
+    },
+    {
+      "affected_ids": [
+        "SF/2026/02401",
+        "SF/2026/02402"
+      ],
+      "currency": "KZT",
+      "description": "The same invoice (same customer, currency, line items and total) is booked twice.",
+      "evidence_sets": [
+        [
+          "DOC-1WRZDWJ6",
+          "DOC-Y91GKJKA",
+          "GL239419251",
+          "GL245282561"
+        ],
+        [
+          "DOC-1WRZDWJ6",
+          "DOC-Y91GKJKA",
+          "GL239419251",
+          "GL528456023"
+        ],
+        [
+          "DOC-1WRZDWJ6",
+          "DOC-Y91GKJKA",
+          "GL245282561",
+          "GL848944133"
+        ],
+        [
+          "DOC-1WRZDWJ6",
+          "DOC-Y91GKJKA",
+          "GL528456023",
+          "GL848944133"
+        ]
+      ],
+      "expected_amount_minor": 181300000,
+      "interaction_id": "G1",
+      "issue_id": "ISS-02",
+      "tolerance_minor": 0,
+      "type": "duplicate_invoice",
+      "variant": null
+    },
+    {
+      "affected_ids": [
+        "SF/2026/02388",
+        "TX2867150701"
+      ],
+      "currency": "KZT",
+      "description": "The remittance references an invoice but the payment was left entirely as unapplied cash.",
+      "evidence_sets": [
+        [
+          "DOC-2Q5KTNZY",
+          "GL701602032"
+        ]
+      ],
+      "expected_amount_minor": 161850000,
+      "interaction_id": null,
+      "issue_id": "ISS-03",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "missing"
+    },
+    {
+      "affected_ids": [
+        "SF/2026/02395",
+        "TX1878877397"
+      ],
+      "currency": "EUR",
+      "description": "Only part of the referenced allocation was applied to the invoice; the rest sits in unapplied cash.",
+      "evidence_sets": [
+        [
+          "DOC-B3MB307M",
+          "GL149785170"
+        ],
+        [
+          "DOC-B3MB307M",
+          "GL426039093"
+        ]
+      ],
+      "expected_amount_minor": 66300,
+      "interaction_id": null,
+      "issue_id": "ISS-04",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "partial"
+    },
+    {
+      "affected_ids": [
+        "SF/2026/02397",
+        "TX8171858985"
+      ],
+      "currency": "USD",
+      "description": "Boundary cross-currency payment: only part of the remittance was applied.",
+      "evidence_sets": [
+        [
+          "DOC-H3VKKMW5",
+          "GL330012021"
+        ],
+        [
+          "DOC-H3VKKMW5",
+          "GL816897605"
+        ]
+      ],
+      "expected_amount_minor": 39587,
+      "interaction_id": "G2",
+      "issue_id": "ISS-05",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "partial"
+    },
+    {
+      "affected_ids": [
+        "SF/2026/02401",
+        "TX8178058407"
+      ],
+      "currency": "KZT",
+      "description": "The remittance references one invoice but the cash was applied to its duplicate.",
+      "evidence_sets": [
+        [
+          "DOC-63VHRBYG",
+          "GL935269586"
+        ]
+      ],
+      "expected_amount_minor": 181300000,
+      "interaction_id": "G1",
+      "issue_id": "ISS-06",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "misapplied"
+    },
+    {
+      "affected_ids": [
+        "SF/2026/02377",
+        "TX0319025473"
+      ],
+      "currency": "KZT",
+      "description": "A cross-currency allocation was converted with a rate other than the policy rate.",
+      "evidence_sets": [
+        [
+          "DOC-1N4ESSSH",
+          "FX:2026-09-04:KWD:KZT",
+          "GL182281444"
+        ],
+        [
+          "DOC-1N4ESSSH",
+          "FX:2026-09-04:KWD:KZT",
+          "GL302907381"
+        ]
+      ],
+      "expected_amount_minor": 10060046,
+      "interaction_id": null,
+      "issue_id": "ISS-07",
+      "tolerance_minor": 0,
+      "type": "fx_conversion",
+      "variant": "invoice_issue_date"
+    },
+    {
+      "affected_ids": [
+        "SF/2026/02397",
+        "TX8171858985"
+      ],
+      "currency": "EUR",
+      "description": "Boundary cross-currency payment: the applied part was converted at the rate of the wall-clock date of the bank timestamp instead of the company-timezone date.",
+      "evidence_sets": [
+        [
+          "DOC-H3VKKMW5",
+          "FX:2026-09-30:USD:EUR",
+          "GL293033842",
+          "GL816897605"
+        ],
+        [
+          "DOC-H3VKKMW5",
+          "FX:2026-09-30:USD:EUR",
+          "GL816897605",
+          "GL994090058"
+        ]
+      ],
+      "expected_amount_minor": 891,
+      "interaction_id": "G2",
+      "issue_id": "ISS-08",
+      "tolerance_minor": 0,
+      "type": "fx_conversion",
+      "variant": "document_wall_clock_date"
+    },
+    {
+      "affected_ids": [
+        "SF/2026/02420",
+        "TX3556511648"
+      ],
+      "currency": "USD",
+      "description": "A cross-currency allocation was converted with a rate other than the policy rate.",
+      "evidence_sets": [
+        [
+          "DOC-VQ74A2PG",
+          "FX:2026-09-25:EUR:USD",
+          "GL437002892"
+        ],
+        [
+          "DOC-VQ74A2PG",
+          "FX:2026-09-25:EUR:USD",
+          "GL659650334"
+        ]
+      ],
+      "expected_amount_minor": 213127,
+      "interaction_id": null,
+      "issue_id": "ISS-09",
+      "tolerance_minor": 0,
+      "type": "fx_conversion",
+      "variant": "reverse_pair_rate"
+    },
+    {
+      "affected_ids": [
+        "SF/2026/02369"
+      ],
+      "currency": "USD",
+      "description": "A document dated outside the period (company timezone) is booked in this period.",
+      "evidence_sets": [
+        [
+          "DOC-6DPBPZEF",
+          "GL269339619"
+        ],
+        [
+          "DOC-6DPBPZEF",
+          "GL945765658"
+        ]
+      ],
+      "expected_amount_minor": 232800,
+      "interaction_id": null,
+      "issue_id": "ISS-10",
+      "tolerance_minor": 0,
+      "type": "period_cutoff",
+      "variant": "early_start_invoice"
+    }
+  ],
+  "schema_version": "1.0"
+}

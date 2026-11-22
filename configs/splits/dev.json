@@ -1,0 +1,183 @@
+{
+  "split": "dev",
+  "config_version": "1.0",
+  "description": "open development split (seeds and configs published)",
+  "secret": "",
+  "episodes": [
+    {
+      "seed": 2001,
+      "config": {
+        "config_version": "1.0",
+        "name": "dev-01-default"
+      }
+    },
+    {
+      "seed": 2002,
+      "config": {
+        "config_version": "1.0",
+        "name": "dev-02-clean",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "timezone": "-03:00"
+      }
+    },
+    {
+      "seed": 2003,
+      "config": {
+        "config_version": "1.0",
+        "name": "dev-03-cutoff-heavy",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 4
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 2004,
+      "config": {
+        "config_version": "1.0",
+        "name": "dev-04-allocation-fx",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 2,
+          "fx_conversion": 2,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 2005,
+      "config": {
+        "config_version": "1.0",
+        "name": "dev-05-both-interactions",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 1,
+          "duplicate_misapplied": 1
+        }
+      }
+    },
+    {
+      "seed": 2006,
+      "config": {
+        "config_version": "1.0",
+        "name": "dev-06-fx-partial-boundary-plus",
+        "errors": {
+          "duplicate_invoice": 1,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 1
+        },
+        "interactions": {
+          "fx_partial_boundary": 1,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 2007,
+      "config": {
+        "config_version": "1.0",
+        "name": "dev-07-clean-distractors",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "distractors": {
+          "split_payments": 3,
+          "refund_pairs": 2,
+          "recurring_customers": 2,
+          "unidentified_receipts": 2,
+          "on_account_payments": 2,
+          "boundary_documents": 4,
+          "cross_currency_payments": 4,
+          "legit_partial_payments": 2,
+          "multi_invoice_payments": 2
+        }
+      }
+    },
+    {
+      "seed": 2008,
+      "config": {
+        "config_version": "1.0",
+        "name": "dev-08-duplicates",
+        "errors": {
+          "duplicate_invoice": 3,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 1
+        },
+        "timezone": "+09:00"
+      }
+    },
+    {
+      "seed": 2009,
+      "config": {
+        "config_version": "1.0",
+        "name": "dev-09-mixed-currencies",
+        "currencies": {
+          "base": "EUR",
+          "foreign_count": 3,
+          "pool": [
+            "EUR",
+            "USD",
+            "GBP",
+            "JPY",
+            "CHF"
+          ]
+        }
+      }
+    },
+    {
+      "seed": 2010,
+      "config": {
+        "config_version": "1.0",
+        "name": "dev-10-all-types",
+        "errors": {
+          "duplicate_invoice": 1,
+          "payment_allocation": 1,
+          "fx_conversion": 1,
+          "period_cutoff": 1
+        },
+        "interactions": {
+          "fx_partial_boundary": 1,
+          "duplicate_misapplied": 0
+        },
+        "timezone": "-05:00"
+      }
+    }
+  ]
+}

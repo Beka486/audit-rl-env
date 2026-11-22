@@ -1,0 +1,114 @@
+{
+  "episode_id": "EP-74B55724EF52",
+  "issues": [
+    {
+      "affected_ids": [
+        "B26-01298",
+        "B26-01302"
+      ],
+      "currency": "JPY",
+      "description": "The same invoice (same customer, currency, line items and total) is booked twice.",
+      "evidence_sets": [
+        [
+          "D6CEHF25Y4",
+          "DPSXZJD24M",
+          "L-0T6HBVED",
+          "L-4SZ5Z9CQ"
+        ],
+        [
+          "D6CEHF25Y4",
+          "DPSXZJD24M",
+          "L-0T6HBVED",
+          "L-98VV5SY5"
+        ],
+        [
+          "D6CEHF25Y4",
+          "DPSXZJD24M",
+          "L-0T6HBVED",
+          "L-W8H1EF5H"
+        ],
+        [
+          "D6CEHF25Y4",
+          "DPSXZJD24M",
+          "L-13NS8182",
+          "L-4SZ5Z9CQ"
+        ],
+        [
+          "D6CEHF25Y4",
+          "DPSXZJD24M",
+          "L-13NS8182",
+          "L-98VV5SY5"
+        ],
+        [
+          "D6CEHF25Y4",
+          "DPSXZJD24M",
+          "L-13NS8182",
+          "L-W8H1EF5H"
+        ],
+        [
+          "D6CEHF25Y4",
+          "DPSXZJD24M",
+          "L-4SZ5Z9CQ",
+          "L-CNWJ3HSB"
+        ],
+        [
+          "D6CEHF25Y4",
+          "DPSXZJD24M",
+          "L-98VV5SY5",
+          "L-CNWJ3HSB"
+        ],
+        [
+          "D6CEHF25Y4",
+          "DPSXZJD24M",
+          "L-CNWJ3HSB",
+          "L-W8H1EF5H"
+        ]
+      ],
+      "expected_amount_minor": 595500,
+      "interaction_id": "G1",
+      "issue_id": "ISS-01",
+      "tolerance_minor": 0,
+      "type": "duplicate_invoice",
+      "variant": null
+    },
+    {
+      "affected_ids": [
+        "B26-01298",
+        "PAY-YEJTPJBKC"
+      ],
+      "currency": "JPY",
+      "description": "The remittance references one invoice but the cash was applied to its duplicate.",
+      "evidence_sets": [
+        [
+          "D9E51MZ4YK",
+          "L-S2JTYPA4"
+        ]
+      ],
+      "expected_amount_minor": 595500,
+      "interaction_id": "G1",
+      "issue_id": "ISS-02",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "misapplied"
+    },
+    {
+      "affected_ids": [
+        "B26-01333"
+      ],
+      "currency": "CHF",
+      "description": "A document dated inside the period (company timezone) is missing from this period's ledger.",
+      "evidence_sets": [
+        [
+          "DB84Q7H0PB"
+        ]
+      ],
+      "expected_amount_minor": 1346200,
+      "interaction_id": null,
+      "issue_id": "ISS-03",
+      "tolerance_minor": 0,
+      "type": "period_cutoff",
+      "variant": "late_end_invoice"
+    }
+  ],
+  "schema_version": "1.0"
+}

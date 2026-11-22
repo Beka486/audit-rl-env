@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "configs/splits/*.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "split",
+    "config_version",
+    "description",
+    "secret",
+    "episodes"
+  ],
+  "properties": {
+    "split": {
+      "type": "string"
+    },
+    "config_version": {
+      "const": "1.0"
+    },
+    "description": {
+      "type": "string"
+    },
+    "secret": {
+      "type": "string"
+    },
+    "episodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "seed",
+          "config"
+        ],
+        "properties": {
+          "seed": {
+            "type": "integer"
+          },
+          "config": {
+            "type": "object",
+            "required": [
+              "config_version",
+              "name"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

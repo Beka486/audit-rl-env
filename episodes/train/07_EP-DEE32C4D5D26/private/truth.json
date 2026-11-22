@@ -1,0 +1,622 @@
+{
+  "episode_id": "EP-DEE32C4D5D26",
+  "issues": [
+    {
+      "affected_ids": [
+        "KZ001128",
+        "KZ001132"
+      ],
+      "currency": "KWD",
+      "description": "The same invoice (same customer, currency, line items and total) is booked twice.",
+      "evidence_sets": [
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL082277090",
+          "GL317324698"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL082277090",
+          "GL512116390"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL082277090",
+          "GL641273135"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL082277090",
+          "GL781023679"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL082277090",
+          "GL782803351"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL154481610",
+          "GL317324698"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL154481610",
+          "GL512116390"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL154481610",
+          "GL641273135"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL154481610",
+          "GL781023679"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL154481610",
+          "GL782803351"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL317324698",
+          "GL352250413"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL317324698",
+          "GL491246253"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL317324698",
+          "GL700631267"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL352250413",
+          "GL512116390"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL352250413",
+          "GL641273135"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL352250413",
+          "GL781023679"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL352250413",
+          "GL782803351"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL491246253",
+          "GL512116390"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL491246253",
+          "GL641273135"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL491246253",
+          "GL781023679"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL491246253",
+          "GL782803351"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL512116390",
+          "GL700631267"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL641273135",
+          "GL700631267"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL700631267",
+          "GL781023679"
+        ],
+        [
+          "DOC-9C32EFF5",
+          "DOC-J8DXTNVK",
+          "GL700631267",
+          "GL782803351"
+        ]
+      ],
+      "expected_amount_minor": 1829700,
+      "interaction_id": null,
+      "issue_id": "ISS-01",
+      "tolerance_minor": 0,
+      "type": "duplicate_invoice",
+      "variant": null
+    },
+    {
+      "affected_ids": [
+        "KZ001135",
+        "KZ001141"
+      ],
+      "currency": "KWD",
+      "description": "The same invoice (same customer, currency, line items and total) is booked twice.",
+      "evidence_sets": [
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL193688524",
+          "GL410841609"
+        ],
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL193688524",
+          "GL675855747"
+        ],
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL193688524",
+          "GL800792289"
+        ],
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL193688524",
+          "GL925439035"
+        ],
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL318575639",
+          "GL410841609"
+        ],
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL318575639",
+          "GL675855747"
+        ],
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL318575639",
+          "GL800792289"
+        ],
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL318575639",
+          "GL925439035"
+        ],
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL410841609",
+          "GL513737601"
+        ],
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL410841609",
+          "GL897374283"
+        ],
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL513737601",
+          "GL675855747"
+        ],
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL513737601",
+          "GL800792289"
+        ],
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL513737601",
+          "GL925439035"
+        ],
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL675855747",
+          "GL897374283"
+        ],
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL800792289",
+          "GL897374283"
+        ],
+        [
+          "DOC-2JVW9APC",
+          "DOC-FSH5X2KS",
+          "GL897374283",
+          "GL925439035"
+        ]
+      ],
+      "expected_amount_minor": 1408000,
+      "interaction_id": "G1",
+      "issue_id": "ISS-02",
+      "tolerance_minor": 0,
+      "type": "duplicate_invoice",
+      "variant": null
+    },
+    {
+      "affected_ids": [
+        "KZ001136",
+        "KZ001142"
+      ],
+      "currency": "KWD",
+      "description": "The same invoice (same customer, currency, line items and total) is booked twice.",
+      "evidence_sets": [
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL067948659",
+          "GL106670605"
+        ],
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL067948659",
+          "GL395435911"
+        ],
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL067948659",
+          "GL429127575"
+        ],
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL067948659",
+          "GL917528814"
+        ],
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL106670605",
+          "GL506649351"
+        ],
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL106670605",
+          "GL644947766"
+        ],
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL106670605",
+          "GL744749565"
+        ],
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL395435911",
+          "GL506649351"
+        ],
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL395435911",
+          "GL644947766"
+        ],
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL395435911",
+          "GL744749565"
+        ],
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL429127575",
+          "GL506649351"
+        ],
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL429127575",
+          "GL644947766"
+        ],
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL429127575",
+          "GL744749565"
+        ],
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL506649351",
+          "GL917528814"
+        ],
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL644947766",
+          "GL917528814"
+        ],
+        [
+          "DOC-6GKETKGJ",
+          "DOC-EXX2V7T9",
+          "GL744749565",
+          "GL917528814"
+        ]
+      ],
+      "expected_amount_minor": 5782000,
+      "interaction_id": null,
+      "issue_id": "ISS-03",
+      "tolerance_minor": 0,
+      "type": "duplicate_invoice",
+      "variant": null
+    },
+    {
+      "affected_ids": [
+        "KZ001106",
+        "TX3659958479"
+      ],
+      "currency": "CHF",
+      "description": "Boundary cross-currency payment: only part of the remittance was applied.",
+      "evidence_sets": [
+        [
+          "DOC-R6M0BF95",
+          "GL156787702"
+        ],
+        [
+          "DOC-R6M0BF95",
+          "GL160958935"
+        ]
+      ],
+      "expected_amount_minor": 205147,
+      "interaction_id": "G2",
+      "issue_id": "ISS-04",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "partial"
+    },
+    {
+      "affected_ids": [
+        "KZ001129",
+        "TX4882268334"
+      ],
+      "currency": "CHF",
+      "description": "The remittance references an invoice but the payment was left entirely as unapplied cash.",
+      "evidence_sets": [
+        [
+          "DOC-Q3BD7CKH",
+          "GL794526070"
+        ]
+      ],
+      "expected_amount_minor": 192000,
+      "interaction_id": null,
+      "issue_id": "ISS-05",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "missing"
+    },
+    {
+      "affected_ids": [
+        "KZ001135",
+        "TX6739711084"
+      ],
+      "currency": "KWD",
+      "description": "The remittance references one invoice but the cash was applied to its duplicate.",
+      "evidence_sets": [
+        [
+          "DOC-Z3DWQJC7",
+          "GL848663357"
+        ]
+      ],
+      "expected_amount_minor": 1408000,
+      "interaction_id": "G1",
+      "issue_id": "ISS-06",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "misapplied"
+    },
+    {
+      "affected_ids": [
+        "KZ001138",
+        "TX7031351811"
+      ],
+      "currency": "KWD",
+      "description": "Only part of the referenced allocation was applied to the invoice; the rest sits in unapplied cash.",
+      "evidence_sets": [
+        [
+          "DOC-PHXJX77G",
+          "GL147877242"
+        ],
+        [
+          "DOC-PHXJX77G",
+          "GL315628017"
+        ]
+      ],
+      "expected_amount_minor": 3590000,
+      "interaction_id": null,
+      "issue_id": "ISS-07",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "partial"
+    },
+    {
+      "affected_ids": [
+        "KZ001106",
+        "TX3659958479"
+      ],
+      "currency": "KWD",
+      "description": "Boundary cross-currency payment: the applied part was converted at the rate of the wall-clock date of the bank timestamp instead of the company-timezone date.",
+      "evidence_sets": [
+        [
+          "DOC-R6M0BF95",
+          "FX:2025-08-01:CHF:KWD",
+          "GL160958935",
+          "GL210930564"
+        ],
+        [
+          "DOC-R6M0BF95",
+          "FX:2025-08-01:CHF:KWD",
+          "GL160958935",
+          "GL363512713"
+        ]
+      ],
+      "expected_amount_minor": 3412,
+      "interaction_id": "G2",
+      "issue_id": "ISS-08",
+      "tolerance_minor": 0,
+      "type": "fx_conversion",
+      "variant": "document_wall_clock_date"
+    },
+    {
+      "affected_ids": [
+        "KZ001139",
+        "TX8759833919"
+      ],
+      "currency": "CHF",
+      "description": "A cross-currency allocation was converted with a rate other than the policy rate.",
+      "evidence_sets": [
+        [
+          "DOC-JJYTT8SN",
+          "FX:2025-08-15:JPY:CHF",
+          "GL228036645"
+        ],
+        [
+          "DOC-JJYTT8SN",
+          "FX:2025-08-15:JPY:CHF",
+          "GL650146727"
+        ]
+      ],
+      "expected_amount_minor": 1079,
+      "interaction_id": null,
+      "issue_id": "ISS-09",
+      "tolerance_minor": 0,
+      "type": "fx_conversion",
+      "variant": "previous_business_day"
+    },
+    {
+      "affected_ids": [
+        "KZ001161",
+        "TX8014825045"
+      ],
+      "currency": "CHF",
+      "description": "A cross-currency allocation was converted with a rate other than the policy rate.",
+      "evidence_sets": [
+        [
+          "DOC-K8HVDD0N",
+          "FX:2025-08-28:JPY:CHF",
+          "GL491708970"
+        ],
+        [
+          "DOC-K8HVDD0N",
+          "FX:2025-08-28:JPY:CHF",
+          "GL591114588"
+        ]
+      ],
+      "expected_amount_minor": 2138,
+      "interaction_id": null,
+      "issue_id": "ISS-10",
+      "tolerance_minor": 0,
+      "type": "fx_conversion",
+      "variant": "invoice_issue_date"
+    },
+    {
+      "affected_ids": [
+        "KZ001169"
+      ],
+      "currency": "KWD",
+      "description": "A document dated outside the period (company timezone) is booked in this period.",
+      "evidence_sets": [
+        [
+          "DOC-8PJP16C1",
+          "GL354433826"
+        ],
+        [
+          "DOC-8PJP16C1",
+          "GL398975399"
+        ],
+        [
+          "DOC-8PJP16C1",
+          "GL436745209"
+        ],
+        [
+          "DOC-8PJP16C1",
+          "GL572002249"
+        ],
+        [
+          "DOC-8PJP16C1",
+          "GL661158806"
+        ]
+      ],
+      "expected_amount_minor": 11830500,
+      "interaction_id": null,
+      "issue_id": "ISS-11",
+      "tolerance_minor": 0,
+      "type": "period_cutoff",
+      "variant": "early_end_invoice"
+    },
+    {
+      "affected_ids": [
+        "TX1321161287"
+      ],
+      "currency": "JPY",
+      "description": "A document dated outside the period (company timezone) is booked in this period.",
+      "evidence_sets": [
+        [
+          "DOC-JBWNX03Z",
+          "GL695590537"
+        ],
+        [
+          "DOC-JBWNX03Z",
+          "GL975976396"
+        ]
+      ],
+      "expected_amount_minor": 3658100,
+      "interaction_id": null,
+      "issue_id": "ISS-12",
+      "tolerance_minor": 0,
+      "type": "period_cutoff",
+      "variant": "early_end_payment"
+    }
+  ],
+  "schema_version": "1.0"
+}

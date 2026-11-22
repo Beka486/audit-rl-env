@@ -1,0 +1,288 @@
+{
+  "episode_id": "EP-EBC949F3A2F8",
+  "issues": [
+    {
+      "affected_ids": [
+        "INV-2026-00261",
+        "INV-2026-00270"
+      ],
+      "currency": "CNY",
+      "description": "The same invoice (same customer, currency, line items and total) is booked twice.",
+      "evidence_sets": [
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-095VVKDH",
+          "L-3A6NT6F1"
+        ],
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-095VVKDH",
+          "L-AY9XTCMJ"
+        ],
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-095VVKDH",
+          "L-FJ13YQG2"
+        ],
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-095VVKDH",
+          "L-MFCRB54W"
+        ],
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-3A6NT6F1",
+          "L-95HVKTGQ"
+        ],
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-3A6NT6F1",
+          "L-EB7QQ1MA"
+        ],
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-3A6NT6F1",
+          "L-Z2JT4PYZ"
+        ],
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-95HVKTGQ",
+          "L-AY9XTCMJ"
+        ],
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-95HVKTGQ",
+          "L-FJ13YQG2"
+        ],
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-95HVKTGQ",
+          "L-MFCRB54W"
+        ],
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-AY9XTCMJ",
+          "L-EB7QQ1MA"
+        ],
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-AY9XTCMJ",
+          "L-Z2JT4PYZ"
+        ],
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-EB7QQ1MA",
+          "L-FJ13YQG2"
+        ],
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-EB7QQ1MA",
+          "L-MFCRB54W"
+        ],
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-FJ13YQG2",
+          "L-Z2JT4PYZ"
+        ],
+        [
+          "DDK4WB706C",
+          "DFCKR9XTE4",
+          "L-MFCRB54W",
+          "L-Z2JT4PYZ"
+        ]
+      ],
+      "expected_amount_minor": 1722000,
+      "interaction_id": null,
+      "issue_id": "ISS-01",
+      "tolerance_minor": 0,
+      "type": "duplicate_invoice",
+      "variant": null
+    },
+    {
+      "affected_ids": [
+        "INV-2026-00268",
+        "INV-2026-00269"
+      ],
+      "currency": "CNY",
+      "description": "The same invoice (same customer, currency, line items and total) is booked twice.",
+      "evidence_sets": [
+        [
+          "DPVEEVCZNF",
+          "DS4ZYSRDW6",
+          "L-228GF8WZ",
+          "L-5TSQM670"
+        ],
+        [
+          "DPVEEVCZNF",
+          "DS4ZYSRDW6",
+          "L-228GF8WZ",
+          "L-E3VCEZ59"
+        ],
+        [
+          "DPVEEVCZNF",
+          "DS4ZYSRDW6",
+          "L-5TSQM670",
+          "L-Y1QT108K"
+        ],
+        [
+          "DPVEEVCZNF",
+          "DS4ZYSRDW6",
+          "L-E3VCEZ59",
+          "L-Y1QT108K"
+        ]
+      ],
+      "expected_amount_minor": 219000,
+      "interaction_id": "G1",
+      "issue_id": "ISS-02",
+      "tolerance_minor": 0,
+      "type": "duplicate_invoice",
+      "variant": null
+    },
+    {
+      "affected_ids": [
+        "INV-2026-00295",
+        "INV-2026-00310"
+      ],
+      "currency": "EUR",
+      "description": "The same invoice (same customer, currency, line items and total) is booked twice.",
+      "evidence_sets": [
+        [
+          "D52RD4MM1G",
+          "DCSZ6YF695",
+          "L-HPYBJA64",
+          "L-K6H61CH2"
+        ],
+        [
+          "D52RD4MM1G",
+          "DCSZ6YF695",
+          "L-HPYBJA64",
+          "L-VN0QJ83Z"
+        ],
+        [
+          "D52RD4MM1G",
+          "DCSZ6YF695",
+          "L-K6H61CH2",
+          "L-WJQS8VCH"
+        ],
+        [
+          "D52RD4MM1G",
+          "DCSZ6YF695",
+          "L-VN0QJ83Z",
+          "L-WJQS8VCH"
+        ]
+      ],
+      "expected_amount_minor": 255600,
+      "interaction_id": null,
+      "issue_id": "ISS-03",
+      "tolerance_minor": 0,
+      "type": "duplicate_invoice",
+      "variant": null
+    },
+    {
+      "affected_ids": [
+        "INV-2026-00301",
+        "INV-2026-00313"
+      ],
+      "currency": "CNY",
+      "description": "The same invoice (same customer, currency, line items and total) is booked twice.",
+      "evidence_sets": [
+        [
+          "DR659SRQ2J",
+          "DWHA5ZE881",
+          "L-8Z1Q49FH",
+          "L-H3GZ2T57"
+        ],
+        [
+          "DR659SRQ2J",
+          "DWHA5ZE881",
+          "L-8Z1Q49FH",
+          "L-NEQFQ1GM"
+        ],
+        [
+          "DR659SRQ2J",
+          "DWHA5ZE881",
+          "L-8Z1Q49FH",
+          "L-XJBSPWFT"
+        ],
+        [
+          "DR659SRQ2J",
+          "DWHA5ZE881",
+          "L-H3GZ2T57",
+          "L-JRW5CX2T"
+        ],
+        [
+          "DR659SRQ2J",
+          "DWHA5ZE881",
+          "L-H3GZ2T57",
+          "L-X0YFAWSH"
+        ],
+        [
+          "DR659SRQ2J",
+          "DWHA5ZE881",
+          "L-JRW5CX2T",
+          "L-NEQFQ1GM"
+        ],
+        [
+          "DR659SRQ2J",
+          "DWHA5ZE881",
+          "L-JRW5CX2T",
+          "L-XJBSPWFT"
+        ],
+        [
+          "DR659SRQ2J",
+          "DWHA5ZE881",
+          "L-NEQFQ1GM",
+          "L-X0YFAWSH"
+        ],
+        [
+          "DR659SRQ2J",
+          "DWHA5ZE881",
+          "L-X0YFAWSH",
+          "L-XJBSPWFT"
+        ]
+      ],
+      "expected_amount_minor": 6419000,
+      "interaction_id": null,
+      "issue_id": "ISS-04",
+      "tolerance_minor": 0,
+      "type": "duplicate_invoice",
+      "variant": null
+    },
+    {
+      "affected_ids": [
+        "INV-2026-00268",
+        "TX8270501522"
+      ],
+      "currency": "CNY",
+      "description": "The remittance references one invoice but the cash was applied to its duplicate.",
+      "evidence_sets": [
+        [
+          "D74RGVB8JK",
+          "L-QW029KC6"
+        ]
+      ],
+      "expected_amount_minor": 219000,
+      "interaction_id": "G1",
+      "issue_id": "ISS-05",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "misapplied"
+    }
+  ],
+  "schema_version": "1.0"
+}

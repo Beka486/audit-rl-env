@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "observation returned by reset()/step()",
+  "type": "object",
+  "required": [
+    "kind",
+    "steps_used",
+    "steps_remaining"
+  ],
+  "properties": {
+    "kind": {
+      "enum": [
+        "reset",
+        "result",
+        "error",
+        "submitted",
+        "truncated"
+      ]
+    },
+    "steps_used": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "steps_remaining": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "error": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "message": {
+          "type": "string",
+          "maxLength": 300
+        }
+      }
+    },
+    "episode_end": {
+      "type": "object"
+    },
+    "result": {
+      "type": "object"
+    },
+    "action": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "task": {
+      "type": "string"
+    },
+    "manifest": {
+      "type": "object"
+    },
+    "policy": {
+      "type": "object"
+    },
+    "tools": {
+      "type": "array"
+    },
+    "max_steps": {
+      "const": 100
+    },
+    "reason": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

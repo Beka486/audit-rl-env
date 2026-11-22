@@ -1,0 +1,347 @@
+{
+  "added_documents": [],
+  "added_ledger_rows": [],
+  "attempt": 0,
+  "changes": [],
+  "company": {
+    "base_currency": "KWD",
+    "currencies": [
+      "KWD",
+      "EUR",
+      "AED"
+    ],
+    "name": "Loki Logistics GmbH",
+    "period": "2026-09",
+    "timezone": "+09:00"
+  },
+  "config": {
+    "config_version": "1.0",
+    "currencies": {
+      "base": null,
+      "foreign_count": [
+        1,
+        3
+      ],
+      "pool": [
+        "KZT",
+        "USD",
+        "EUR",
+        "GBP",
+        "CNY",
+        "AED",
+        "TRY",
+        "INR",
+        "JPY",
+        "KWD",
+        "UZS",
+        "CHF"
+      ]
+    },
+    "distractors": {
+      "boundary_documents": [
+        2,
+        5
+      ],
+      "boundary_per_cutoff": 2,
+      "cross_currency_payments": [
+        2,
+        5
+      ],
+      "legit_partial_payments": [
+        1,
+        3
+      ],
+      "multi_invoice_payments": [
+        1,
+        3
+      ],
+      "on_account_payments": [
+        0,
+        2
+      ],
+      "recurring_customers": [
+        1,
+        2
+      ],
+      "refund_pairs": [
+        0,
+        2
+      ],
+      "split_payments": [
+        1,
+        4
+      ],
+      "unidentified_receipts": [
+        1,
+        3
+      ]
+    },
+    "errors": {
+      "duplicate_invoice": 0,
+      "fx_conversion": 0,
+      "payment_allocation": 0,
+      "period_cutoff": 0
+    },
+    "interactions": {
+      "duplicate_misapplied": 0,
+      "fx_partial_boundary": 0
+    },
+    "name": "train-02-clean",
+    "period": null,
+    "size": {
+      "customers": [
+        6,
+        12
+      ],
+      "invoices": [
+        40,
+        75
+      ],
+      "max_documents": 200,
+      "max_ledger_rows": 1200,
+      "min_ledger_rows": 200,
+      "prior_invoices": [
+        3,
+        6
+      ]
+    },
+    "timezone": null,
+    "variants": {
+      "fx_conversion": [
+        "next_business_day",
+        "previous_business_day",
+        "document_wall_clock_date",
+        "invoice_issue_date",
+        "reverse_pair_rate"
+      ],
+      "payment_allocation": [
+        "missing",
+        "partial"
+      ],
+      "period_cutoff": [
+        "early",
+        "late"
+      ]
+    }
+  },
+  "construction_order": [
+    "company",
+    "fx",
+    "customers",
+    "history",
+    "distractors",
+    "error_hosts",
+    "clean_books",
+    "error_injection",
+    "ids",
+    "self_check"
+  ],
+  "distractors": [
+    {
+      "customers": [
+        "CUST338221",
+        "CUST298872"
+      ],
+      "invoices": [
+        "DC53WV3G57",
+        "DKJG0WFQ66",
+        "D4M4HWABFR",
+        "DHNFDRYP7S",
+        "D3R77F09NJ",
+        "D76FXJ0EEY",
+        "DG0CZK6G7E",
+        "DHN8GN2PWT"
+      ],
+      "kind": "recurring_customers",
+      "payments": [
+        "DRQVDVTJP4",
+        "DXNXE3WNTD",
+        "D3XKVPBPTF",
+        "DKVDP1JNH0",
+        "DYG53SJQA2",
+        "DN18AXJAQ1",
+        "DJ043F64G4",
+        "DBYQJ10ZW7"
+      ]
+    },
+    {
+      "invoice": "DC4X0BWEPA",
+      "kind": "split_payments",
+      "payments": [
+        "D60TE3FGK0",
+        "DDHGRNXXJC",
+        "DHMW6WQ4D5"
+      ]
+    },
+    {
+      "invoice": "DPXB1E00HK",
+      "kind": "legit_partial_payments",
+      "payments": [
+        "DKT28ZYM3E"
+      ]
+    },
+    {
+      "invoice": "D7AYQE41AJ",
+      "kind": "legit_partial_payments",
+      "payments": [
+        "DPKDG286S0"
+      ]
+    },
+    {
+      "invoice": "D8RYN9SBDQ",
+      "kind": "legit_partial_payments",
+      "payments": [
+        "D0ZNNQAA6R"
+      ]
+    },
+    {
+      "invoices": [
+        "DG39M5M7AV",
+        "DHWSB712WY"
+      ],
+      "kind": "multi_invoice_payments",
+      "payments": [
+        "DBMW83V6MP"
+      ]
+    },
+    {
+      "invoices": [
+        "DPNT47ZJ81",
+        "DDJC4CT2CY",
+        "D0PN497CC1"
+      ],
+      "kind": "multi_invoice_payments",
+      "payments": [
+        "D8HD4QM67Y"
+      ]
+    },
+    {
+      "invoices": [
+        "DT80YSSBPC",
+        "DS69CBK1E1"
+      ],
+      "kind": "multi_invoice_payments",
+      "payments": [
+        "DMRDRW723Q"
+      ]
+    },
+    {
+      "invoice": "DJKBKRRQ8V",
+      "kind": "refund_pairs",
+      "payments": [
+        "D8Z15K7YWF",
+        "DGHH2QGTRE",
+        "D48J4YK39P"
+      ]
+    },
+    {
+      "invoice": "DBNKFQXKJN",
+      "kind": "refund_pairs",
+      "payments": [
+        "DK7EWFDSFR",
+        "DVP8NHDEXC",
+        "DYMGCY6J3K"
+      ]
+    },
+    {
+      "kind": "on_account_payments",
+      "payments": [
+        "D407V5BFT7"
+      ]
+    },
+    {
+      "kind": "cross_currency_payments",
+      "payments": [
+        "DJW8NWTPXD"
+      ]
+    },
+    {
+      "kind": "cross_currency_payments",
+      "payments": [
+        "DXACWYRGZN"
+      ]
+    },
+    {
+      "kind": "cross_currency_payments",
+      "payments": [
+        "DD7BGK55K4"
+      ]
+    },
+    {
+      "kind": "cross_currency_payments",
+      "payments": [
+        "DXRP2FSG8F"
+      ]
+    },
+    {
+      "kind": "cross_currency_payments",
+      "payments": [
+        "DXSRJZNNVS"
+      ]
+    },
+    {
+      "kind": "unidentified_receipts",
+      "payments": [
+        "D721XAM4GR"
+      ]
+    },
+    {
+      "kind": "unidentified_receipts",
+      "payments": [
+        "DEBAEBCQ9A"
+      ]
+    },
+    {
+      "doc": "DNA832164N",
+      "in_period": false,
+      "kind": "boundary_documents",
+      "side": "start"
+    },
+    {
+      "doc": "DHW7BTSJSH",
+      "in_period": false,
+      "kind": "boundary_documents",
+      "side": "end"
+    }
+  ],
+  "env_version": "1.0.0",
+  "episode_id": "EP-BE079F81E69E",
+  "generator_version": "1.0.0",
+  "removed_ledger_rows": [],
+  "sampled": {
+    "distractors": {
+      "boundary_documents": 2,
+      "boundary_per_cutoff": 2,
+      "cross_currency_payments": 5,
+      "legit_partial_payments": 3,
+      "multi_invoice_payments": 3,
+      "on_account_payments": 1,
+      "recurring_customers": 2,
+      "refund_pairs": 2,
+      "split_payments": 1,
+      "unidentified_receipts": 2
+    },
+    "errors": {
+      "duplicate_invoice": 0,
+      "fx_conversion": 0,
+      "payment_allocation": 0,
+      "period_cutoff": 0
+    },
+    "foreign_count": 2,
+    "interactions": {
+      "duplicate_misapplied": 0,
+      "fx_partial_boundary": 0
+    },
+    "size": {
+      "customers": 11,
+      "invoices": 74,
+      "max_documents": 200,
+      "max_ledger_rows": 1200,
+      "min_ledger_rows": 200,
+      "prior_invoices": 3
+    }
+  },
+  "schema_version": "1.0",
+  "secret_used": false,
+  "seed": 1002
+}

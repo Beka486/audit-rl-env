@@ -1,0 +1,190 @@
+{
+  "episode_id": "EP-434114113CE2",
+  "issues": [
+    {
+      "affected_ids": [
+        "ST002546",
+        "ST002550"
+      ],
+      "currency": "INR",
+      "description": "The same invoice (same customer, currency, line items and total) is booked twice.",
+      "evidence_sets": [
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-1AKYDYSM",
+          "L-1W9H5AES"
+        ],
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-1AKYDYSM",
+          "L-21V4K5FT"
+        ],
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-1AKYDYSM",
+          "L-SS32G0HN"
+        ],
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-1AKYDYSM",
+          "L-X92FA7E3"
+        ],
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-1W9H5AES",
+          "L-8FPF40E0"
+        ],
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-1W9H5AES",
+          "L-E0KD4GSW"
+        ],
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-1W9H5AES",
+          "L-N9G6AGXW"
+        ],
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-21V4K5FT",
+          "L-8FPF40E0"
+        ],
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-21V4K5FT",
+          "L-E0KD4GSW"
+        ],
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-21V4K5FT",
+          "L-N9G6AGXW"
+        ],
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-8FPF40E0",
+          "L-SS32G0HN"
+        ],
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-8FPF40E0",
+          "L-X92FA7E3"
+        ],
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-E0KD4GSW",
+          "L-SS32G0HN"
+        ],
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-E0KD4GSW",
+          "L-X92FA7E3"
+        ],
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-N9G6AGXW",
+          "L-SS32G0HN"
+        ],
+        [
+          "DOC-MQNC44ZY",
+          "DOC-YQ3TVZYG",
+          "L-N9G6AGXW",
+          "L-X92FA7E3"
+        ]
+      ],
+      "expected_amount_minor": 80460000,
+      "interaction_id": "G1",
+      "issue_id": "ISS-01",
+      "tolerance_minor": 0,
+      "type": "duplicate_invoice",
+      "variant": null
+    },
+    {
+      "affected_ids": [
+        "ST002546",
+        "TX7219962447"
+      ],
+      "currency": "INR",
+      "description": "The remittance references one invoice but the cash was applied to its duplicate.",
+      "evidence_sets": [
+        [
+          "DOC-DGTF752N",
+          "L-M607FC2Q"
+        ]
+      ],
+      "expected_amount_minor": 80460000,
+      "interaction_id": "G1",
+      "issue_id": "ISS-02",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "misapplied"
+    },
+    {
+      "affected_ids": [
+        "ST002564",
+        "TX4916733774"
+      ],
+      "currency": "CNY",
+      "description": "Boundary cross-currency payment: only part of the remittance was applied.",
+      "evidence_sets": [
+        [
+          "DOC-ZWD9FS8F",
+          "L-EGKQTATZ"
+        ],
+        [
+          "DOC-ZWD9FS8F",
+          "L-PASK8PB6"
+        ]
+      ],
+      "expected_amount_minor": 1717614,
+      "interaction_id": "G2",
+      "issue_id": "ISS-03",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "partial"
+    },
+    {
+      "affected_ids": [
+        "ST002564",
+        "TX4916733774"
+      ],
+      "currency": "INR",
+      "description": "Boundary cross-currency payment: the applied part was converted at the rate of the wall-clock date of the bank timestamp instead of the company-timezone date.",
+      "evidence_sets": [
+        [
+          "DOC-ZWD9FS8F",
+          "FX:2025-12-31:CNY:INR",
+          "L-HEN2F32M",
+          "L-PASK8PB6"
+        ],
+        [
+          "DOC-ZWD9FS8F",
+          "FX:2025-12-31:CNY:INR",
+          "L-PASK8PB6",
+          "L-TRGD1PXD"
+        ]
+      ],
+      "expected_amount_minor": 16663,
+      "interaction_id": "G2",
+      "issue_id": "ISS-04",
+      "tolerance_minor": 0,
+      "type": "fx_conversion",
+      "variant": "document_wall_clock_date"
+    }
+  ],
+  "schema_version": "1.0"
+}

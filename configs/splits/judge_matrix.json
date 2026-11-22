@@ -1,0 +1,436 @@
+{
+  "split": "judge_matrix",
+  "config_version": "1.0",
+  "description": "the 20-episode matrix of the jury check definitions (D01-D20): 5 clean, 3 duplicate, 3 allocation (missing, partial, both), 2 FX, 2 period cutoff, 3 + 2 interaction scenarios; open seeds",
+  "secret": "",
+  "episodes": [
+    {
+      "seed": 3001,
+      "config": {
+        "config_version": "1.0",
+        "name": "D01-clean-plain",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 3002,
+      "config": {
+        "config_version": "1.0",
+        "name": "D02-clean-split-payment",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "distractors": {
+          "split_payments": [
+            2,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "seed": 3003,
+      "config": {
+        "config_version": "1.0",
+        "name": "D03-clean-refund",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "distractors": {
+          "refund_pairs": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "seed": 3004,
+      "config": {
+        "config_version": "1.0",
+        "name": "D04-clean-recurring-amounts",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "distractors": {
+          "recurring_customers": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "seed": 3005,
+      "config": {
+        "config_version": "1.0",
+        "name": "D05-clean-fx-and-period-boundary",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "distractors": {
+          "boundary_documents": [
+            4,
+            6
+          ],
+          "cross_currency_payments": [
+            4,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "seed": 3006,
+      "config": {
+        "config_version": "1.0",
+        "name": "D06-duplicate-invoice",
+        "errors": {
+          "duplicate_invoice": 1,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "distractors": {
+          "recurring_customers": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "seed": 3007,
+      "config": {
+        "config_version": "1.0",
+        "name": "D07-duplicate-invoice",
+        "errors": {
+          "duplicate_invoice": 1,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "timezone": "-05:00"
+      }
+    },
+    {
+      "seed": 3008,
+      "config": {
+        "config_version": "1.0",
+        "name": "D08-duplicate-invoice",
+        "errors": {
+          "duplicate_invoice": 2,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "currencies": {
+          "base": "JPY",
+          "foreign_count": 2,
+          "pool": [
+            "JPY",
+            "USD",
+            "EUR",
+            "KWD"
+          ]
+        }
+      }
+    },
+    {
+      "seed": 3009,
+      "config": {
+        "config_version": "1.0",
+        "name": "D09-allocation-missing",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 1,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "variants": {
+          "payment_allocation": [
+            "missing"
+          ]
+        }
+      }
+    },
+    {
+      "seed": 3010,
+      "config": {
+        "config_version": "1.0",
+        "name": "D10-allocation-partial",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 1,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "variants": {
+          "payment_allocation": [
+            "partial"
+          ]
+        }
+      }
+    },
+    {
+      "seed": 3011,
+      "config": {
+        "config_version": "1.0",
+        "name": "D11-allocation-mixed",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 2,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "variants": {
+          "payment_allocation": [
+            "missing",
+            "partial"
+          ]
+        }
+      }
+    },
+    {
+      "seed": 3012,
+      "config": {
+        "config_version": "1.0",
+        "name": "D12-fx-wrong-date",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 1,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "variants": {
+          "fx_conversion": [
+            "next_business_day",
+            "previous_business_day",
+            "document_wall_clock_date",
+            "invoice_issue_date"
+          ]
+        }
+      }
+    },
+    {
+      "seed": 3013,
+      "config": {
+        "config_version": "1.0",
+        "name": "D13-fx-reverse-pair",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 1,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "variants": {
+          "fx_conversion": [
+            "reverse_pair_rate"
+          ]
+        }
+      }
+    },
+    {
+      "seed": 3014,
+      "config": {
+        "config_version": "1.0",
+        "name": "D14-period-cutoff-early",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 1
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "variants": {
+          "period_cutoff": [
+            "early"
+          ]
+        },
+        "timezone": "+05:00"
+      }
+    },
+    {
+      "seed": 3015,
+      "config": {
+        "config_version": "1.0",
+        "name": "D15-period-cutoff-late",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 2
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "variants": {
+          "period_cutoff": [
+            "late"
+          ]
+        },
+        "timezone": "-03:00"
+      }
+    },
+    {
+      "seed": 3016,
+      "config": {
+        "config_version": "1.0",
+        "name": "D16-interaction-fx-partial-boundary",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 1,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 3017,
+      "config": {
+        "config_version": "1.0",
+        "name": "D17-interaction-fx-partial-boundary",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 1,
+          "duplicate_misapplied": 0
+        },
+        "timezone": "+09:00"
+      }
+    },
+    {
+      "seed": 3018,
+      "config": {
+        "config_version": "1.0",
+        "name": "D18-interaction-fx-partial-boundary",
+        "errors": {
+          "duplicate_invoice": 1,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 1,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 3019,
+      "config": {
+        "config_version": "1.0",
+        "name": "D19-interaction-duplicate-misapplied",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 1
+        }
+      }
+    },
+    {
+      "seed": 3020,
+      "config": {
+        "config_version": "1.0",
+        "name": "D20-interaction-duplicate-misapplied",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 1,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 1
+        },
+        "timezone": "-05:00"
+      }
+    }
+  ]
+}

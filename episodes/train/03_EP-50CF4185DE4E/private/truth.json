@@ -1,0 +1,178 @@
+{
+  "episode_id": "EP-50CF4185DE4E",
+  "issues": [
+    {
+      "affected_ids": [
+        "INV-2026-02406",
+        "INV-2026-02412"
+      ],
+      "currency": "KZT",
+      "description": "The same invoice (same customer, currency, line items and total) is booked twice.",
+      "evidence_sets": [
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-3R6T694V",
+          "L-6ZAG1SHF"
+        ],
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-3R6T694V",
+          "L-C5XGQJ9Y"
+        ],
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-3R6T694V",
+          "L-E6Y8R4QN"
+        ],
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-3R6T694V",
+          "L-Z5VFFJ63"
+        ],
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-6ZAG1SHF",
+          "L-71GMZN6Y"
+        ],
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-6ZAG1SHF",
+          "L-7A9B22XJ"
+        ],
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-6ZAG1SHF",
+          "L-7EG2CZVR"
+        ],
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-71GMZN6Y",
+          "L-C5XGQJ9Y"
+        ],
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-71GMZN6Y",
+          "L-E6Y8R4QN"
+        ],
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-71GMZN6Y",
+          "L-Z5VFFJ63"
+        ],
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-7A9B22XJ",
+          "L-C5XGQJ9Y"
+        ],
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-7A9B22XJ",
+          "L-E6Y8R4QN"
+        ],
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-7A9B22XJ",
+          "L-Z5VFFJ63"
+        ],
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-7EG2CZVR",
+          "L-C5XGQJ9Y"
+        ],
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-7EG2CZVR",
+          "L-E6Y8R4QN"
+        ],
+        [
+          "DOC-52SS8T56",
+          "DOC-7G7MM409",
+          "L-7EG2CZVR",
+          "L-Z5VFFJ63"
+        ]
+      ],
+      "expected_amount_minor": 263690000,
+      "interaction_id": null,
+      "issue_id": "ISS-01",
+      "tolerance_minor": 0,
+      "type": "duplicate_invoice",
+      "variant": null
+    },
+    {
+      "affected_ids": [
+        "INV-2026-02429",
+        "INV-2026-02432"
+      ],
+      "currency": "INR",
+      "description": "The same invoice (same customer, currency, line items and total) is booked twice.",
+      "evidence_sets": [
+        [
+          "DOC-4QQENMTX",
+          "DOC-RK6PHJ98",
+          "L-8RWREKT7",
+          "L-KFEXYHBE"
+        ],
+        [
+          "DOC-4QQENMTX",
+          "DOC-RK6PHJ98",
+          "L-8RWREKT7",
+          "L-SZPQEQH1"
+        ],
+        [
+          "DOC-4QQENMTX",
+          "DOC-RK6PHJ98",
+          "L-B9TK1E5V",
+          "L-KFEXYHBE"
+        ],
+        [
+          "DOC-4QQENMTX",
+          "DOC-RK6PHJ98",
+          "L-B9TK1E5V",
+          "L-SZPQEQH1"
+        ]
+      ],
+      "expected_amount_minor": 1040000,
+      "interaction_id": null,
+      "issue_id": "ISS-02",
+      "tolerance_minor": 0,
+      "type": "duplicate_invoice",
+      "variant": null
+    },
+    {
+      "affected_ids": [
+        "INV-2026-02381",
+        "PAY-B8PH9DSH5"
+      ],
+      "currency": "KZT",
+      "description": "The remittance references an invoice but the payment was left entirely as unapplied cash.",
+      "evidence_sets": [
+        [
+          "DOC-XEQB4GXH",
+          "L-C8SNV2BD"
+        ]
+      ],
+      "expected_amount_minor": 113900000,
+      "interaction_id": null,
+      "issue_id": "ISS-03",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "missing"
+    }
+  ],
+  "schema_version": "1.0"
+}

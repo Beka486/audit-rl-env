@@ -1,0 +1,148 @@
+{
+  "episode_id": "EP-6B272AF5D617",
+  "issues": [
+    {
+      "affected_ids": [
+        "TX0000734407",
+        "YT000846"
+      ],
+      "currency": "KWD",
+      "description": "Boundary cross-currency payment: only part of the remittance was applied.",
+      "evidence_sets": [
+        [
+          "DOC-GCY7SFJT",
+          "GL163037962"
+        ],
+        [
+          "DOC-GCY7SFJT",
+          "GL254817745"
+        ]
+      ],
+      "expected_amount_minor": 2327645,
+      "interaction_id": "G1",
+      "issue_id": "ISS-01",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "partial"
+    },
+    {
+      "affected_ids": [
+        "TX8896645306",
+        "YT000861"
+      ],
+      "currency": "KWD",
+      "description": "The remittance references an invoice but the payment was left entirely as unapplied cash.",
+      "evidence_sets": [
+        [
+          "DOC-QPR91JE3",
+          "GL838271144"
+        ]
+      ],
+      "expected_amount_minor": 555000,
+      "interaction_id": null,
+      "issue_id": "ISS-02",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "missing"
+    },
+    {
+      "affected_ids": [
+        "TX0000734407",
+        "YT000846"
+      ],
+      "currency": "UZS",
+      "description": "Boundary cross-currency payment: the applied part was converted at the rate of the wall-clock date of the bank timestamp instead of the company-timezone date.",
+      "evidence_sets": [
+        [
+          "DOC-GCY7SFJT",
+          "FX:2025-02-27:KWD:UZS",
+          "GL010209174",
+          "GL163037962"
+        ],
+        [
+          "DOC-GCY7SFJT",
+          "FX:2025-02-27:KWD:UZS",
+          "GL163037962",
+          "GL283915832"
+        ]
+      ],
+      "expected_amount_minor": 18729002,
+      "interaction_id": "G1",
+      "issue_id": "ISS-03",
+      "tolerance_minor": 0,
+      "type": "fx_conversion",
+      "variant": "document_wall_clock_date"
+    },
+    {
+      "affected_ids": [
+        "TX2604358741",
+        "YT000858"
+      ],
+      "currency": "UZS",
+      "description": "A cross-currency allocation was converted with a rate other than the policy rate.",
+      "evidence_sets": [
+        [
+          "DOC-CS6HAR2P",
+          "FX:2025-02-26:CNY:UZS",
+          "GL461997353"
+        ],
+        [
+          "DOC-CS6HAR2P",
+          "FX:2025-02-26:CNY:UZS",
+          "GL736131453"
+        ]
+      ],
+      "expected_amount_minor": 15346428,
+      "interaction_id": null,
+      "issue_id": "ISS-04",
+      "tolerance_minor": 0,
+      "type": "fx_conversion",
+      "variant": "next_business_day"
+    },
+    {
+      "affected_ids": [
+        "TX6853212667",
+        "YT000838"
+      ],
+      "currency": "KWD",
+      "description": "A cross-currency allocation was converted with a rate other than the policy rate.",
+      "evidence_sets": [
+        [
+          "DOC-D4D51VMM",
+          "FX:2025-02-21:UZS:KWD",
+          "GL793501947"
+        ],
+        [
+          "DOC-D4D51VMM",
+          "FX:2025-02-21:UZS:KWD",
+          "GL972235453"
+        ]
+      ],
+      "expected_amount_minor": 14531,
+      "interaction_id": null,
+      "issue_id": "ISS-05",
+      "tolerance_minor": 0,
+      "type": "fx_conversion",
+      "variant": "next_business_day"
+    },
+    {
+      "affected_ids": [
+        "TX8790900109"
+      ],
+      "currency": "EUR",
+      "description": "A document dated inside the period (company timezone) is missing from this period's ledger.",
+      "evidence_sets": [
+        [
+          "DOC-4YF2JT4M"
+        ]
+      ],
+      "expected_amount_minor": 1922700,
+      "interaction_id": null,
+      "issue_id": "ISS-06",
+      "tolerance_minor": 0,
+      "type": "period_cutoff",
+      "variant": "late_end_payment"
+    }
+  ],
+  "schema_version": "1.0"
+}

@@ -1,0 +1,439 @@
+{
+  "added_documents": [],
+  "added_ledger_rows": [
+    "L-1MZPAH9T",
+    "L-9AT2F6G9",
+    "L-HTJFZG5M",
+    "L-NX94PN1S"
+  ],
+  "attempt": 0,
+  "changes": [
+    {
+      "journal": {
+        "document": "DOC-ATSPG3ZN"
+      },
+      "op": "remove_journal",
+      "reason": "document of this period booked in the adjacent period (wall-clock date of its own timezone)"
+    },
+    {
+      "journal": {
+        "document": "DOC-RD20S5P7"
+      },
+      "op": "remove_journal",
+      "reason": "document of this period booked in the adjacent period (wall-clock date of its own timezone)"
+    },
+    {
+      "journal": {
+        "document": "DOC-TSBDNZ33"
+      },
+      "op": "add_journal",
+      "reason": "document from another period booked using its wall-clock date read in the company timezone"
+    },
+    {
+      "journal": {
+        "document": "DOC-VMBZ68YV"
+      },
+      "op": "add_journal",
+      "reason": "document from another period booked using its wall-clock date read in the company timezone"
+    }
+  ],
+  "company": {
+    "base_currency": "EUR",
+    "currencies": [
+      "EUR",
+      "KZT"
+    ],
+    "name": "Soran Instruments S.A.",
+    "period": "2026-02",
+    "timezone": "+09:00"
+  },
+  "config": {
+    "config_version": "1.0",
+    "currencies": {
+      "base": null,
+      "foreign_count": [
+        1,
+        3
+      ],
+      "pool": [
+        "KZT",
+        "USD",
+        "EUR",
+        "GBP",
+        "CNY",
+        "AED",
+        "TRY",
+        "INR",
+        "JPY",
+        "KWD",
+        "UZS",
+        "CHF"
+      ]
+    },
+    "distractors": {
+      "boundary_documents": [
+        2,
+        5
+      ],
+      "boundary_per_cutoff": 2,
+      "cross_currency_payments": [
+        2,
+        5
+      ],
+      "legit_partial_payments": [
+        1,
+        3
+      ],
+      "multi_invoice_payments": [
+        1,
+        3
+      ],
+      "on_account_payments": [
+        0,
+        2
+      ],
+      "recurring_customers": [
+        1,
+        2
+      ],
+      "refund_pairs": [
+        0,
+        2
+      ],
+      "split_payments": [
+        1,
+        4
+      ],
+      "unidentified_receipts": [
+        1,
+        3
+      ]
+    },
+    "errors": {
+      "duplicate_invoice": 0,
+      "fx_conversion": 0,
+      "payment_allocation": 0,
+      "period_cutoff": 4
+    },
+    "interactions": {
+      "duplicate_misapplied": 0,
+      "fx_partial_boundary": 0
+    },
+    "name": "dev-03-cutoff-heavy",
+    "period": null,
+    "size": {
+      "customers": [
+        6,
+        12
+      ],
+      "invoices": [
+        40,
+        75
+      ],
+      "max_documents": 200,
+      "max_ledger_rows": 1200,
+      "min_ledger_rows": 200,
+      "prior_invoices": [
+        3,
+        6
+      ]
+    },
+    "timezone": null,
+    "variants": {
+      "fx_conversion": [
+        "next_business_day",
+        "previous_business_day",
+        "document_wall_clock_date",
+        "invoice_issue_date",
+        "reverse_pair_rate"
+      ],
+      "payment_allocation": [
+        "missing",
+        "partial"
+      ],
+      "period_cutoff": [
+        "early",
+        "late"
+      ]
+    }
+  },
+  "construction_order": [
+    "company",
+    "fx",
+    "customers",
+    "history",
+    "distractors",
+    "error_hosts",
+    "clean_books",
+    "error_injection",
+    "ids",
+    "self_check"
+  ],
+  "distractors": [
+    {
+      "customers": [
+        "CUST813617"
+      ],
+      "invoices": [
+        "DOC-F98RJGQJ",
+        "DOC-2XTXAKJA",
+        "DOC-39Z0ZAGV",
+        "DOC-D3EE9BEX"
+      ],
+      "kind": "recurring_customers",
+      "payments": [
+        "DOC-H7KYV60N",
+        "DOC-7TB2WTDD"
+      ]
+    },
+    {
+      "invoice": "DOC-SY62G431",
+      "kind": "split_payments",
+      "payments": [
+        "DOC-VZE1M3QA",
+        "DOC-0KHABVJR"
+      ]
+    },
+    {
+      "invoice": "DOC-14B9M779",
+      "kind": "legit_partial_payments",
+      "payments": [
+        "DOC-90Y4FV34"
+      ]
+    },
+    {
+      "invoices": [
+        "DOC-J3B1P178",
+        "DOC-21F8QZZJ"
+      ],
+      "kind": "multi_invoice_payments",
+      "payments": [
+        "DOC-H1PQMAM5"
+      ]
+    },
+    {
+      "invoices": [
+        "DOC-CT2SXW47",
+        "DOC-XMBVSP7F"
+      ],
+      "kind": "multi_invoice_payments",
+      "payments": [
+        "DOC-WWFBS14Y"
+      ]
+    },
+    {
+      "invoices": [
+        "DOC-43NEE4KW",
+        "DOC-TVZBHCA3"
+      ],
+      "kind": "multi_invoice_payments",
+      "payments": [
+        "DOC-6FTKGS26"
+      ]
+    },
+    {
+      "kind": "on_account_payments",
+      "payments": [
+        "DOC-1YKR8BMY"
+      ]
+    },
+    {
+      "kind": "on_account_payments",
+      "payments": [
+        "DOC-CYKMTRWJ"
+      ]
+    },
+    {
+      "kind": "cross_currency_payments",
+      "payments": [
+        "DOC-SDHHB7KT"
+      ]
+    },
+    {
+      "kind": "cross_currency_payments",
+      "payments": [
+        "DOC-J4HPA8PM"
+      ]
+    },
+    {
+      "kind": "unidentified_receipts",
+      "payments": [
+        "DOC-MMDY1ZZN"
+      ]
+    },
+    {
+      "kind": "unidentified_receipts",
+      "payments": [
+        "DOC-BKM30WK2"
+      ]
+    },
+    {
+      "doc": "DOC-98HD68J2",
+      "in_period": false,
+      "kind": "boundary_documents",
+      "side": "start"
+    },
+    {
+      "doc": "DOC-D8T00QHT",
+      "in_period": true,
+      "kind": "boundary_documents",
+      "side": "start"
+    },
+    {
+      "doc": "DOC-ZCYWY4ME",
+      "in_period": false,
+      "kind": "boundary_documents",
+      "side": "start"
+    },
+    {
+      "doc": "DOC-60R9A4D9",
+      "in_period": true,
+      "kind": "boundary_documents",
+      "side": "end"
+    },
+    {
+      "doc": "DOC-JNHM9T9R",
+      "in_period": false,
+      "kind": "boundary_documents",
+      "side": "end"
+    },
+    {
+      "doc": "DOC-SC1SAP9Q",
+      "in_period": false,
+      "kind": "boundary_documents",
+      "side": "start"
+    },
+    {
+      "doc": "DOC-T3K8HQNH",
+      "in_period": false,
+      "kind": "boundary_documents",
+      "side": "end"
+    },
+    {
+      "doc": "DOC-7H2J161A",
+      "in_period": true,
+      "kind": "boundary_documents",
+      "side": "end"
+    },
+    {
+      "doc": "DOC-7JJYNFFM",
+      "in_period": true,
+      "kind": "boundary_documents",
+      "side": "start"
+    },
+    {
+      "doc": "DOC-Y6FX012D",
+      "in_period": true,
+      "kind": "boundary_documents",
+      "side": "start"
+    },
+    {
+      "doc": "DOC-GSA3PJQR",
+      "in_period": false,
+      "kind": "boundary_documents",
+      "side": "end"
+    },
+    {
+      "doc": "DOC-ERHRTFR2",
+      "in_period": false,
+      "kind": "boundary_documents",
+      "side": "end"
+    }
+  ],
+  "env_version": "1.0.0",
+  "episode_id": "EP-26F533AB304D",
+  "generator_version": "1.0.0",
+  "removed_ledger_rows": [
+    {
+      "account": "4000-REVENUE-SERVICES",
+      "credit_minor": 36360,
+      "currency": "EUR",
+      "debit_minor": 0,
+      "entity_id": "CUST294453",
+      "invoice_id": "B26-02721",
+      "payment_id": null,
+      "row_id": "L-CZEDZA3Y",
+      "timestamp": "2026-02-01T04:18:15+09:00"
+    },
+    {
+      "account": "4000-REVENUE-SERVICES",
+      "credit_minor": 21560,
+      "currency": "EUR",
+      "debit_minor": 0,
+      "entity_id": "CUST294453",
+      "invoice_id": "B26-02721",
+      "payment_id": null,
+      "row_id": "L-K6FH819N",
+      "timestamp": "2026-02-01T04:18:15+09:00"
+    },
+    {
+      "account": "1100-AR",
+      "credit_minor": 0,
+      "currency": "EUR",
+      "debit_minor": 57920,
+      "entity_id": "CUST294453",
+      "invoice_id": "B26-02721",
+      "payment_id": null,
+      "row_id": "L-M2FVHD04",
+      "timestamp": "2026-02-01T04:18:15+09:00"
+    },
+    {
+      "account": "1100-AR",
+      "credit_minor": 0,
+      "currency": "KZT",
+      "debit_minor": 116000000,
+      "entity_id": "CUST102662",
+      "invoice_id": "B26-02783",
+      "payment_id": null,
+      "row_id": "L-P15BJC7D",
+      "timestamp": "2026-02-28T21:05:17+09:00"
+    },
+    {
+      "account": "4200-REVENUE-GOODS",
+      "credit_minor": 116000000,
+      "currency": "KZT",
+      "debit_minor": 0,
+      "entity_id": "CUST102662",
+      "invoice_id": "B26-02783",
+      "payment_id": null,
+      "row_id": "L-RDZ96EQD",
+      "timestamp": "2026-02-28T21:05:17+09:00"
+    }
+  ],
+  "sampled": {
+    "distractors": {
+      "boundary_documents": 12,
+      "boundary_per_cutoff": 2,
+      "cross_currency_payments": 2,
+      "legit_partial_payments": 1,
+      "multi_invoice_payments": 3,
+      "on_account_payments": 2,
+      "recurring_customers": 1,
+      "refund_pairs": 0,
+      "split_payments": 1,
+      "unidentified_receipts": 2
+    },
+    "errors": {
+      "duplicate_invoice": 0,
+      "fx_conversion": 0,
+      "payment_allocation": 0,
+      "period_cutoff": 4
+    },
+    "foreign_count": 1,
+    "interactions": {
+      "duplicate_misapplied": 0,
+      "fx_partial_boundary": 0
+    },
+    "size": {
+      "customers": 7,
+      "invoices": 56,
+      "max_documents": 200,
+      "max_ledger_rows": 1200,
+      "min_ledger_rows": 200,
+      "prior_invoices": 6
+    }
+  },
+  "schema_version": "1.0",
+  "secret_used": false,
+  "seed": 2003
+}

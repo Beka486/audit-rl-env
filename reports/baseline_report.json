@@ -1,0 +1,4964 @@
+{
+  "env_version": "1.0.0",
+  "generator_version": "1.0.0",
+  "python": "3.11.18",
+  "note": "Closed mode: policies received reward 0 at every step; grades come from the evaluator log of the out-of-process server. Timing is wall-clock on the machine that ran the report.",
+  "splits": {
+    "train": {
+      "split": "train",
+      "isolated": true,
+      "rows": [
+        {
+          "policy": "random",
+          "summary": {
+            "episodes": 10,
+            "precision_mean": 0.0,
+            "recall_mean": 0.0,
+            "f1_mean": 0.0,
+            "micro_precision": 0.0,
+            "micro_recall": 0.0,
+            "return_mean": -1.0,
+            "return_min": -1.0,
+            "return_max": -1.0,
+            "steps_mean": 20.2,
+            "seconds_mean": 0.06372709670004043,
+            "seconds_max": 0.23852804400030436,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {},
+            "fn_by_type": {
+              "duplicate_invoice": 6,
+              "duplicate_invoice+interaction": 3,
+              "fx_conversion": 9,
+              "fx_conversion+interaction": 4,
+              "payment_allocation": 8,
+              "payment_allocation+interaction": 7,
+              "period_cutoff": 7
+            },
+            "fp_reasons": {
+              "false_accusation": 6,
+              "fooled_by_distractor:boundary_documents": 2,
+              "fooled_by_distractor:recurring_customers": 4,
+              "fooled_by_distractor:split_payments": 1,
+              "fooled_by_timezone_rendering": 1,
+              "same_amount_different_line_items": 6
+            }
+          },
+          "groups": {
+            "clean": {
+              "episodes": 2,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "interacting": {
+              "episodes": 2,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "other": {
+              "episodes": 6,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-D5DF9A303C26",
+              "config": "train-01-default",
+              "issues": 3,
+              "tp": 0,
+              "fp": 3,
+              "fn": 3,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 14,
+              "seconds": 0.2385
+            },
+            {
+              "episode_id": "EP-BE079F81E69E",
+              "config": "train-02-clean",
+              "issues": 0,
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 29,
+              "seconds": 0.0386
+            },
+            {
+              "episode_id": "EP-50CF4185DE4E",
+              "config": "train-03-duplicates-allocation",
+              "issues": 3,
+              "tp": 0,
+              "fp": 2,
+              "fn": 3,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 16,
+              "seconds": 0.0338
+            },
+            {
+              "episode_id": "EP-EADF6F4FDAFA",
+              "config": "train-04-fx-cutoff",
+              "issues": 4,
+              "tp": 0,
+              "fp": 1,
+              "fn": 4,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 6,
+              "seconds": 0.0316
+            },
+            {
+              "episode_id": "EP-0A2931A182E5",
+              "config": "train-05-fx-partial-boundary",
+              "issues": 3,
+              "tp": 0,
+              "fp": 2,
+              "fn": 3,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 33,
+              "seconds": 0.0572
+            },
+            {
+              "episode_id": "EP-74B55724EF52",
+              "config": "train-06-duplicate-misapplied",
+              "issues": 3,
+              "tp": 0,
+              "fp": 3,
+              "fn": 3,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 9,
+              "seconds": 0.0365
+            },
+            {
+              "episode_id": "EP-DEE32C4D5D26",
+              "config": "train-07-max-issues",
+              "issues": 12,
+              "tp": 0,
+              "fp": 2,
+              "fn": 12,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 8,
+              "seconds": 0.0325
+            },
+            {
+              "episode_id": "EP-376D95ACEEFB",
+              "config": "train-08-clean-many-distractors",
+              "issues": 0,
+              "tp": 0,
+              "fp": 2,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 18,
+              "seconds": 0.0319
+            },
+            {
+              "episode_id": "EP-768458800731",
+              "config": "train-09-exotic-currencies",
+              "issues": 10,
+              "tp": 0,
+              "fp": 3,
+              "fn": 10,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 32,
+              "seconds": 0.0499
+            },
+            {
+              "episode_id": "EP-6B272AF5D617",
+              "config": "train-10-large",
+              "issues": 6,
+              "tp": 0,
+              "fp": 1,
+              "fn": 6,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 37,
+              "seconds": 0.0868
+            }
+          ]
+        },
+        {
+          "policy": "reconciliation",
+          "summary": {
+            "episodes": 10,
+            "precision_mean": 0.12370813397129186,
+            "recall_mean": 0.3833333333333333,
+            "f1_mean": 0.18118197978492095,
+            "micro_precision": 0.1360544217687075,
+            "micro_recall": 0.45454545454545453,
+            "return_mean": -0.6524360404301581,
+            "return_min": -1.0,
+            "return_max": -0.22,
+            "steps_mean": 11.5,
+            "seconds_mean": 0.07244861789995412,
+            "seconds_max": 0.3275649160004832,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {
+              "duplicate_invoice": 9,
+              "payment_allocation": 11
+            },
+            "fn_by_type": {
+              "fx_conversion": 9,
+              "fx_conversion+interaction": 4,
+              "payment_allocation+interaction": 4,
+              "period_cutoff": 7
+            },
+            "fp_reasons": {
+              "fooled_by_distractor:boundary_documents": 47,
+              "fooled_by_distractor:cross_currency_payments": 15,
+              "fooled_by_distractor:recurring_customers": 55,
+              "fooled_by_timezone_rendering": 4,
+              "wrong_amount": 1,
+              "wrong_type": 5
+            }
+          },
+          "groups": {
+            "clean": {
+              "episodes": 2,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "interacting": {
+              "episodes": 2,
+              "f1_mean": 0.16783216783216784,
+              "return_mean": -0.6853356643356643
+            },
+            "other": {
+              "episodes": 6,
+              "f1_mean": 0.24602591036414567,
+              "return_mean": -0.5256148459383754
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-D5DF9A303C26",
+              "config": "train-01-default",
+              "issues": 3,
+              "tp": 2,
+              "fp": 9,
+              "fn": 1,
+              "f1": 0.2857142857142857,
+              "return": -0.44657142857142856,
+              "steps": 10,
+              "seconds": 0.3276
+            },
+            {
+              "episode_id": "EP-BE079F81E69E",
+              "config": "train-02-clean",
+              "issues": 0,
+              "tp": 0,
+              "fp": 11,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 13,
+              "seconds": 0.0408
+            },
+            {
+              "episode_id": "EP-50CF4185DE4E",
+              "config": "train-03-duplicates-allocation",
+              "issues": 3,
+              "tp": 3,
+              "fp": 9,
+              "fn": 0,
+              "f1": 0.4,
+              "return": -0.22,
+              "steps": 11,
+              "seconds": 0.037
+            },
+            {
+              "episode_id": "EP-EADF6F4FDAFA",
+              "config": "train-04-fx-cutoff",
+              "issues": 4,
+              "tp": 0,
+              "fp": 14,
+              "fn": 4,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 10,
+              "seconds": 0.0372
+            },
+            {
+              "episode_id": "EP-0A2931A182E5",
+              "config": "train-05-fx-partial-boundary",
+              "issues": 3,
+              "tp": 1,
+              "fp": 9,
+              "fn": 2,
+              "f1": 0.15384615384615385,
+              "return": -0.7103076923076923,
+              "steps": 10,
+              "seconds": 0.035
+            },
+            {
+              "episode_id": "EP-74B55724EF52",
+              "config": "train-06-duplicate-misapplied",
+              "issues": 3,
+              "tp": 2,
+              "fp": 17,
+              "fn": 1,
+              "f1": 0.18181818181818182,
+              "return": -0.6603636363636364,
+              "steps": 13,
+              "seconds": 0.0569
+            },
+            {
+              "episode_id": "EP-DEE32C4D5D26",
+              "config": "train-07-max-issues",
+              "issues": 12,
+              "tp": 6,
+              "fp": 16,
+              "fn": 6,
+              "f1": 0.35294117647058826,
+              "return": -0.31411764705882356,
+              "steps": 11,
+              "seconds": 0.0412
+            },
+            {
+              "episode_id": "EP-376D95ACEEFB",
+              "config": "train-08-clean-many-distractors",
+              "issues": 0,
+              "tp": 0,
+              "fp": 16,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 11,
+              "seconds": 0.0388
+            },
+            {
+              "episode_id": "EP-768458800731",
+              "config": "train-09-exotic-currencies",
+              "issues": 10,
+              "tp": 5,
+              "fp": 17,
+              "fn": 5,
+              "f1": 0.3125,
+              "return": -0.393,
+              "steps": 10,
+              "seconds": 0.0405
+            },
+            {
+              "episode_id": "EP-6B272AF5D617",
+              "config": "train-10-large",
+              "issues": 6,
+              "tp": 1,
+              "fp": 9,
+              "fn": 5,
+              "f1": 0.125,
+              "return": -0.78,
+              "steps": 16,
+              "seconds": 0.0694
+            }
+          ]
+        },
+        {
+          "policy": "flag_all",
+          "summary": {
+            "episodes": 10,
+            "precision_mean": 0.0,
+            "recall_mean": 0.0,
+            "f1_mean": 0.0,
+            "micro_precision": 0.0,
+            "micro_recall": 0.0,
+            "return_mean": -1.0,
+            "return_min": -1.0,
+            "return_max": -1.0,
+            "steps_mean": 4.5,
+            "seconds_mean": 0.058608950799953166,
+            "seconds_max": 0.22616742799982603,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {},
+            "fn_by_type": {
+              "duplicate_invoice": 6,
+              "duplicate_invoice+interaction": 3,
+              "fx_conversion": 9,
+              "fx_conversion+interaction": 4,
+              "payment_allocation": 8,
+              "payment_allocation+interaction": 7,
+              "period_cutoff": 7
+            },
+            "fp_reasons": {
+              "false_accusation": 60,
+              "fooled_by_distractor:boundary_documents": 42,
+              "fooled_by_distractor:cross_currency_payments": 20,
+              "fooled_by_distractor:legit_partial_payments": 12,
+              "fooled_by_distractor:multi_invoice_payments": 22,
+              "fooled_by_distractor:on_account_payments": 6,
+              "fooled_by_distractor:recurring_customers": 36,
+              "fooled_by_distractor:refund_pairs": 25,
+              "fooled_by_distractor:split_payments": 41,
+              "fooled_by_timezone_rendering": 2,
+              "insufficient_evidence": 2,
+              "same_amount_different_line_items": 23,
+              "wrong_amount": 2,
+              "wrong_currency": 4,
+              "wrong_type": 3
+            }
+          },
+          "groups": {
+            "clean": {
+              "episodes": 2,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "interacting": {
+              "episodes": 2,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "other": {
+              "episodes": 6,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-D5DF9A303C26",
+              "config": "train-01-default",
+              "issues": 3,
+              "tp": 0,
+              "fp": 30,
+              "fn": 3,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.2262
+            },
+            {
+              "episode_id": "EP-BE079F81E69E",
+              "config": "train-02-clean",
+              "issues": 0,
+              "tp": 0,
+              "fp": 30,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 5,
+              "seconds": 0.036
+            },
+            {
+              "episode_id": "EP-50CF4185DE4E",
+              "config": "train-03-duplicates-allocation",
+              "issues": 3,
+              "tp": 0,
+              "fp": 30,
+              "fn": 3,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0407
+            },
+            {
+              "episode_id": "EP-EADF6F4FDAFA",
+              "config": "train-04-fx-cutoff",
+              "issues": 4,
+              "tp": 0,
+              "fp": 30,
+              "fn": 4,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0363
+            },
+            {
+              "episode_id": "EP-0A2931A182E5",
+              "config": "train-05-fx-partial-boundary",
+              "issues": 3,
+              "tp": 0,
+              "fp": 30,
+              "fn": 3,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0294
+            },
+            {
+              "episode_id": "EP-74B55724EF52",
+              "config": "train-06-duplicate-misapplied",
+              "issues": 3,
+              "tp": 0,
+              "fp": 30,
+              "fn": 3,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 5,
+              "seconds": 0.049
+            },
+            {
+              "episode_id": "EP-DEE32C4D5D26",
+              "config": "train-07-max-issues",
+              "issues": 12,
+              "tp": 0,
+              "fp": 30,
+              "fn": 12,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0378
+            },
+            {
+              "episode_id": "EP-376D95ACEEFB",
+              "config": "train-08-clean-many-distractors",
+              "issues": 0,
+              "tp": 0,
+              "fp": 30,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 5,
+              "seconds": 0.0316
+            },
+            {
+              "episode_id": "EP-768458800731",
+              "config": "train-09-exotic-currencies",
+              "issues": 10,
+              "tp": 0,
+              "fp": 30,
+              "fn": 10,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.042
+            },
+            {
+              "episode_id": "EP-6B272AF5D617",
+              "config": "train-10-large",
+              "issues": 6,
+              "tp": 0,
+              "fp": 30,
+              "fn": 6,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 6,
+              "seconds": 0.0571
+            }
+          ]
+        },
+        {
+          "policy": "oracle",
+          "summary": {
+            "episodes": 10,
+            "precision_mean": 0.8,
+            "recall_mean": 0.8,
+            "f1_mean": 1.0,
+            "micro_precision": 1.0,
+            "micro_recall": 1.0,
+            "return_mean": 1.0,
+            "return_min": 1.0,
+            "return_max": 1.0,
+            "steps_mean": 1,
+            "seconds_mean": 0.056967991899909975,
+            "seconds_max": 0.2839499039992006,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {
+              "duplicate_invoice": 9,
+              "fx_conversion": 13,
+              "payment_allocation": 15,
+              "period_cutoff": 7
+            },
+            "fn_by_type": {},
+            "fp_reasons": {}
+          },
+          "groups": {
+            "clean": {
+              "episodes": 2,
+              "f1_mean": 1.0,
+              "return_mean": 1.0
+            },
+            "interacting": {
+              "episodes": 2,
+              "f1_mean": 1.0,
+              "return_mean": 1.0
+            },
+            "other": {
+              "episodes": 6,
+              "f1_mean": 1.0,
+              "return_mean": 1.0
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-D5DF9A303C26",
+              "config": "train-01-default",
+              "issues": 3,
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.2839
+            },
+            {
+              "episode_id": "EP-BE079F81E69E",
+              "config": "train-02-clean",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0304
+            },
+            {
+              "episode_id": "EP-50CF4185DE4E",
+              "config": "train-03-duplicates-allocation",
+              "issues": 3,
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0258
+            },
+            {
+              "episode_id": "EP-EADF6F4FDAFA",
+              "config": "train-04-fx-cutoff",
+              "issues": 4,
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0273
+            },
+            {
+              "episode_id": "EP-0A2931A182E5",
+              "config": "train-05-fx-partial-boundary",
+              "issues": 3,
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0241
+            },
+            {
+              "episode_id": "EP-74B55724EF52",
+              "config": "train-06-duplicate-misapplied",
+              "issues": 3,
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0286
+            },
+            {
+              "episode_id": "EP-DEE32C4D5D26",
+              "config": "train-07-max-issues",
+              "issues": 12,
+              "tp": 12,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0278
+            },
+            {
+              "episode_id": "EP-376D95ACEEFB",
+              "config": "train-08-clean-many-distractors",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0237
+            },
+            {
+              "episode_id": "EP-768458800731",
+              "config": "train-09-exotic-currencies",
+              "issues": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0285
+            },
+            {
+              "episode_id": "EP-6B272AF5D617",
+              "config": "train-10-large",
+              "issues": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0694
+            }
+          ]
+        },
+        {
+          "policy": "scripted_auditor",
+          "summary": {
+            "episodes": 10,
+            "precision_mean": 0.8,
+            "recall_mean": 0.8,
+            "f1_mean": 1.0,
+            "micro_precision": 1.0,
+            "micro_recall": 1.0,
+            "return_mean": 0.9508,
+            "return_min": 0.936,
+            "return_max": 0.964,
+            "steps_mean": 25.6,
+            "seconds_mean": 0.06365737370015268,
+            "seconds_max": 0.23859235999952944,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {
+              "duplicate_invoice": 9,
+              "fx_conversion": 13,
+              "payment_allocation": 15,
+              "period_cutoff": 7
+            },
+            "fn_by_type": {},
+            "fp_reasons": {}
+          },
+          "groups": {
+            "clean": {
+              "episodes": 2,
+              "f1_mean": 1.0,
+              "return_mean": 0.949
+            },
+            "interacting": {
+              "episodes": 2,
+              "f1_mean": 1.0,
+              "return_mean": 0.954
+            },
+            "other": {
+              "episodes": 6,
+              "f1_mean": 1.0,
+              "return_mean": 0.9503333333333333
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-D5DF9A303C26",
+              "config": "train-01-default",
+              "issues": 3,
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.962,
+              "steps": 20,
+              "seconds": 0.2386
+            },
+            {
+              "episode_id": "EP-BE079F81E69E",
+              "config": "train-02-clean",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.95,
+              "steps": 26,
+              "seconds": 0.0418
+            },
+            {
+              "episode_id": "EP-50CF4185DE4E",
+              "config": "train-03-duplicates-allocation",
+              "issues": 3,
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.952,
+              "steps": 25,
+              "seconds": 0.0419
+            },
+            {
+              "episode_id": "EP-EADF6F4FDAFA",
+              "config": "train-04-fx-cutoff",
+              "issues": 4,
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.962,
+              "steps": 20,
+              "seconds": 0.039
+            },
+            {
+              "episode_id": "EP-0A2931A182E5",
+              "config": "train-05-fx-partial-boundary",
+              "issues": 3,
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.964,
+              "steps": 19,
+              "seconds": 0.0343
+            },
+            {
+              "episode_id": "EP-74B55724EF52",
+              "config": "train-06-duplicate-misapplied",
+              "issues": 3,
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.944,
+              "steps": 29,
+              "seconds": 0.0429
+            },
+            {
+              "episode_id": "EP-DEE32C4D5D26",
+              "config": "train-07-max-issues",
+              "issues": 12,
+              "tp": 12,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.936,
+              "steps": 33,
+              "seconds": 0.0423
+            },
+            {
+              "episode_id": "EP-376D95ACEEFB",
+              "config": "train-08-clean-many-distractors",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.948,
+              "steps": 27,
+              "seconds": 0.0371
+            },
+            {
+              "episode_id": "EP-768458800731",
+              "config": "train-09-exotic-currencies",
+              "issues": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.94,
+              "steps": 31,
+              "seconds": 0.0589
+            },
+            {
+              "episode_id": "EP-6B272AF5D617",
+              "config": "train-10-large",
+              "issues": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.95,
+              "steps": 26,
+              "seconds": 0.0597
+            }
+          ]
+        }
+      ]
+    },
+    "dev": {
+      "split": "dev",
+      "isolated": true,
+      "rows": [
+        {
+          "policy": "random",
+          "summary": {
+            "episodes": 10,
+            "precision_mean": 0.0,
+            "recall_mean": 0.0,
+            "f1_mean": 0.0,
+            "micro_precision": 0.0,
+            "micro_recall": 0.0,
+            "return_mean": -1.0,
+            "return_min": -1.0,
+            "return_max": -1.0,
+            "steps_mean": 20.2,
+            "seconds_mean": 0.052281789999869946,
+            "seconds_max": 0.2242873570003212,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {},
+            "fn_by_type": {
+              "duplicate_invoice": 8,
+              "duplicate_invoice+interaction": 2,
+              "fx_conversion": 3,
+              "fx_conversion+interaction": 4,
+              "payment_allocation": 5,
+              "payment_allocation+interaction": 6,
+              "period_cutoff": 7
+            },
+            "fp_reasons": {
+              "false_accusation": 5,
+              "fooled_by_distractor:boundary_documents": 1,
+              "fooled_by_distractor:cross_currency_payments": 2,
+              "fooled_by_distractor:legit_partial_payments": 1,
+              "fooled_by_distractor:multi_invoice_payments": 1,
+              "fooled_by_distractor:recurring_customers": 2,
+              "fooled_by_distractor:refund_pairs": 3,
+              "fooled_by_timezone_rendering": 1,
+              "same_amount_different_line_items": 2
+            }
+          },
+          "groups": {
+            "clean": {
+              "episodes": 2,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "interacting": {
+              "episodes": 2,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "other": {
+              "episodes": 6,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-31BA5EA6DAAC",
+              "config": "dev-01-default",
+              "issues": 2,
+              "tp": 0,
+              "fp": 3,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 14,
+              "seconds": 0.2243
+            },
+            {
+              "episode_id": "EP-4BF7C3470116",
+              "config": "dev-02-clean",
+              "issues": 0,
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 29,
+              "seconds": 0.0373
+            },
+            {
+              "episode_id": "EP-26F533AB304D",
+              "config": "dev-03-cutoff-heavy",
+              "issues": 4,
+              "tp": 0,
+              "fp": 2,
+              "fn": 4,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 16,
+              "seconds": 0.0284
+            },
+            {
+              "episode_id": "EP-35D5A9DBF4CB",
+              "config": "dev-04-allocation-fx",
+              "issues": 4,
+              "tp": 0,
+              "fp": 1,
+              "fn": 4,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 6,
+              "seconds": 0.0239
+            },
+            {
+              "episode_id": "EP-434114113CE2",
+              "config": "dev-05-both-interactions",
+              "issues": 4,
+              "tp": 0,
+              "fp": 0,
+              "fn": 4,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 33,
+              "seconds": 0.0369
+            },
+            {
+              "episode_id": "EP-5F0AD6708BCE",
+              "config": "dev-06-fx-partial-boundary-plus",
+              "issues": 4,
+              "tp": 0,
+              "fp": 3,
+              "fn": 4,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 9,
+              "seconds": 0.0299
+            },
+            {
+              "episode_id": "EP-6E1CF3657322",
+              "config": "dev-07-clean-distractors",
+              "issues": 0,
+              "tp": 0,
+              "fp": 2,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 8,
+              "seconds": 0.0306
+            },
+            {
+              "episode_id": "EP-EBC949F3A2F8",
+              "config": "dev-08-duplicates",
+              "issues": 5,
+              "tp": 0,
+              "fp": 2,
+              "fn": 5,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 18,
+              "seconds": 0.0297
+            },
+            {
+              "episode_id": "EP-1BB45075339D",
+              "config": "dev-09-mixed-currencies",
+              "issues": 6,
+              "tp": 0,
+              "fp": 3,
+              "fn": 6,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 32,
+              "seconds": 0.0387
+            },
+            {
+              "episode_id": "EP-34CBCC8899E8",
+              "config": "dev-10-all-types",
+              "issues": 6,
+              "tp": 0,
+              "fp": 1,
+              "fn": 6,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 37,
+              "seconds": 0.0431
+            }
+          ]
+        },
+        {
+          "policy": "reconciliation",
+          "summary": {
+            "episodes": 10,
+            "precision_mean": 0.11694748234221919,
+            "recall_mean": 0.4083333333333333,
+            "f1_mean": 0.17641742627931886,
+            "micro_precision": 0.11971830985915492,
+            "micro_recall": 0.4857142857142857,
+            "return_mean": -0.6621651474413622,
+            "return_min": -1.0,
+            "return_max": -0.15043478260869564,
+            "steps_mean": 11.4,
+            "seconds_mean": 0.06808807939987674,
+            "seconds_max": 0.28413051900042774,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {
+              "duplicate_invoice": 10,
+              "payment_allocation": 7
+            },
+            "fn_by_type": {
+              "fx_conversion": 3,
+              "fx_conversion+interaction": 4,
+              "payment_allocation+interaction": 4,
+              "period_cutoff": 7
+            },
+            "fp_reasons": {
+              "fooled_by_distractor:boundary_documents": 49,
+              "fooled_by_distractor:cross_currency_payments": 14,
+              "fooled_by_distractor:recurring_customers": 53,
+              "fooled_by_distractor:split_payments": 1,
+              "fooled_by_timezone_rendering": 7,
+              "wrong_type": 1
+            }
+          },
+          "groups": {
+            "clean": {
+              "episodes": 2,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "interacting": {
+              "episodes": 2,
+              "f1_mean": 0.15555555555555556,
+              "return_mean": -0.7128888888888889
+            },
+            "other": {
+              "episodes": 6,
+              "f1_mean": 0.24217719194701293,
+              "return_mean": -0.5326456161059742
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-31BA5EA6DAAC",
+              "config": "dev-01-default",
+              "issues": 2,
+              "tp": 2,
+              "fp": 13,
+              "fn": 0,
+              "f1": 0.23529411764705882,
+              "return": -0.5474117647058824,
+              "steps": 10,
+              "seconds": 0.2841
+            },
+            {
+              "episode_id": "EP-4BF7C3470116",
+              "config": "dev-02-clean",
+              "issues": 0,
+              "tp": 0,
+              "fp": 11,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 11,
+              "seconds": 0.048
+            },
+            {
+              "episode_id": "EP-26F533AB304D",
+              "config": "dev-03-cutoff-heavy",
+              "issues": 4,
+              "tp": 0,
+              "fp": 16,
+              "fn": 4,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 10,
+              "seconds": 0.0432
+            },
+            {
+              "episode_id": "EP-35D5A9DBF4CB",
+              "config": "dev-04-allocation-fx",
+              "issues": 4,
+              "tp": 2,
+              "fp": 7,
+              "fn": 2,
+              "f1": 0.3076923076923077,
+              "return": -0.4046153846153846,
+              "steps": 11,
+              "seconds": 0.0471
+            },
+            {
+              "episode_id": "EP-434114113CE2",
+              "config": "dev-05-both-interactions",
+              "issues": 4,
+              "tp": 2,
+              "fp": 14,
+              "fn": 2,
+              "f1": 0.2,
+              "return": -0.626,
+              "steps": 14,
+              "seconds": 0.0534
+            },
+            {
+              "episode_id": "EP-5F0AD6708BCE",
+              "config": "dev-06-fx-partial-boundary-plus",
+              "issues": 4,
+              "tp": 1,
+              "fp": 13,
+              "fn": 3,
+              "f1": 0.1111111111111111,
+              "return": -0.7997777777777778,
+              "steps": 12,
+              "seconds": 0.0455
+            },
+            {
+              "episode_id": "EP-6E1CF3657322",
+              "config": "dev-07-clean-distractors",
+              "issues": 0,
+              "tp": 0,
+              "fp": 13,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 11,
+              "seconds": 0.0388
+            },
+            {
+              "episode_id": "EP-EBC949F3A2F8",
+              "config": "dev-08-duplicates",
+              "issues": 5,
+              "tp": 5,
+              "fp": 13,
+              "fn": 0,
+              "f1": 0.43478260869565216,
+              "return": -0.15043478260869564,
+              "steps": 11,
+              "seconds": 0.0348
+            },
+            {
+              "episode_id": "EP-1BB45075339D",
+              "config": "dev-09-mixed-currencies",
+              "issues": 6,
+              "tp": 3,
+              "fp": 16,
+              "fn": 3,
+              "f1": 0.24,
+              "return": -0.544,
+              "steps": 13,
+              "seconds": 0.0424
+            },
+            {
+              "episode_id": "EP-34CBCC8899E8",
+              "config": "dev-10-all-types",
+              "issues": 6,
+              "tp": 2,
+              "fp": 9,
+              "fn": 4,
+              "f1": 0.23529411764705882,
+              "return": -0.5494117647058824,
+              "steps": 11,
+              "seconds": 0.0435
+            }
+          ]
+        },
+        {
+          "policy": "flag_all",
+          "summary": {
+            "episodes": 10,
+            "precision_mean": 0.0,
+            "recall_mean": 0.0,
+            "f1_mean": 0.0,
+            "micro_precision": 0.0,
+            "micro_recall": 0.0,
+            "return_mean": -1.0,
+            "return_min": -1.0,
+            "return_max": -1.0,
+            "steps_mean": 4.2,
+            "seconds_mean": 0.06468778740008929,
+            "seconds_max": 0.22705232999942382,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {},
+            "fn_by_type": {
+              "duplicate_invoice": 8,
+              "duplicate_invoice+interaction": 2,
+              "fx_conversion": 3,
+              "fx_conversion+interaction": 4,
+              "payment_allocation": 5,
+              "payment_allocation+interaction": 6,
+              "period_cutoff": 7
+            },
+            "fp_reasons": {
+              "false_accusation": 86,
+              "fooled_by_distractor:boundary_documents": 28,
+              "fooled_by_distractor:cross_currency_payments": 4,
+              "fooled_by_distractor:legit_partial_payments": 13,
+              "fooled_by_distractor:multi_invoice_payments": 19,
+              "fooled_by_distractor:on_account_payments": 4,
+              "fooled_by_distractor:recurring_customers": 60,
+              "fooled_by_distractor:refund_pairs": 29,
+              "fooled_by_distractor:split_payments": 23,
+              "fooled_by_timezone_rendering": 2,
+              "insufficient_evidence": 3,
+              "same_amount_different_line_items": 24,
+              "wrong_amount": 2,
+              "wrong_currency": 2,
+              "wrong_type": 1
+            }
+          },
+          "groups": {
+            "clean": {
+              "episodes": 2,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "interacting": {
+              "episodes": 2,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "other": {
+              "episodes": 6,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-31BA5EA6DAAC",
+              "config": "dev-01-default",
+              "issues": 2,
+              "tp": 0,
+              "fp": 30,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.2271
+            },
+            {
+              "episode_id": "EP-4BF7C3470116",
+              "config": "dev-02-clean",
+              "issues": 0,
+              "tp": 0,
+              "fp": 30,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0397
+            },
+            {
+              "episode_id": "EP-26F533AB304D",
+              "config": "dev-03-cutoff-heavy",
+              "issues": 4,
+              "tp": 0,
+              "fp": 30,
+              "fn": 4,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0378
+            },
+            {
+              "episode_id": "EP-35D5A9DBF4CB",
+              "config": "dev-04-allocation-fx",
+              "issues": 4,
+              "tp": 0,
+              "fp": 30,
+              "fn": 4,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0309
+            },
+            {
+              "episode_id": "EP-434114113CE2",
+              "config": "dev-05-both-interactions",
+              "issues": 4,
+              "tp": 0,
+              "fp": 30,
+              "fn": 4,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 5,
+              "seconds": 0.0377
+            },
+            {
+              "episode_id": "EP-5F0AD6708BCE",
+              "config": "dev-06-fx-partial-boundary-plus",
+              "issues": 4,
+              "tp": 0,
+              "fp": 30,
+              "fn": 4,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0335
+            },
+            {
+              "episode_id": "EP-6E1CF3657322",
+              "config": "dev-07-clean-distractors",
+              "issues": 0,
+              "tp": 0,
+              "fp": 30,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0468
+            },
+            {
+              "episode_id": "EP-EBC949F3A2F8",
+              "config": "dev-08-duplicates",
+              "issues": 5,
+              "tp": 0,
+              "fp": 30,
+              "fn": 5,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0533
+            },
+            {
+              "episode_id": "EP-1BB45075339D",
+              "config": "dev-09-mixed-currencies",
+              "issues": 6,
+              "tp": 0,
+              "fp": 30,
+              "fn": 6,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 5,
+              "seconds": 0.0699
+            },
+            {
+              "episode_id": "EP-34CBCC8899E8",
+              "config": "dev-10-all-types",
+              "issues": 6,
+              "tp": 0,
+              "fp": 30,
+              "fn": 6,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0702
+            }
+          ]
+        },
+        {
+          "policy": "oracle",
+          "summary": {
+            "episodes": 10,
+            "precision_mean": 0.8,
+            "recall_mean": 0.8,
+            "f1_mean": 1.0,
+            "micro_precision": 1.0,
+            "micro_recall": 1.0,
+            "return_mean": 1.0,
+            "return_min": 1.0,
+            "return_max": 1.0,
+            "steps_mean": 1,
+            "seconds_mean": 0.04722768700003144,
+            "seconds_max": 0.22752421200038953,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {
+              "duplicate_invoice": 10,
+              "fx_conversion": 7,
+              "payment_allocation": 11,
+              "period_cutoff": 7
+            },
+            "fn_by_type": {},
+            "fp_reasons": {}
+          },
+          "groups": {
+            "clean": {
+              "episodes": 2,
+              "f1_mean": 1.0,
+              "return_mean": 1.0
+            },
+            "interacting": {
+              "episodes": 2,
+              "f1_mean": 1.0,
+              "return_mean": 1.0
+            },
+            "other": {
+              "episodes": 6,
+              "f1_mean": 1.0,
+              "return_mean": 1.0
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-31BA5EA6DAAC",
+              "config": "dev-01-default",
+              "issues": 2,
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.2275
+            },
+            {
+              "episode_id": "EP-4BF7C3470116",
+              "config": "dev-02-clean",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0239
+            },
+            {
+              "episode_id": "EP-26F533AB304D",
+              "config": "dev-03-cutoff-heavy",
+              "issues": 4,
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0221
+            },
+            {
+              "episode_id": "EP-35D5A9DBF4CB",
+              "config": "dev-04-allocation-fx",
+              "issues": 4,
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0228
+            },
+            {
+              "episode_id": "EP-434114113CE2",
+              "config": "dev-05-both-interactions",
+              "issues": 4,
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0296
+            },
+            {
+              "episode_id": "EP-5F0AD6708BCE",
+              "config": "dev-06-fx-partial-boundary-plus",
+              "issues": 4,
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0266
+            },
+            {
+              "episode_id": "EP-6E1CF3657322",
+              "config": "dev-07-clean-distractors",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0278
+            },
+            {
+              "episode_id": "EP-EBC949F3A2F8",
+              "config": "dev-08-duplicates",
+              "issues": 5,
+              "tp": 5,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0256
+            },
+            {
+              "episode_id": "EP-1BB45075339D",
+              "config": "dev-09-mixed-currencies",
+              "issues": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0319
+            },
+            {
+              "episode_id": "EP-34CBCC8899E8",
+              "config": "dev-10-all-types",
+              "issues": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0344
+            }
+          ]
+        },
+        {
+          "policy": "scripted_auditor",
+          "summary": {
+            "episodes": 10,
+            "precision_mean": 0.8,
+            "recall_mean": 0.8,
+            "f1_mean": 1.0,
+            "micro_precision": 1.0,
+            "micro_recall": 1.0,
+            "return_mean": 0.954,
+            "return_min": 0.94,
+            "return_max": 0.97,
+            "steps_mean": 24,
+            "seconds_mean": 0.0680462211998929,
+            "seconds_max": 0.27743604100032826,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {
+              "duplicate_invoice": 10,
+              "fx_conversion": 7,
+              "payment_allocation": 11,
+              "period_cutoff": 7
+            },
+            "fn_by_type": {},
+            "fp_reasons": {}
+          },
+          "groups": {
+            "clean": {
+              "episodes": 2,
+              "f1_mean": 1.0,
+              "return_mean": 0.961
+            },
+            "interacting": {
+              "episodes": 2,
+              "f1_mean": 1.0,
+              "return_mean": 0.95
+            },
+            "other": {
+              "episodes": 6,
+              "f1_mean": 1.0,
+              "return_mean": 0.953
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-31BA5EA6DAAC",
+              "config": "dev-01-default",
+              "issues": 2,
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.952,
+              "steps": 25,
+              "seconds": 0.2774
+            },
+            {
+              "episode_id": "EP-4BF7C3470116",
+              "config": "dev-02-clean",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.968,
+              "steps": 17,
+              "seconds": 0.0495
+            },
+            {
+              "episode_id": "EP-26F533AB304D",
+              "config": "dev-03-cutoff-heavy",
+              "issues": 4,
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.97,
+              "steps": 16,
+              "seconds": 0.0458
+            },
+            {
+              "episode_id": "EP-35D5A9DBF4CB",
+              "config": "dev-04-allocation-fx",
+              "issues": 4,
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.958,
+              "steps": 22,
+              "seconds": 0.0503
+            },
+            {
+              "episode_id": "EP-434114113CE2",
+              "config": "dev-05-both-interactions",
+              "issues": 4,
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.942,
+              "steps": 30,
+              "seconds": 0.0438
+            },
+            {
+              "episode_id": "EP-5F0AD6708BCE",
+              "config": "dev-06-fx-partial-boundary-plus",
+              "issues": 4,
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.958,
+              "steps": 22,
+              "seconds": 0.0414
+            },
+            {
+              "episode_id": "EP-6E1CF3657322",
+              "config": "dev-07-clean-distractors",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.954,
+              "steps": 24,
+              "seconds": 0.0406
+            },
+            {
+              "episode_id": "EP-EBC949F3A2F8",
+              "config": "dev-08-duplicates",
+              "issues": 5,
+              "tp": 5,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.942,
+              "steps": 30,
+              "seconds": 0.039
+            },
+            {
+              "episode_id": "EP-1BB45075339D",
+              "config": "dev-09-mixed-currencies",
+              "issues": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.94,
+              "steps": 31,
+              "seconds": 0.0462
+            },
+            {
+              "episode_id": "EP-34CBCC8899E8",
+              "config": "dev-10-all-types",
+              "issues": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.956,
+              "steps": 23,
+              "seconds": 0.0464
+            }
+          ]
+        }
+      ]
+    },
+    "holdout_sim": {
+      "split": "holdout_sim",
+      "isolated": true,
+      "rows": [
+        {
+          "policy": "random",
+          "summary": {
+            "episodes": 20,
+            "precision_mean": 0.0,
+            "recall_mean": 0.0,
+            "f1_mean": 0.05,
+            "micro_precision": 0.0,
+            "micro_recall": 0.0,
+            "return_mean": -0.9032,
+            "return_min": -1.0,
+            "return_max": 0.936,
+            "steps_mean": 21.65,
+            "seconds_mean": 0.04917677035000452,
+            "seconds_max": 0.2971251620001567,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {},
+            "fn_by_type": {
+              "duplicate_invoice": 21,
+              "duplicate_invoice+interaction": 3,
+              "fx_conversion": 29,
+              "fx_conversion+interaction": 3,
+              "payment_allocation": 14,
+              "payment_allocation+interaction": 6,
+              "period_cutoff": 19
+            },
+            "fp_reasons": {
+              "false_accusation": 19,
+              "fooled_by_distractor:boundary_documents": 3,
+              "fooled_by_distractor:cross_currency_payments": 1,
+              "fooled_by_distractor:multi_invoice_payments": 1,
+              "fooled_by_distractor:recurring_customers": 2,
+              "fooled_by_distractor:refund_pairs": 1,
+              "fooled_by_distractor:split_payments": 3,
+              "same_amount_different_line_items": 7
+            }
+          },
+          "groups": {
+            "clean": {
+              "episodes": 5,
+              "f1_mean": 0.2,
+              "return_mean": -0.6128
+            },
+            "interacting": {
+              "episodes": 5,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "other": {
+              "episodes": 10,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-937D97F806B5",
+              "config": "holdout-clean-1",
+              "issues": 0,
+              "tp": 0,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 14,
+              "seconds": 0.2971
+            },
+            {
+              "episode_id": "EP-F408F7276490",
+              "config": "holdout-clean-2",
+              "issues": 0,
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 29,
+              "seconds": 0.0404
+            },
+            {
+              "episode_id": "EP-CC1CDFA9825F",
+              "config": "holdout-clean-3",
+              "issues": 0,
+              "tp": 0,
+              "fp": 2,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 16,
+              "seconds": 0.0426
+            },
+            {
+              "episode_id": "EP-92B68B82ABE2",
+              "config": "holdout-clean-4",
+              "issues": 0,
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 6,
+              "seconds": 0.0383
+            },
+            {
+              "episode_id": "EP-ADF720B9549E",
+              "config": "holdout-clean-5",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.936,
+              "steps": 33,
+              "seconds": 0.054
+            },
+            {
+              "episode_id": "EP-97207B07A769",
+              "config": "holdout-interacting-1",
+              "issues": 5,
+              "tp": 0,
+              "fp": 3,
+              "fn": 5,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 9,
+              "seconds": 0.0329
+            },
+            {
+              "episode_id": "EP-230595CDB47E",
+              "config": "holdout-interacting-2",
+              "issues": 5,
+              "tp": 0,
+              "fp": 2,
+              "fn": 5,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 8,
+              "seconds": 0.0312
+            },
+            {
+              "episode_id": "EP-C7BE08ECA51D",
+              "config": "holdout-interacting-3",
+              "issues": 7,
+              "tp": 0,
+              "fp": 2,
+              "fn": 7,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 18,
+              "seconds": 0.0288
+            },
+            {
+              "episode_id": "EP-C617CA0CF6E1",
+              "config": "holdout-interacting-4",
+              "issues": 5,
+              "tp": 0,
+              "fp": 3,
+              "fn": 5,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 32,
+              "seconds": 0.0386
+            },
+            {
+              "episode_id": "EP-71B4896B9B4A",
+              "config": "holdout-interacting-5",
+              "issues": 3,
+              "tp": 0,
+              "fp": 1,
+              "fn": 3,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 37,
+              "seconds": 0.0422
+            },
+            {
+              "episode_id": "EP-AFE1F5274407",
+              "config": "holdout-mixed-1",
+              "issues": 6,
+              "tp": 0,
+              "fp": 1,
+              "fn": 6,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 38,
+              "seconds": 0.0421
+            },
+            {
+              "episode_id": "EP-0CF29EBF06E3",
+              "config": "holdout-mixed-2",
+              "issues": 9,
+              "tp": 0,
+              "fp": 2,
+              "fn": 9,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 6,
+              "seconds": 0.0326
+            },
+            {
+              "episode_id": "EP-E4BA625419B9",
+              "config": "holdout-mixed-3",
+              "issues": 9,
+              "tp": 0,
+              "fp": 2,
+              "fn": 9,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 40,
+              "seconds": 0.0371
+            },
+            {
+              "episode_id": "EP-9A1AA5D726EE",
+              "config": "holdout-mixed-4",
+              "issues": 9,
+              "tp": 0,
+              "fp": 1,
+              "fn": 9,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 39,
+              "seconds": 0.033
+            },
+            {
+              "episode_id": "EP-5E386FF67E14",
+              "config": "holdout-mixed-5",
+              "issues": 7,
+              "tp": 0,
+              "fp": 2,
+              "fn": 7,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 24,
+              "seconds": 0.0418
+            },
+            {
+              "episode_id": "EP-13B73039FB79",
+              "config": "holdout-mixed-6",
+              "issues": 6,
+              "tp": 0,
+              "fp": 3,
+              "fn": 6,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 19,
+              "seconds": 0.0404
+            },
+            {
+              "episode_id": "EP-0CA6A10E017C",
+              "config": "holdout-mixed-7",
+              "issues": 5,
+              "tp": 0,
+              "fp": 2,
+              "fn": 5,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 8,
+              "seconds": 0.0282
+            },
+            {
+              "episode_id": "EP-296AD8EEA5AE",
+              "config": "holdout-mixed-8",
+              "issues": 6,
+              "tp": 0,
+              "fp": 2,
+              "fn": 6,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 17,
+              "seconds": 0.022
+            },
+            {
+              "episode_id": "EP-CCF25BEC0C38",
+              "config": "holdout-mixed-9",
+              "issues": 7,
+              "tp": 0,
+              "fp": 3,
+              "fn": 7,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 6,
+              "seconds": 0.0262
+            },
+            {
+              "episode_id": "EP-2B3DAE92D572",
+              "config": "holdout-mixed-10",
+              "issues": 6,
+              "tp": 0,
+              "fp": 1,
+              "fn": 6,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 34,
+              "seconds": 0.034
+            }
+          ]
+        },
+        {
+          "policy": "reconciliation",
+          "summary": {
+            "episodes": 20,
+            "precision_mean": 0.11179396454938251,
+            "recall_mean": 0.31333333333333335,
+            "f1_mean": 0.16342093945387887,
+            "micro_precision": 0.12745098039215685,
+            "micro_recall": 0.4105263157894737,
+            "return_mean": -0.6883581210922423,
+            "return_min": -1.0,
+            "return_max": -0.2560952380952381,
+            "steps_mean": 11.45,
+            "seconds_mean": 0.0522139717500977,
+            "seconds_max": 0.23519776800003456,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {
+              "duplicate_invoice": 24,
+              "payment_allocation": 15
+            },
+            "fn_by_type": {
+              "fx_conversion": 29,
+              "fx_conversion+interaction": 3,
+              "payment_allocation": 2,
+              "payment_allocation+interaction": 3,
+              "period_cutoff": 19
+            },
+            "fp_reasons": {
+              "fooled_by_distractor:boundary_documents": 113,
+              "fooled_by_distractor:cross_currency_payments": 31,
+              "fooled_by_distractor:recurring_customers": 98,
+              "fooled_by_distractor:split_payments": 1,
+              "fooled_by_timezone_rendering": 9,
+              "same_amount_different_line_items": 2,
+              "wrong_amount": 1,
+              "wrong_type": 12
+            }
+          },
+          "groups": {
+            "clean": {
+              "episodes": 5,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "interacting": {
+              "episodes": 5,
+              "f1_mean": 0.19764543498558843,
+              "return_mean": -0.6263091300288232
+            },
+            "other": {
+              "episodes": 10,
+              "f1_mean": 0.2280191614149635,
+              "return_mean": -0.563561677170073
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-937D97F806B5",
+              "config": "holdout-clean-1",
+              "issues": 0,
+              "tp": 0,
+              "fp": 9,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 10,
+              "seconds": 0.2352
+            },
+            {
+              "episode_id": "EP-F408F7276490",
+              "config": "holdout-clean-2",
+              "issues": 0,
+              "tp": 0,
+              "fp": 9,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 9,
+              "seconds": 0.0276
+            },
+            {
+              "episode_id": "EP-CC1CDFA9825F",
+              "config": "holdout-clean-3",
+              "issues": 0,
+              "tp": 0,
+              "fp": 6,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 11,
+              "seconds": 0.0341
+            },
+            {
+              "episode_id": "EP-92B68B82ABE2",
+              "config": "holdout-clean-4",
+              "issues": 0,
+              "tp": 0,
+              "fp": 12,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 11,
+              "seconds": 0.044
+            },
+            {
+              "episode_id": "EP-ADF720B9549E",
+              "config": "holdout-clean-5",
+              "issues": 0,
+              "tp": 0,
+              "fp": 12,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 13,
+              "seconds": 0.0438
+            },
+            {
+              "episode_id": "EP-97207B07A769",
+              "config": "holdout-interacting-1",
+              "issues": 5,
+              "tp": 1,
+              "fp": 12,
+              "fn": 4,
+              "f1": 0.1111111111111111,
+              "return": -0.7977777777777778,
+              "steps": 11,
+              "seconds": 0.0321
+            },
+            {
+              "episode_id": "EP-230595CDB47E",
+              "config": "holdout-interacting-2",
+              "issues": 5,
+              "tp": 3,
+              "fp": 13,
+              "fn": 2,
+              "f1": 0.2857142857142857,
+              "return": -0.45057142857142857,
+              "steps": 12,
+              "seconds": 0.0448
+            },
+            {
+              "episode_id": "EP-C7BE08ECA51D",
+              "config": "holdout-interacting-3",
+              "issues": 7,
+              "tp": 3,
+              "fp": 13,
+              "fn": 4,
+              "f1": 0.2608695652173913,
+              "return": -0.49826086956521737,
+              "steps": 11,
+              "seconds": 0.0409
+            },
+            {
+              "episode_id": "EP-C617CA0CF6E1",
+              "config": "holdout-interacting-4",
+              "issues": 5,
+              "tp": 1,
+              "fp": 15,
+              "fn": 4,
+              "f1": 0.09523809523809523,
+              "return": -0.8335238095238096,
+              "steps": 13,
+              "seconds": 0.0443
+            },
+            {
+              "episode_id": "EP-71B4896B9B4A",
+              "config": "holdout-interacting-5",
+              "issues": 3,
+              "tp": 2,
+              "fp": 12,
+              "fn": 1,
+              "f1": 0.23529411764705882,
+              "return": -0.5514117647058824,
+              "steps": 12,
+              "seconds": 0.0442
+            },
+            {
+              "episode_id": "EP-AFE1F5274407",
+              "config": "holdout-mixed-1",
+              "issues": 6,
+              "tp": 4,
+              "fp": 11,
+              "fn": 2,
+              "f1": 0.38095238095238093,
+              "return": -0.2560952380952381,
+              "steps": 10,
+              "seconds": 0.0551
+            },
+            {
+              "episode_id": "EP-0CF29EBF06E3",
+              "config": "holdout-mixed-2",
+              "issues": 9,
+              "tp": 4,
+              "fp": 20,
+              "fn": 5,
+              "f1": 0.24242424242424243,
+              "return": -0.5411515151515152,
+              "steps": 14,
+              "seconds": 0.0549
+            },
+            {
+              "episode_id": "EP-E4BA625419B9",
+              "config": "holdout-mixed-3",
+              "issues": 9,
+              "tp": 3,
+              "fp": 17,
+              "fn": 6,
+              "f1": 0.20689655172413793,
+              "return": -0.6082068965517241,
+              "steps": 12,
+              "seconds": 0.0387
+            },
+            {
+              "episode_id": "EP-9A1AA5D726EE",
+              "config": "holdout-mixed-4",
+              "issues": 9,
+              "tp": 5,
+              "fp": 14,
+              "fn": 4,
+              "f1": 0.35714285714285715,
+              "return": -0.3057142857142857,
+              "steps": 11,
+              "seconds": 0.0329
+            },
+            {
+              "episode_id": "EP-5E386FF67E14",
+              "config": "holdout-mixed-5",
+              "issues": 7,
+              "tp": 1,
+              "fp": 15,
+              "fn": 6,
+              "f1": 0.08695652173913043,
+              "return": -0.8560869565217392,
+              "steps": 16,
+              "seconds": 0.0599
+            },
+            {
+              "episode_id": "EP-13B73039FB79",
+              "config": "holdout-mixed-6",
+              "issues": 6,
+              "tp": 3,
+              "fp": 14,
+              "fn": 3,
+              "f1": 0.2608695652173913,
+              "return": -0.5022608695652174,
+              "steps": 13,
+              "seconds": 0.0456
+            },
+            {
+              "episode_id": "EP-0CA6A10E017C",
+              "config": "holdout-mixed-7",
+              "issues": 5,
+              "tp": 3,
+              "fp": 14,
+              "fn": 2,
+              "f1": 0.2727272727272727,
+              "return": -0.47454545454545455,
+              "steps": 11,
+              "seconds": 0.077
+            },
+            {
+              "episode_id": "EP-296AD8EEA5AE",
+              "config": "holdout-mixed-8",
+              "issues": 6,
+              "tp": 0,
+              "fp": 17,
+              "fn": 6,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 9,
+              "seconds": 0.0247
+            },
+            {
+              "episode_id": "EP-CCF25BEC0C38",
+              "config": "holdout-mixed-9",
+              "issues": 7,
+              "tp": 3,
+              "fp": 17,
+              "fn": 4,
+              "f1": 0.2222222222222222,
+              "return": -0.5735555555555556,
+              "steps": 10,
+              "seconds": 0.0316
+            },
+            {
+              "episode_id": "EP-2B3DAE92D572",
+              "config": "holdout-mixed-10",
+              "issues": 6,
+              "tp": 3,
+              "fp": 15,
+              "fn": 3,
+              "f1": 0.25,
+              "return": -0.518,
+              "steps": 10,
+              "seconds": 0.0329
+            }
+          ]
+        },
+        {
+          "policy": "flag_all",
+          "summary": {
+            "episodes": 20,
+            "precision_mean": 0.0016666666666666666,
+            "recall_mean": 0.005555555555555555,
+            "f1_mean": 0.002564102564102564,
+            "micro_precision": 0.0016666666666666668,
+            "micro_recall": 0.010526315789473684,
+            "return_mean": -0.9951717948717949,
+            "return_min": -1.0,
+            "return_max": -0.9034358974358975,
+            "steps_mean": 4.25,
+            "seconds_mean": 0.05182842565009196,
+            "seconds_max": 0.24099279300025955,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {
+              "period_cutoff": 1
+            },
+            "fn_by_type": {
+              "duplicate_invoice": 21,
+              "duplicate_invoice+interaction": 3,
+              "fx_conversion": 29,
+              "fx_conversion+interaction": 3,
+              "payment_allocation": 14,
+              "payment_allocation+interaction": 6,
+              "period_cutoff": 18
+            },
+            "fp_reasons": {
+              "false_accusation": 128,
+              "fooled_by_distractor:boundary_documents": 80,
+              "fooled_by_distractor:cross_currency_payments": 35,
+              "fooled_by_distractor:legit_partial_payments": 32,
+              "fooled_by_distractor:multi_invoice_payments": 54,
+              "fooled_by_distractor:on_account_payments": 10,
+              "fooled_by_distractor:recurring_customers": 83,
+              "fooled_by_distractor:refund_pairs": 37,
+              "fooled_by_distractor:split_payments": 55,
+              "fooled_by_timezone_rendering": 3,
+              "insufficient_evidence": 4,
+              "same_amount_different_line_items": 54,
+              "wrong_amount": 3,
+              "wrong_currency": 12,
+              "wrong_type": 9
+            }
+          },
+          "groups": {
+            "clean": {
+              "episodes": 5,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "interacting": {
+              "episodes": 5,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "other": {
+              "episodes": 10,
+              "f1_mean": 0.005128205128205128,
+              "return_mean": -0.9903435897435897
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-937D97F806B5",
+              "config": "holdout-clean-1",
+              "issues": 0,
+              "tp": 0,
+              "fp": 30,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.241
+            },
+            {
+              "episode_id": "EP-F408F7276490",
+              "config": "holdout-clean-2",
+              "issues": 0,
+              "tp": 0,
+              "fp": 30,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0471
+            },
+            {
+              "episode_id": "EP-CC1CDFA9825F",
+              "config": "holdout-clean-3",
+              "issues": 0,
+              "tp": 0,
+              "fp": 30,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0585
+            },
+            {
+              "episode_id": "EP-92B68B82ABE2",
+              "config": "holdout-clean-4",
+              "issues": 0,
+              "tp": 0,
+              "fp": 30,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.062
+            },
+            {
+              "episode_id": "EP-ADF720B9549E",
+              "config": "holdout-clean-5",
+              "issues": 0,
+              "tp": 0,
+              "fp": 30,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 5,
+              "seconds": 0.0555
+            },
+            {
+              "episode_id": "EP-97207B07A769",
+              "config": "holdout-interacting-1",
+              "issues": 5,
+              "tp": 0,
+              "fp": 30,
+              "fn": 5,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0338
+            },
+            {
+              "episode_id": "EP-230595CDB47E",
+              "config": "holdout-interacting-2",
+              "issues": 5,
+              "tp": 0,
+              "fp": 30,
+              "fn": 5,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0342
+            },
+            {
+              "episode_id": "EP-C7BE08ECA51D",
+              "config": "holdout-interacting-3",
+              "issues": 7,
+              "tp": 0,
+              "fp": 30,
+              "fn": 7,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.029
+            },
+            {
+              "episode_id": "EP-C617CA0CF6E1",
+              "config": "holdout-interacting-4",
+              "issues": 5,
+              "tp": 0,
+              "fp": 30,
+              "fn": 5,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 5,
+              "seconds": 0.0561
+            },
+            {
+              "episode_id": "EP-71B4896B9B4A",
+              "config": "holdout-interacting-5",
+              "issues": 3,
+              "tp": 0,
+              "fp": 30,
+              "fn": 3,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0521
+            },
+            {
+              "episode_id": "EP-AFE1F5274407",
+              "config": "holdout-mixed-1",
+              "issues": 6,
+              "tp": 0,
+              "fp": 30,
+              "fn": 6,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0473
+            },
+            {
+              "episode_id": "EP-0CF29EBF06E3",
+              "config": "holdout-mixed-2",
+              "issues": 9,
+              "tp": 0,
+              "fp": 30,
+              "fn": 9,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 5,
+              "seconds": 0.0443
+            },
+            {
+              "episode_id": "EP-E4BA625419B9",
+              "config": "holdout-mixed-3",
+              "issues": 9,
+              "tp": 1,
+              "fp": 29,
+              "fn": 8,
+              "f1": 0.05128205128205128,
+              "return": -0.9034358974358975,
+              "steps": 4,
+              "seconds": 0.0445
+            },
+            {
+              "episode_id": "EP-9A1AA5D726EE",
+              "config": "holdout-mixed-4",
+              "issues": 9,
+              "tp": 0,
+              "fp": 30,
+              "fn": 9,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0286
+            },
+            {
+              "episode_id": "EP-5E386FF67E14",
+              "config": "holdout-mixed-5",
+              "issues": 7,
+              "tp": 0,
+              "fp": 30,
+              "fn": 7,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 6,
+              "seconds": 0.0436
+            },
+            {
+              "episode_id": "EP-13B73039FB79",
+              "config": "holdout-mixed-6",
+              "issues": 6,
+              "tp": 0,
+              "fp": 30,
+              "fn": 6,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.04
+            },
+            {
+              "episode_id": "EP-0CA6A10E017C",
+              "config": "holdout-mixed-7",
+              "issues": 5,
+              "tp": 0,
+              "fp": 30,
+              "fn": 5,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0338
+            },
+            {
+              "episode_id": "EP-296AD8EEA5AE",
+              "config": "holdout-mixed-8",
+              "issues": 6,
+              "tp": 0,
+              "fp": 30,
+              "fn": 6,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0239
+            },
+            {
+              "episode_id": "EP-CCF25BEC0C38",
+              "config": "holdout-mixed-9",
+              "issues": 7,
+              "tp": 0,
+              "fp": 30,
+              "fn": 7,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0322
+            },
+            {
+              "episode_id": "EP-2B3DAE92D572",
+              "config": "holdout-mixed-10",
+              "issues": 6,
+              "tp": 0,
+              "fp": 30,
+              "fn": 6,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.029
+            }
+          ]
+        },
+        {
+          "policy": "oracle",
+          "summary": {
+            "episodes": 20,
+            "precision_mean": 0.75,
+            "recall_mean": 0.75,
+            "f1_mean": 1.0,
+            "micro_precision": 1.0,
+            "micro_recall": 1.0,
+            "return_mean": 1.0,
+            "return_min": 1.0,
+            "return_max": 1.0,
+            "steps_mean": 1,
+            "seconds_mean": 0.039054081650056104,
+            "seconds_max": 0.24881028500021785,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {
+              "duplicate_invoice": 24,
+              "fx_conversion": 32,
+              "payment_allocation": 20,
+              "period_cutoff": 19
+            },
+            "fn_by_type": {},
+            "fp_reasons": {}
+          },
+          "groups": {
+            "clean": {
+              "episodes": 5,
+              "f1_mean": 1.0,
+              "return_mean": 1.0
+            },
+            "interacting": {
+              "episodes": 5,
+              "f1_mean": 1.0,
+              "return_mean": 1.0
+            },
+            "other": {
+              "episodes": 10,
+              "f1_mean": 1.0,
+              "return_mean": 1.0
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-937D97F806B5",
+              "config": "holdout-clean-1",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.2488
+            },
+            {
+              "episode_id": "EP-F408F7276490",
+              "config": "holdout-clean-2",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0217
+            },
+            {
+              "episode_id": "EP-CC1CDFA9825F",
+              "config": "holdout-clean-3",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0251
+            },
+            {
+              "episode_id": "EP-92B68B82ABE2",
+              "config": "holdout-clean-4",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0269
+            },
+            {
+              "episode_id": "EP-ADF720B9549E",
+              "config": "holdout-clean-5",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.03
+            },
+            {
+              "episode_id": "EP-97207B07A769",
+              "config": "holdout-interacting-1",
+              "issues": 5,
+              "tp": 5,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0242
+            },
+            {
+              "episode_id": "EP-230595CDB47E",
+              "config": "holdout-interacting-2",
+              "issues": 5,
+              "tp": 5,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0296
+            },
+            {
+              "episode_id": "EP-C7BE08ECA51D",
+              "config": "holdout-interacting-3",
+              "issues": 7,
+              "tp": 7,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0249
+            },
+            {
+              "episode_id": "EP-C617CA0CF6E1",
+              "config": "holdout-interacting-4",
+              "issues": 5,
+              "tp": 5,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.033
+            },
+            {
+              "episode_id": "EP-71B4896B9B4A",
+              "config": "holdout-interacting-5",
+              "issues": 3,
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0333
+            },
+            {
+              "episode_id": "EP-AFE1F5274407",
+              "config": "holdout-mixed-1",
+              "issues": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0371
+            },
+            {
+              "episode_id": "EP-0CF29EBF06E3",
+              "config": "holdout-mixed-2",
+              "issues": 9,
+              "tp": 9,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0322
+            },
+            {
+              "episode_id": "EP-E4BA625419B9",
+              "config": "holdout-mixed-3",
+              "issues": 9,
+              "tp": 9,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0288
+            },
+            {
+              "episode_id": "EP-9A1AA5D726EE",
+              "config": "holdout-mixed-4",
+              "issues": 9,
+              "tp": 9,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0238
+            },
+            {
+              "episode_id": "EP-5E386FF67E14",
+              "config": "holdout-mixed-5",
+              "issues": 7,
+              "tp": 7,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0352
+            },
+            {
+              "episode_id": "EP-13B73039FB79",
+              "config": "holdout-mixed-6",
+              "issues": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0339
+            },
+            {
+              "episode_id": "EP-0CA6A10E017C",
+              "config": "holdout-mixed-7",
+              "issues": 5,
+              "tp": 5,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0265
+            },
+            {
+              "episode_id": "EP-296AD8EEA5AE",
+              "config": "holdout-mixed-8",
+              "issues": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0179
+            },
+            {
+              "episode_id": "EP-CCF25BEC0C38",
+              "config": "holdout-mixed-9",
+              "issues": 7,
+              "tp": 7,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0244
+            },
+            {
+              "episode_id": "EP-2B3DAE92D572",
+              "config": "holdout-mixed-10",
+              "issues": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0237
+            }
+          ]
+        },
+        {
+          "policy": "scripted_auditor",
+          "summary": {
+            "episodes": 20,
+            "precision_mean": 0.75,
+            "recall_mean": 0.75,
+            "f1_mean": 1.0,
+            "micro_precision": 1.0,
+            "micro_recall": 1.0,
+            "return_mean": 0.9511999999999999,
+            "return_min": 0.934,
+            "return_max": 0.972,
+            "steps_mean": 25.4,
+            "seconds_mean": 0.05458954605005602,
+            "seconds_max": 0.2270484430000579,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {
+              "duplicate_invoice": 24,
+              "fx_conversion": 32,
+              "payment_allocation": 20,
+              "period_cutoff": 19
+            },
+            "fn_by_type": {},
+            "fp_reasons": {}
+          },
+          "groups": {
+            "clean": {
+              "episodes": 5,
+              "f1_mean": 1.0,
+              "return_mean": 0.9636
+            },
+            "interacting": {
+              "episodes": 5,
+              "f1_mean": 1.0,
+              "return_mean": 0.9503999999999999
+            },
+            "other": {
+              "episodes": 10,
+              "f1_mean": 1.0,
+              "return_mean": 0.9454
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-937D97F806B5",
+              "config": "holdout-clean-1",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.964,
+              "steps": 19,
+              "seconds": 0.227
+            },
+            {
+              "episode_id": "EP-F408F7276490",
+              "config": "holdout-clean-2",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.972,
+              "steps": 15,
+              "seconds": 0.0311
+            },
+            {
+              "episode_id": "EP-CC1CDFA9825F",
+              "config": "holdout-clean-3",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.964,
+              "steps": 19,
+              "seconds": 0.0376
+            },
+            {
+              "episode_id": "EP-92B68B82ABE2",
+              "config": "holdout-clean-4",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.956,
+              "steps": 23,
+              "seconds": 0.0526
+            },
+            {
+              "episode_id": "EP-ADF720B9549E",
+              "config": "holdout-clean-5",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.962,
+              "steps": 20,
+              "seconds": 0.0453
+            },
+            {
+              "episode_id": "EP-97207B07A769",
+              "config": "holdout-interacting-1",
+              "issues": 5,
+              "tp": 5,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.958,
+              "steps": 22,
+              "seconds": 0.0346
+            },
+            {
+              "episode_id": "EP-230595CDB47E",
+              "config": "holdout-interacting-2",
+              "issues": 5,
+              "tp": 5,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.952,
+              "steps": 25,
+              "seconds": 0.0622
+            },
+            {
+              "episode_id": "EP-C7BE08ECA51D",
+              "config": "holdout-interacting-3",
+              "issues": 7,
+              "tp": 7,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.948,
+              "steps": 27,
+              "seconds": 0.0499
+            },
+            {
+              "episode_id": "EP-C617CA0CF6E1",
+              "config": "holdout-interacting-4",
+              "issues": 5,
+              "tp": 5,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.946,
+              "steps": 28,
+              "seconds": 0.0449
+            },
+            {
+              "episode_id": "EP-71B4896B9B4A",
+              "config": "holdout-interacting-5",
+              "issues": 3,
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.948,
+              "steps": 27,
+              "seconds": 0.0445
+            },
+            {
+              "episode_id": "EP-AFE1F5274407",
+              "config": "holdout-mixed-1",
+              "issues": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.94,
+              "steps": 31,
+              "seconds": 0.0497
+            },
+            {
+              "episode_id": "EP-0CF29EBF06E3",
+              "config": "holdout-mixed-2",
+              "issues": 9,
+              "tp": 9,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.934,
+              "steps": 34,
+              "seconds": 0.053
+            },
+            {
+              "episode_id": "EP-E4BA625419B9",
+              "config": "holdout-mixed-3",
+              "issues": 9,
+              "tp": 9,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.938,
+              "steps": 32,
+              "seconds": 0.0445
+            },
+            {
+              "episode_id": "EP-9A1AA5D726EE",
+              "config": "holdout-mixed-4",
+              "issues": 9,
+              "tp": 9,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.944,
+              "steps": 29,
+              "seconds": 0.0375
+            },
+            {
+              "episode_id": "EP-5E386FF67E14",
+              "config": "holdout-mixed-5",
+              "issues": 7,
+              "tp": 7,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.946,
+              "steps": 28,
+              "seconds": 0.0616
+            },
+            {
+              "episode_id": "EP-13B73039FB79",
+              "config": "holdout-mixed-6",
+              "issues": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.94,
+              "steps": 31,
+              "seconds": 0.0511
+            },
+            {
+              "episode_id": "EP-0CA6A10E017C",
+              "config": "holdout-mixed-7",
+              "issues": 5,
+              "tp": 5,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.95,
+              "steps": 26,
+              "seconds": 0.0413
+            },
+            {
+              "episode_id": "EP-296AD8EEA5AE",
+              "config": "holdout-mixed-8",
+              "issues": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.962,
+              "steps": 20,
+              "seconds": 0.0277
+            },
+            {
+              "episode_id": "EP-CCF25BEC0C38",
+              "config": "holdout-mixed-9",
+              "issues": 7,
+              "tp": 7,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.95,
+              "steps": 26,
+              "seconds": 0.0435
+            },
+            {
+              "episode_id": "EP-2B3DAE92D572",
+              "config": "holdout-mixed-10",
+              "issues": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.95,
+              "steps": 26,
+              "seconds": 0.0521
+            }
+          ]
+        }
+      ]
+    },
+    "judge_matrix": {
+      "split": "judge_matrix",
+      "isolated": true,
+      "rows": [
+        {
+          "policy": "random",
+          "summary": {
+            "episodes": 20,
+            "precision_mean": 0.0,
+            "recall_mean": 0.0,
+            "f1_mean": 0.05,
+            "micro_precision": 0.0,
+            "micro_recall": 0.0,
+            "return_mean": -0.9032,
+            "return_min": -1.0,
+            "return_max": 0.936,
+            "steps_mean": 21.65,
+            "seconds_mean": 0.04667520160001004,
+            "seconds_max": 0.2963604389997272,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {},
+            "fn_by_type": {
+              "duplicate_invoice": 5,
+              "duplicate_invoice+interaction": 2,
+              "fx_conversion": 3,
+              "fx_conversion+interaction": 3,
+              "payment_allocation": 4,
+              "payment_allocation+interaction": 5,
+              "period_cutoff": 3
+            },
+            "fp_reasons": {
+              "false_accusation": 17,
+              "fooled_by_distractor:cross_currency_payments": 3,
+              "fooled_by_distractor:legit_partial_payments": 2,
+              "fooled_by_distractor:multi_invoice_payments": 2,
+              "fooled_by_distractor:recurring_customers": 1,
+              "fooled_by_distractor:refund_pairs": 2,
+              "fooled_by_distractor:split_payments": 4,
+              "same_amount_different_line_items": 6
+            }
+          },
+          "groups": {
+            "clean": {
+              "episodes": 5,
+              "f1_mean": 0.2,
+              "return_mean": -0.6128
+            },
+            "interacting": {
+              "episodes": 5,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "other": {
+              "episodes": 10,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-722FE1987215",
+              "config": "D01-clean-plain",
+              "issues": 0,
+              "tp": 0,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 14,
+              "seconds": 0.2964
+            },
+            {
+              "episode_id": "EP-77DA20C6527B",
+              "config": "D02-clean-split-payment",
+              "issues": 0,
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 29,
+              "seconds": 0.0458
+            },
+            {
+              "episode_id": "EP-E1D4981631F6",
+              "config": "D03-clean-refund",
+              "issues": 0,
+              "tp": 0,
+              "fp": 2,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 16,
+              "seconds": 0.0435
+            },
+            {
+              "episode_id": "EP-7B8AC559EF40",
+              "config": "D04-clean-recurring-amounts",
+              "issues": 0,
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 6,
+              "seconds": 0.0292
+            },
+            {
+              "episode_id": "EP-80EF060C9E39",
+              "config": "D05-clean-fx-and-period-boundary",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.936,
+              "steps": 33,
+              "seconds": 0.0391
+            },
+            {
+              "episode_id": "EP-DD37B117C2DC",
+              "config": "D06-duplicate-invoice",
+              "issues": 1,
+              "tp": 0,
+              "fp": 3,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 9,
+              "seconds": 0.0339
+            },
+            {
+              "episode_id": "EP-8B93D6592893",
+              "config": "D07-duplicate-invoice",
+              "issues": 1,
+              "tp": 0,
+              "fp": 2,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 8,
+              "seconds": 0.0263
+            },
+            {
+              "episode_id": "EP-07EC9F7121D1",
+              "config": "D08-duplicate-invoice",
+              "issues": 2,
+              "tp": 0,
+              "fp": 2,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 18,
+              "seconds": 0.0308
+            },
+            {
+              "episode_id": "EP-89C6FE4AC491",
+              "config": "D09-allocation-missing",
+              "issues": 1,
+              "tp": 0,
+              "fp": 3,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 32,
+              "seconds": 0.0331
+            },
+            {
+              "episode_id": "EP-E232DF4FE1F7",
+              "config": "D10-allocation-partial",
+              "issues": 1,
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 37,
+              "seconds": 0.0376
+            },
+            {
+              "episode_id": "EP-890A7B74EDB1",
+              "config": "D11-allocation-mixed",
+              "issues": 2,
+              "tp": 0,
+              "fp": 1,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 38,
+              "seconds": 0.0382
+            },
+            {
+              "episode_id": "EP-304B5F322B40",
+              "config": "D12-fx-wrong-date",
+              "issues": 1,
+              "tp": 0,
+              "fp": 2,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 6,
+              "seconds": 0.0242
+            },
+            {
+              "episode_id": "EP-23760589336F",
+              "config": "D13-fx-reverse-pair",
+              "issues": 1,
+              "tp": 0,
+              "fp": 2,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 40,
+              "seconds": 0.0316
+            },
+            {
+              "episode_id": "EP-AA9FE9F6E650",
+              "config": "D14-period-cutoff-early",
+              "issues": 1,
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 39,
+              "seconds": 0.038
+            },
+            {
+              "episode_id": "EP-B4EF777BB1EB",
+              "config": "D15-period-cutoff-late",
+              "issues": 2,
+              "tp": 0,
+              "fp": 2,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 24,
+              "seconds": 0.0312
+            },
+            {
+              "episode_id": "EP-863580D76C88",
+              "config": "D16-interaction-fx-partial-boundary",
+              "issues": 2,
+              "tp": 0,
+              "fp": 3,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 19,
+              "seconds": 0.0329
+            },
+            {
+              "episode_id": "EP-22F563CC627F",
+              "config": "D17-interaction-fx-partial-boundary",
+              "issues": 2,
+              "tp": 0,
+              "fp": 2,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 8,
+              "seconds": 0.0297
+            },
+            {
+              "episode_id": "EP-471B65738907",
+              "config": "D18-interaction-fx-partial-boundary",
+              "issues": 3,
+              "tp": 0,
+              "fp": 2,
+              "fn": 3,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 17,
+              "seconds": 0.0255
+            },
+            {
+              "episode_id": "EP-7EB264E2149D",
+              "config": "D19-interaction-duplicate-misapplied",
+              "issues": 2,
+              "tp": 0,
+              "fp": 3,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 6,
+              "seconds": 0.027
+            },
+            {
+              "episode_id": "EP-87AC79F95266",
+              "config": "D20-interaction-duplicate-misapplied",
+              "issues": 3,
+              "tp": 0,
+              "fp": 1,
+              "fn": 3,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 34,
+              "seconds": 0.0394
+            }
+          ]
+        },
+        {
+          "policy": "reconciliation",
+          "summary": {
+            "episodes": 20,
+            "precision_mean": 0.04402509255450432,
+            "recall_mean": 0.325,
+            "f1_mean": 0.07579365079365079,
+            "micro_precision": 0.04330708661417323,
+            "micro_recall": 0.44,
+            "return_mean": -0.8562126984126984,
+            "return_min": -1.0,
+            "return_max": -0.44657142857142856,
+            "steps_mean": 10.85,
+            "seconds_mean": 0.05010869389993786,
+            "seconds_max": 0.2420123310002964,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {
+              "duplicate_invoice": 7,
+              "payment_allocation": 4
+            },
+            "fn_by_type": {
+              "fx_conversion": 3,
+              "fx_conversion+interaction": 3,
+              "payment_allocation": 2,
+              "payment_allocation+interaction": 3,
+              "period_cutoff": 3
+            },
+            "fp_reasons": {
+              "fooled_by_distractor:boundary_documents": 78,
+              "fooled_by_distractor:cross_currency_payments": 43,
+              "fooled_by_distractor:recurring_customers": 110,
+              "fooled_by_distractor:split_payments": 2,
+              "fooled_by_timezone_rendering": 6,
+              "wrong_amount": 3,
+              "wrong_type": 1
+            }
+          },
+          "groups": {
+            "clean": {
+              "episodes": 5,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "interacting": {
+              "episodes": 5,
+              "f1_mean": 0.13714285714285715,
+              "return_mean": -0.7361142857142857
+            },
+            "other": {
+              "episodes": 10,
+              "f1_mean": 0.08301587301587302,
+              "return_mean": -0.844368253968254
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-722FE1987215",
+              "config": "D01-clean-plain",
+              "issues": 0,
+              "tp": 0,
+              "fp": 8,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 11,
+              "seconds": 0.242
+            },
+            {
+              "episode_id": "EP-77DA20C6527B",
+              "config": "D02-clean-split-payment",
+              "issues": 0,
+              "tp": 0,
+              "fp": 11,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 11,
+              "seconds": 0.0381
+            },
+            {
+              "episode_id": "EP-E1D4981631F6",
+              "config": "D03-clean-refund",
+              "issues": 0,
+              "tp": 0,
+              "fp": 9,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 10,
+              "seconds": 0.0308
+            },
+            {
+              "episode_id": "EP-7B8AC559EF40",
+              "config": "D04-clean-recurring-amounts",
+              "issues": 0,
+              "tp": 0,
+              "fp": 13,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 10,
+              "seconds": 0.0311
+            },
+            {
+              "episode_id": "EP-80EF060C9E39",
+              "config": "D05-clean-fx-and-period-boundary",
+              "issues": 0,
+              "tp": 0,
+              "fp": 16,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 12,
+              "seconds": 0.0475
+            },
+            {
+              "episode_id": "EP-DD37B117C2DC",
+              "config": "D06-duplicate-invoice",
+              "issues": 1,
+              "tp": 1,
+              "fp": 16,
+              "fn": 0,
+              "f1": 0.1111111111111111,
+              "return": -0.7997777777777778,
+              "steps": 12,
+              "seconds": 0.0418
+            },
+            {
+              "episode_id": "EP-8B93D6592893",
+              "config": "D07-duplicate-invoice",
+              "issues": 1,
+              "tp": 1,
+              "fp": 12,
+              "fn": 0,
+              "f1": 0.14285714285714285,
+              "return": -0.7302857142857143,
+              "steps": 9,
+              "seconds": 0.0339
+            },
+            {
+              "episode_id": "EP-07EC9F7121D1",
+              "config": "D08-duplicate-invoice",
+              "issues": 2,
+              "tp": 2,
+              "fp": 11,
+              "fn": 0,
+              "f1": 0.26666666666666666,
+              "return": -0.4866666666666667,
+              "steps": 11,
+              "seconds": 0.0406
+            },
+            {
+              "episode_id": "EP-89C6FE4AC491",
+              "config": "D09-allocation-missing",
+              "issues": 1,
+              "tp": 1,
+              "fp": 10,
+              "fn": 0,
+              "f1": 0.16666666666666666,
+              "return": -0.6886666666666666,
+              "steps": 12,
+              "seconds": 0.0529
+            },
+            {
+              "episode_id": "EP-E232DF4FE1F7",
+              "config": "D10-allocation-partial",
+              "issues": 1,
+              "tp": 0,
+              "fp": 15,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 10,
+              "seconds": 0.0519
+            },
+            {
+              "episode_id": "EP-890A7B74EDB1",
+              "config": "D11-allocation-mixed",
+              "issues": 2,
+              "tp": 1,
+              "fp": 11,
+              "fn": 1,
+              "f1": 0.14285714285714285,
+              "return": -0.7382857142857143,
+              "steps": 13,
+              "seconds": 0.0401
+            },
+            {
+              "episode_id": "EP-304B5F322B40",
+              "config": "D12-fx-wrong-date",
+              "issues": 1,
+              "tp": 0,
+              "fp": 12,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 10,
+              "seconds": 0.0329
+            },
+            {
+              "episode_id": "EP-23760589336F",
+              "config": "D13-fx-reverse-pair",
+              "issues": 1,
+              "tp": 0,
+              "fp": 14,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 11,
+              "seconds": 0.0333
+            },
+            {
+              "episode_id": "EP-AA9FE9F6E650",
+              "config": "D14-period-cutoff-early",
+              "issues": 1,
+              "tp": 0,
+              "fp": 15,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 13,
+              "seconds": 0.0455
+            },
+            {
+              "episode_id": "EP-B4EF777BB1EB",
+              "config": "D15-period-cutoff-late",
+              "issues": 2,
+              "tp": 0,
+              "fp": 15,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 10,
+              "seconds": 0.0476
+            },
+            {
+              "episode_id": "EP-863580D76C88",
+              "config": "D16-interaction-fx-partial-boundary",
+              "issues": 2,
+              "tp": 0,
+              "fp": 11,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 11,
+              "seconds": 0.0385
+            },
+            {
+              "episode_id": "EP-22F563CC627F",
+              "config": "D17-interaction-fx-partial-boundary",
+              "issues": 2,
+              "tp": 0,
+              "fp": 13,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 12,
+              "seconds": 0.0386
+            },
+            {
+              "episode_id": "EP-471B65738907",
+              "config": "D18-interaction-fx-partial-boundary",
+              "issues": 3,
+              "tp": 1,
+              "fp": 11,
+              "fn": 2,
+              "f1": 0.13333333333333333,
+              "return": -0.7493333333333333,
+              "steps": 9,
+              "seconds": 0.0303
+            },
+            {
+              "episode_id": "EP-7EB264E2149D",
+              "config": "D19-interaction-duplicate-misapplied",
+              "issues": 2,
+              "tp": 2,
+              "fp": 10,
+              "fn": 0,
+              "f1": 0.2857142857142857,
+              "return": -0.44657142857142856,
+              "steps": 10,
+              "seconds": 0.0389
+            },
+            {
+              "episode_id": "EP-87AC79F95266",
+              "config": "D20-interaction-duplicate-misapplied",
+              "issues": 3,
+              "tp": 2,
+              "fp": 10,
+              "fn": 1,
+              "f1": 0.26666666666666666,
+              "return": -0.4846666666666667,
+              "steps": 10,
+              "seconds": 0.0459
+            }
+          ]
+        },
+        {
+          "policy": "flag_all",
+          "summary": {
+            "episodes": 20,
+            "precision_mean": 0.0,
+            "recall_mean": 0.0,
+            "f1_mean": 0.0,
+            "micro_precision": 0.0,
+            "micro_recall": 0.0,
+            "return_mean": -1.0,
+            "return_min": -1.0,
+            "return_max": -1.0,
+            "steps_mean": 4.15,
+            "seconds_mean": 0.041411936999884345,
+            "seconds_max": 0.2400708190007208,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {},
+            "fn_by_type": {
+              "duplicate_invoice": 5,
+              "duplicate_invoice+interaction": 2,
+              "fx_conversion": 3,
+              "fx_conversion+interaction": 3,
+              "payment_allocation": 4,
+              "payment_allocation+interaction": 5,
+              "period_cutoff": 3
+            },
+            "fp_reasons": {
+              "false_accusation": 165,
+              "fooled_by_distractor:boundary_documents": 48,
+              "fooled_by_distractor:cross_currency_payments": 31,
+              "fooled_by_distractor:legit_partial_payments": 43,
+              "fooled_by_distractor:multi_invoice_payments": 58,
+              "fooled_by_distractor:on_account_payments": 7,
+              "fooled_by_distractor:recurring_customers": 74,
+              "fooled_by_distractor:refund_pairs": 68,
+              "fooled_by_distractor:split_payments": 49,
+              "fooled_by_timezone_rendering": 2,
+              "same_amount_different_line_items": 51,
+              "wrong_amount": 1,
+              "wrong_currency": 2,
+              "wrong_type": 1
+            }
+          },
+          "groups": {
+            "clean": {
+              "episodes": 5,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "interacting": {
+              "episodes": 5,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            },
+            "other": {
+              "episodes": 10,
+              "f1_mean": 0.0,
+              "return_mean": -1.0
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-722FE1987215",
+              "config": "D01-clean-plain",
+              "issues": 0,
+              "tp": 0,
+              "fp": 30,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.2401
+            },
+            {
+              "episode_id": "EP-77DA20C6527B",
+              "config": "D02-clean-split-payment",
+              "issues": 0,
+              "tp": 0,
+              "fp": 30,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.034
+            },
+            {
+              "episode_id": "EP-E1D4981631F6",
+              "config": "D03-clean-refund",
+              "issues": 0,
+              "tp": 0,
+              "fp": 30,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0291
+            },
+            {
+              "episode_id": "EP-7B8AC559EF40",
+              "config": "D04-clean-recurring-amounts",
+              "issues": 0,
+              "tp": 0,
+              "fp": 30,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0294
+            },
+            {
+              "episode_id": "EP-80EF060C9E39",
+              "config": "D05-clean-fx-and-period-boundary",
+              "issues": 0,
+              "tp": 0,
+              "fp": 30,
+              "fn": 0,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0379
+            },
+            {
+              "episode_id": "EP-DD37B117C2DC",
+              "config": "D06-duplicate-invoice",
+              "issues": 1,
+              "tp": 0,
+              "fp": 30,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.036
+            },
+            {
+              "episode_id": "EP-8B93D6592893",
+              "config": "D07-duplicate-invoice",
+              "issues": 1,
+              "tp": 0,
+              "fp": 30,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.028
+            },
+            {
+              "episode_id": "EP-07EC9F7121D1",
+              "config": "D08-duplicate-invoice",
+              "issues": 2,
+              "tp": 0,
+              "fp": 30,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0339
+            },
+            {
+              "episode_id": "EP-89C6FE4AC491",
+              "config": "D09-allocation-missing",
+              "issues": 1,
+              "tp": 0,
+              "fp": 30,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 5,
+              "seconds": 0.0315
+            },
+            {
+              "episode_id": "EP-E232DF4FE1F7",
+              "config": "D10-allocation-partial",
+              "issues": 1,
+              "tp": 0,
+              "fp": 30,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.034
+            },
+            {
+              "episode_id": "EP-890A7B74EDB1",
+              "config": "D11-allocation-mixed",
+              "issues": 2,
+              "tp": 0,
+              "fp": 30,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 5,
+              "seconds": 0.0373
+            },
+            {
+              "episode_id": "EP-304B5F322B40",
+              "config": "D12-fx-wrong-date",
+              "issues": 1,
+              "tp": 0,
+              "fp": 30,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0277
+            },
+            {
+              "episode_id": "EP-23760589336F",
+              "config": "D13-fx-reverse-pair",
+              "issues": 1,
+              "tp": 0,
+              "fp": 30,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0272
+            },
+            {
+              "episode_id": "EP-AA9FE9F6E650",
+              "config": "D14-period-cutoff-early",
+              "issues": 1,
+              "tp": 0,
+              "fp": 30,
+              "fn": 1,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 5,
+              "seconds": 0.0347
+            },
+            {
+              "episode_id": "EP-B4EF777BB1EB",
+              "config": "D15-period-cutoff-late",
+              "issues": 2,
+              "tp": 0,
+              "fp": 30,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.028
+            },
+            {
+              "episode_id": "EP-863580D76C88",
+              "config": "D16-interaction-fx-partial-boundary",
+              "issues": 2,
+              "tp": 0,
+              "fp": 30,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.032
+            },
+            {
+              "episode_id": "EP-22F563CC627F",
+              "config": "D17-interaction-fx-partial-boundary",
+              "issues": 2,
+              "tp": 0,
+              "fp": 30,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.031
+            },
+            {
+              "episode_id": "EP-471B65738907",
+              "config": "D18-interaction-fx-partial-boundary",
+              "issues": 3,
+              "tp": 0,
+              "fp": 30,
+              "fn": 3,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0249
+            },
+            {
+              "episode_id": "EP-7EB264E2149D",
+              "config": "D19-interaction-duplicate-misapplied",
+              "issues": 2,
+              "tp": 0,
+              "fp": 30,
+              "fn": 2,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0232
+            },
+            {
+              "episode_id": "EP-87AC79F95266",
+              "config": "D20-interaction-duplicate-misapplied",
+              "issues": 3,
+              "tp": 0,
+              "fp": 30,
+              "fn": 3,
+              "f1": 0.0,
+              "return": -1.0,
+              "steps": 4,
+              "seconds": 0.0284
+            }
+          ]
+        },
+        {
+          "policy": "oracle",
+          "summary": {
+            "episodes": 20,
+            "precision_mean": 0.75,
+            "recall_mean": 0.75,
+            "f1_mean": 1.0,
+            "micro_precision": 1.0,
+            "micro_recall": 1.0,
+            "return_mean": 1.0,
+            "return_min": 1.0,
+            "return_max": 1.0,
+            "steps_mean": 1,
+            "seconds_mean": 0.03467106074995172,
+            "seconds_max": 0.2245414509998227,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {
+              "duplicate_invoice": 7,
+              "fx_conversion": 6,
+              "payment_allocation": 9,
+              "period_cutoff": 3
+            },
+            "fn_by_type": {},
+            "fp_reasons": {}
+          },
+          "groups": {
+            "clean": {
+              "episodes": 5,
+              "f1_mean": 1.0,
+              "return_mean": 1.0
+            },
+            "interacting": {
+              "episodes": 5,
+              "f1_mean": 1.0,
+              "return_mean": 1.0
+            },
+            "other": {
+              "episodes": 10,
+              "f1_mean": 1.0,
+              "return_mean": 1.0
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-722FE1987215",
+              "config": "D01-clean-plain",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.2245
+            },
+            {
+              "episode_id": "EP-77DA20C6527B",
+              "config": "D02-clean-split-payment",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0255
+            },
+            {
+              "episode_id": "EP-E1D4981631F6",
+              "config": "D03-clean-refund",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0212
+            },
+            {
+              "episode_id": "EP-7B8AC559EF40",
+              "config": "D04-clean-recurring-amounts",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0216
+            },
+            {
+              "episode_id": "EP-80EF060C9E39",
+              "config": "D05-clean-fx-and-period-boundary",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.031
+            },
+            {
+              "episode_id": "EP-DD37B117C2DC",
+              "config": "D06-duplicate-invoice",
+              "issues": 1,
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.031
+            },
+            {
+              "episode_id": "EP-8B93D6592893",
+              "config": "D07-duplicate-invoice",
+              "issues": 1,
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0237
+            },
+            {
+              "episode_id": "EP-07EC9F7121D1",
+              "config": "D08-duplicate-invoice",
+              "issues": 2,
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0272
+            },
+            {
+              "episode_id": "EP-89C6FE4AC491",
+              "config": "D09-allocation-missing",
+              "issues": 1,
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0252
+            },
+            {
+              "episode_id": "EP-E232DF4FE1F7",
+              "config": "D10-allocation-partial",
+              "issues": 1,
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0276
+            },
+            {
+              "episode_id": "EP-890A7B74EDB1",
+              "config": "D11-allocation-mixed",
+              "issues": 2,
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0274
+            },
+            {
+              "episode_id": "EP-304B5F322B40",
+              "config": "D12-fx-wrong-date",
+              "issues": 1,
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0218
+            },
+            {
+              "episode_id": "EP-23760589336F",
+              "config": "D13-fx-reverse-pair",
+              "issues": 1,
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0211
+            },
+            {
+              "episode_id": "EP-AA9FE9F6E650",
+              "config": "D14-period-cutoff-early",
+              "issues": 1,
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0276
+            },
+            {
+              "episode_id": "EP-B4EF777BB1EB",
+              "config": "D15-period-cutoff-late",
+              "issues": 2,
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0238
+            },
+            {
+              "episode_id": "EP-863580D76C88",
+              "config": "D16-interaction-fx-partial-boundary",
+              "issues": 2,
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0257
+            },
+            {
+              "episode_id": "EP-22F563CC627F",
+              "config": "D17-interaction-fx-partial-boundary",
+              "issues": 2,
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0258
+            },
+            {
+              "episode_id": "EP-471B65738907",
+              "config": "D18-interaction-fx-partial-boundary",
+              "issues": 3,
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0207
+            },
+            {
+              "episode_id": "EP-7EB264E2149D",
+              "config": "D19-interaction-duplicate-misapplied",
+              "issues": 2,
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0193
+            },
+            {
+              "episode_id": "EP-87AC79F95266",
+              "config": "D20-interaction-duplicate-misapplied",
+              "issues": 3,
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 1.0,
+              "steps": 1,
+              "seconds": 0.0215
+            }
+          ]
+        },
+        {
+          "policy": "scripted_auditor",
+          "summary": {
+            "episodes": 20,
+            "precision_mean": 0.75,
+            "recall_mean": 0.75,
+            "f1_mean": 1.0,
+            "micro_precision": 1.0,
+            "micro_recall": 1.0,
+            "return_mean": 0.9568,
+            "return_min": 0.94,
+            "return_max": 0.968,
+            "steps_mean": 22.6,
+            "seconds_mean": 0.04933321315002104,
+            "seconds_max": 0.27935340299973177,
+            "invalid_submissions": 0,
+            "truncated": 0,
+            "agent_visible_return_mean": 0.0,
+            "tp_by_type": {
+              "duplicate_invoice": 7,
+              "fx_conversion": 6,
+              "payment_allocation": 9,
+              "period_cutoff": 3
+            },
+            "fn_by_type": {},
+            "fp_reasons": {}
+          },
+          "groups": {
+            "clean": {
+              "episodes": 5,
+              "f1_mean": 1.0,
+              "return_mean": 0.9611999999999999
+            },
+            "interacting": {
+              "episodes": 5,
+              "f1_mean": 1.0,
+              "return_mean": 0.956
+            },
+            "other": {
+              "episodes": 10,
+              "f1_mean": 1.0,
+              "return_mean": 0.955
+            }
+          },
+          "per_episode": [
+            {
+              "episode_id": "EP-722FE1987215",
+              "config": "D01-clean-plain",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.968,
+              "steps": 17,
+              "seconds": 0.2794
+            },
+            {
+              "episode_id": "EP-77DA20C6527B",
+              "config": "D02-clean-split-payment",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.964,
+              "steps": 19,
+              "seconds": 0.0355
+            },
+            {
+              "episode_id": "EP-E1D4981631F6",
+              "config": "D03-clean-refund",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.968,
+              "steps": 17,
+              "seconds": 0.0293
+            },
+            {
+              "episode_id": "EP-7B8AC559EF40",
+              "config": "D04-clean-recurring-amounts",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.956,
+              "steps": 23,
+              "seconds": 0.0304
+            },
+            {
+              "episode_id": "EP-80EF060C9E39",
+              "config": "D05-clean-fx-and-period-boundary",
+              "issues": 0,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.95,
+              "steps": 26,
+              "seconds": 0.0394
+            },
+            {
+              "episode_id": "EP-DD37B117C2DC",
+              "config": "D06-duplicate-invoice",
+              "issues": 1,
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.94,
+              "steps": 31,
+              "seconds": 0.0407
+            },
+            {
+              "episode_id": "EP-8B93D6592893",
+              "config": "D07-duplicate-invoice",
+              "issues": 1,
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.96,
+              "steps": 21,
+              "seconds": 0.0307
+            },
+            {
+              "episode_id": "EP-07EC9F7121D1",
+              "config": "D08-duplicate-invoice",
+              "issues": 2,
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.95,
+              "steps": 26,
+              "seconds": 0.0594
+            },
+            {
+              "episode_id": "EP-89C6FE4AC491",
+              "config": "D09-allocation-missing",
+              "issues": 1,
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.962,
+              "steps": 20,
+              "seconds": 0.0539
+            },
+            {
+              "episode_id": "EP-E232DF4FE1F7",
+              "config": "D10-allocation-partial",
+              "issues": 1,
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.962,
+              "steps": 20,
+              "seconds": 0.0494
+            },
+            {
+              "episode_id": "EP-890A7B74EDB1",
+              "config": "D11-allocation-mixed",
+              "issues": 2,
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.95,
+              "steps": 26,
+              "seconds": 0.0388
+            },
+            {
+              "episode_id": "EP-304B5F322B40",
+              "config": "D12-fx-wrong-date",
+              "issues": 1,
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.958,
+              "steps": 22,
+              "seconds": 0.0329
+            },
+            {
+              "episode_id": "EP-23760589336F",
+              "config": "D13-fx-reverse-pair",
+              "issues": 1,
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.952,
+              "steps": 25,
+              "seconds": 0.0314
+            },
+            {
+              "episode_id": "EP-AA9FE9F6E650",
+              "config": "D14-period-cutoff-early",
+              "issues": 1,
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.954,
+              "steps": 24,
+              "seconds": 0.0383
+            },
+            {
+              "episode_id": "EP-B4EF777BB1EB",
+              "config": "D15-period-cutoff-late",
+              "issues": 2,
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.962,
+              "steps": 20,
+              "seconds": 0.0331
+            },
+            {
+              "episode_id": "EP-863580D76C88",
+              "config": "D16-interaction-fx-partial-boundary",
+              "issues": 2,
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.958,
+              "steps": 22,
+              "seconds": 0.0362
+            },
+            {
+              "episode_id": "EP-22F563CC627F",
+              "config": "D17-interaction-fx-partial-boundary",
+              "issues": 2,
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.954,
+              "steps": 24,
+              "seconds": 0.0368
+            },
+            {
+              "episode_id": "EP-471B65738907",
+              "config": "D18-interaction-fx-partial-boundary",
+              "issues": 3,
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.954,
+              "steps": 24,
+              "seconds": 0.0304
+            },
+            {
+              "episode_id": "EP-7EB264E2149D",
+              "config": "D19-interaction-duplicate-misapplied",
+              "issues": 2,
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.962,
+              "steps": 20,
+              "seconds": 0.0281
+            },
+            {
+              "episode_id": "EP-87AC79F95266",
+              "config": "D20-interaction-duplicate-misapplied",
+              "issues": 3,
+              "tp": 3,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0,
+              "return": 0.952,
+              "steps": 25,
+              "seconds": 0.0326
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "paired_checks": [
+    {
+      "episode": "holdout-clean-1",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.964,
+      "scripted_reward_transformed": 0.964,
+      "ok": true
+    },
+    {
+      "episode": "holdout-clean-2",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.972,
+      "scripted_reward_transformed": 0.972,
+      "ok": true
+    },
+    {
+      "episode": "holdout-clean-3",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.964,
+      "scripted_reward_transformed": 0.964,
+      "ok": true
+    },
+    {
+      "episode": "holdout-clean-4",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.956,
+      "scripted_reward_transformed": 0.956,
+      "ok": true
+    },
+    {
+      "episode": "holdout-clean-5",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.962,
+      "scripted_reward_transformed": 0.962,
+      "ok": true
+    },
+    {
+      "episode": "holdout-interacting-1",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.958,
+      "scripted_reward_transformed": 0.958,
+      "ok": true
+    },
+    {
+      "episode": "holdout-interacting-2",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.952,
+      "scripted_reward_transformed": 0.952,
+      "ok": true
+    },
+    {
+      "episode": "holdout-interacting-3",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.948,
+      "scripted_reward_transformed": 0.948,
+      "ok": true
+    },
+    {
+      "episode": "holdout-interacting-4",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.946,
+      "scripted_reward_transformed": 0.946,
+      "ok": true
+    },
+    {
+      "episode": "holdout-interacting-5",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.948,
+      "scripted_reward_transformed": 0.948,
+      "ok": true
+    },
+    {
+      "episode": "holdout-mixed-1",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.94,
+      "scripted_reward_transformed": 0.94,
+      "ok": true
+    },
+    {
+      "episode": "holdout-mixed-2",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.934,
+      "scripted_reward_transformed": 0.934,
+      "ok": true
+    },
+    {
+      "episode": "holdout-mixed-3",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.938,
+      "scripted_reward_transformed": 0.938,
+      "ok": true
+    },
+    {
+      "episode": "holdout-mixed-4",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.944,
+      "scripted_reward_transformed": 0.944,
+      "ok": true
+    },
+    {
+      "episode": "holdout-mixed-5",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.946,
+      "scripted_reward_transformed": 0.946,
+      "ok": true
+    },
+    {
+      "episode": "holdout-mixed-6",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.94,
+      "scripted_reward_transformed": 0.94,
+      "ok": true
+    },
+    {
+      "episode": "holdout-mixed-7",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.95,
+      "scripted_reward_transformed": 0.95,
+      "ok": true
+    },
+    {
+      "episode": "holdout-mixed-8",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.962,
+      "scripted_reward_transformed": 0.962,
+      "ok": true
+    },
+    {
+      "episode": "holdout-mixed-9",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.95,
+      "scripted_reward_transformed": 0.95,
+      "ok": true
+    },
+    {
+      "episode": "holdout-mixed-10",
+      "replay_identical": true,
+      "oracle_reward_original": 1.0,
+      "oracle_reward_transformed": 1.0,
+      "truth_maps_onto_transformed": true,
+      "scripted_reward_original": 0.95,
+      "scripted_reward_transformed": 0.95,
+      "ok": true
+    }
+  ],
+  "boundary_attack": {
+    "before_fix": {
+      "boundary_per_cutoff": 0,
+      "episodes": 20,
+      "return_mean": 0.09989999999999999,
+      "positive_returns": 15,
+      "precision_mean": 0.4666666666666667,
+      "tp": 56,
+      "fp": 64
+    },
+    "after_fix": {
+      "boundary_per_cutoff": 2,
+      "episodes": 20,
+      "return_mean": -0.4009,
+      "positive_returns": 3,
+      "precision_mean": 0.2583333333333333,
+      "tp": 31,
+      "fp": 89
+    }
+  },
+  "elapsed_s": 25.39
+}

@@ -1,0 +1,98 @@
+{
+  "episode_id": "EP-35D5A9DBF4CB",
+  "issues": [
+    {
+      "affected_ids": [
+        "PAY-9MW3WHRS9",
+        "SF/2026/02917"
+      ],
+      "currency": "AED",
+      "description": "The remittance references an invoice but the payment was left entirely as unapplied cash.",
+      "evidence_sets": [
+        [
+          "DJ6Z0D7AQG",
+          "L-213JVBM9"
+        ]
+      ],
+      "expected_amount_minor": 2668400,
+      "interaction_id": null,
+      "issue_id": "ISS-01",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "missing"
+    },
+    {
+      "affected_ids": [
+        "PAY-YCY7XARTB",
+        "SF/2026/02884"
+      ],
+      "currency": "AED",
+      "description": "The remittance references an invoice but the payment was left entirely as unapplied cash.",
+      "evidence_sets": [
+        [
+          "DE4JP4ADKA",
+          "L-RVJSSEK6"
+        ]
+      ],
+      "expected_amount_minor": 1245900,
+      "interaction_id": null,
+      "issue_id": "ISS-02",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "missing"
+    },
+    {
+      "affected_ids": [
+        "PAY-HFG3S0N8D",
+        "SF/2026/02891"
+      ],
+      "currency": "GBP",
+      "description": "A cross-currency allocation was converted with a rate other than the policy rate.",
+      "evidence_sets": [
+        [
+          "D081WG385X",
+          "FX:2026-11-26:AED:GBP",
+          "L-3R4ABF3P"
+        ],
+        [
+          "D081WG385X",
+          "FX:2026-11-26:AED:GBP",
+          "L-6GMR78NQ"
+        ]
+      ],
+      "expected_amount_minor": 61,
+      "interaction_id": null,
+      "issue_id": "ISS-03",
+      "tolerance_minor": 0,
+      "type": "fx_conversion",
+      "variant": "next_business_day"
+    },
+    {
+      "affected_ids": [
+        "PAY-NA9D89N4M",
+        "SF/2026/02872"
+      ],
+      "currency": "AED",
+      "description": "A cross-currency allocation was converted with a rate other than the policy rate.",
+      "evidence_sets": [
+        [
+          "DZ7ZR8WXM4",
+          "FX:2026-11-24:GBP:AED",
+          "L-EK417FFP"
+        ],
+        [
+          "DZ7ZR8WXM4",
+          "FX:2026-11-24:GBP:AED",
+          "L-QY34WW33"
+        ]
+      ],
+      "expected_amount_minor": 3230,
+      "interaction_id": null,
+      "issue_id": "ISS-04",
+      "tolerance_minor": 0,
+      "type": "fx_conversion",
+      "variant": "invoice_issue_date"
+    }
+  ],
+  "schema_version": "1.0"
+}

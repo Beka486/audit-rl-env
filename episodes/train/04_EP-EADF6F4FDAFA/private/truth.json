@@ -1,0 +1,108 @@
+{
+  "episode_id": "EP-EADF6F4FDAFA",
+  "issues": [
+    {
+      "affected_ids": [
+        "B26-03824",
+        "PAY-VKPZ0R6VQ"
+      ],
+      "currency": "CHF",
+      "description": "A cross-currency allocation was converted with a rate other than the policy rate.",
+      "evidence_sets": [
+        [
+          "DOC-2VGJMCQ6",
+          "FX:2026-09-24:USD:CHF",
+          "GL490795649"
+        ],
+        [
+          "DOC-2VGJMCQ6",
+          "FX:2026-09-24:USD:CHF",
+          "GL495830600"
+        ]
+      ],
+      "expected_amount_minor": 776,
+      "interaction_id": null,
+      "issue_id": "ISS-01",
+      "tolerance_minor": 0,
+      "type": "fx_conversion",
+      "variant": "previous_business_day"
+    },
+    {
+      "affected_ids": [
+        "B26-03843",
+        "PAY-AGSJ3WEVT"
+      ],
+      "currency": "CHF",
+      "description": "A cross-currency allocation was converted with a rate other than the policy rate.",
+      "evidence_sets": [
+        [
+          "DOC-AG7J0GG6",
+          "FX:2026-09-28:UZS:CHF",
+          "GL482611625"
+        ],
+        [
+          "DOC-AG7J0GG6",
+          "FX:2026-09-28:UZS:CHF",
+          "GL736040879"
+        ]
+      ],
+      "expected_amount_minor": 38378963599095,
+      "interaction_id": null,
+      "issue_id": "ISS-02",
+      "tolerance_minor": 0,
+      "type": "fx_conversion",
+      "variant": "reverse_pair_rate"
+    },
+    {
+      "affected_ids": [
+        "B26-03869"
+      ],
+      "currency": "CHF",
+      "description": "A document dated outside the period (company timezone) is booked in this period.",
+      "evidence_sets": [
+        [
+          "DOC-BPX84D51",
+          "GL484832588"
+        ],
+        [
+          "DOC-BPX84D51",
+          "GL753988322"
+        ],
+        [
+          "DOC-BPX84D51",
+          "GL916112423"
+        ]
+      ],
+      "expected_amount_minor": 192400,
+      "interaction_id": null,
+      "issue_id": "ISS-03",
+      "tolerance_minor": 0,
+      "type": "period_cutoff",
+      "variant": "early_end_invoice"
+    },
+    {
+      "affected_ids": [
+        "PAY-CVY6FPVHY"
+      ],
+      "currency": "CHF",
+      "description": "A document dated outside the period (company timezone) is booked in this period.",
+      "evidence_sets": [
+        [
+          "DOC-DY9RJ4P8",
+          "GL710237195"
+        ],
+        [
+          "DOC-DY9RJ4P8",
+          "GL938206730"
+        ]
+      ],
+      "expected_amount_minor": 762800,
+      "interaction_id": null,
+      "issue_id": "ISS-04",
+      "tolerance_minor": 0,
+      "type": "period_cutoff",
+      "variant": "early_end_payment"
+    }
+  ],
+  "schema_version": "1.0"
+}

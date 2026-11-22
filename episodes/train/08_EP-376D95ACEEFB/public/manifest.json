@@ -1,0 +1,43 @@
+{
+  "base_currency": "INR",
+  "company_name": "Kidel Foods JSC",
+  "counts": {
+    "documents": 118,
+    "fx_rates": 408,
+    "invoices": 66,
+    "ledger_rows": 280,
+    "payments": 52
+  },
+  "currencies": {
+    "AED": {
+      "exponent": 2
+    },
+    "INR": {
+      "exponent": 2
+    },
+    "JPY": {
+      "exponent": 0
+    }
+  },
+  "env_version": "1.0.0",
+  "episode_id": "EP-376D95ACEEFB",
+  "files": {
+    "fx": "fx.csv",
+    "invoices": "invoices.jsonl",
+    "ledger": "ledger.csv",
+    "payments": "payments.jsonl",
+    "policy": "policy.json"
+  },
+  "generator_version": "1.0.0",
+  "null_policy": "missing references are explicit null (JSON null; the literal 'null' in CSV)",
+  "period_end": "2025-12-31T23:59:59+09:00",
+  "period_start": "2025-12-01T00:00:00+09:00",
+  "rounding": {
+    "amount_tolerance": "exact: a claimed amount matches if |claimed - expected| <= tau with tau = 0 minor units for every finding type",
+    "fx_conversion": "target_minor = round_half_even(amount_minor * 10^-exp(source) * rate * 10^exp(target))",
+    "mode": "ROUND_HALF_EVEN",
+    "money": "integers in minor units; minor = major * 10^exponent (see currencies)"
+  },
+  "schema_version": "1.0",
+  "timezone": "+09:00"
+}

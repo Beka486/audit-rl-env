@@ -1,0 +1,423 @@
+{
+  "added_documents": [
+    "D1GM9N0CEN"
+  ],
+  "added_ledger_rows": [
+    "L-ADFGZYBK",
+    "L-HDDA9J7E",
+    "L-MWXQC0WJ",
+    "L-S83B0405",
+    "L-TZW6KMF3",
+    "L-WFDHTJ1Y",
+    "L-YAYT8AYK"
+  ],
+  "attempt": 0,
+  "changes": [
+    {
+      "copy_of": "DRDRGTWD61",
+      "documents": [
+        "D1GM9N0CEN"
+      ],
+      "journal": {
+        "document": "D1GM9N0CEN"
+      },
+      "op": "add_document_and_journal",
+      "reason": "invoice entered twice (copy of an existing invoice)"
+    },
+    {
+      "journal": {
+        "document": "DV09GJXHV2"
+      },
+      "op": "modify_journal",
+      "reason": "allocation missing"
+    },
+    {
+      "journal": {
+        "document": "DF7DCZ05VQ"
+      },
+      "op": "modify_journal",
+      "reason": "conversion used rate of 2026-02-05 (invoice_issue_date) instead of 2026-02-12"
+    }
+  ],
+  "company": {
+    "base_currency": "GBP",
+    "currencies": [
+      "GBP",
+      "KZT",
+      "EUR",
+      "AED"
+    ],
+    "name": "Kavi Agro Inc",
+    "period": "2026-02",
+    "timezone": "+05:30"
+  },
+  "config": {
+    "config_version": "1.0",
+    "currencies": {
+      "base": null,
+      "foreign_count": [
+        1,
+        3
+      ],
+      "pool": [
+        "KZT",
+        "USD",
+        "EUR",
+        "GBP",
+        "CNY",
+        "AED",
+        "TRY",
+        "INR",
+        "JPY",
+        "KWD",
+        "UZS",
+        "CHF"
+      ]
+    },
+    "distractors": {
+      "boundary_documents": [
+        2,
+        5
+      ],
+      "boundary_per_cutoff": 2,
+      "cross_currency_payments": [
+        2,
+        5
+      ],
+      "legit_partial_payments": [
+        1,
+        3
+      ],
+      "multi_invoice_payments": [
+        1,
+        3
+      ],
+      "on_account_payments": [
+        0,
+        2
+      ],
+      "recurring_customers": [
+        1,
+        2
+      ],
+      "refund_pairs": [
+        0,
+        2
+      ],
+      "split_payments": [
+        1,
+        4
+      ],
+      "unidentified_receipts": [
+        1,
+        3
+      ]
+    },
+    "errors": {
+      "duplicate_invoice": [
+        0,
+        2
+      ],
+      "fx_conversion": [
+        0,
+        2
+      ],
+      "payment_allocation": [
+        0,
+        2
+      ],
+      "period_cutoff": [
+        0,
+        2
+      ]
+    },
+    "interactions": {
+      "duplicate_misapplied": [
+        0,
+        1
+      ],
+      "fx_partial_boundary": [
+        0,
+        1
+      ]
+    },
+    "name": "train-01-default",
+    "period": null,
+    "size": {
+      "customers": [
+        6,
+        12
+      ],
+      "invoices": [
+        40,
+        75
+      ],
+      "max_documents": 200,
+      "max_ledger_rows": 1200,
+      "min_ledger_rows": 200,
+      "prior_invoices": [
+        3,
+        6
+      ]
+    },
+    "timezone": null,
+    "variants": {
+      "fx_conversion": [
+        "next_business_day",
+        "previous_business_day",
+        "document_wall_clock_date",
+        "invoice_issue_date",
+        "reverse_pair_rate"
+      ],
+      "payment_allocation": [
+        "missing",
+        "partial"
+      ],
+      "period_cutoff": [
+        "early",
+        "late"
+      ]
+    }
+  },
+  "construction_order": [
+    "company",
+    "fx",
+    "customers",
+    "history",
+    "distractors",
+    "error_hosts",
+    "clean_books",
+    "error_injection",
+    "ids",
+    "self_check"
+  ],
+  "distractors": [
+    {
+      "customers": [
+        "C-WB83J5"
+      ],
+      "invoices": [
+        "DS9QBR2C5Z",
+        "DMMEKKVMHD",
+        "DNVP0CAXHP",
+        "D41N7H01SE"
+      ],
+      "kind": "recurring_customers",
+      "payments": [
+        "DSFS59ZMQ3",
+        "DBFE0HCQVJ"
+      ]
+    },
+    {
+      "invoice": "DXW7VDVQHW",
+      "kind": "split_payments",
+      "payments": [
+        "DTBPDF5KQ8",
+        "D9TTZZDDAD"
+      ]
+    },
+    {
+      "invoice": "D7C38B2BBD",
+      "kind": "split_payments",
+      "payments": [
+        "D7KGSSC6FB",
+        "DNHDW3A75P",
+        "DAAZK0HXM7"
+      ]
+    },
+    {
+      "invoice": "DXPS9C7X8F",
+      "kind": "split_payments",
+      "payments": [
+        "D2HHFA04QZ",
+        "DBDABMATM8"
+      ]
+    },
+    {
+      "invoice": "DW03JHCFMA",
+      "kind": "legit_partial_payments",
+      "payments": [
+        "DC6MY2NTBC"
+      ]
+    },
+    {
+      "invoices": [
+        "D8YHAKEF0M",
+        "DSDJ9WBY28"
+      ],
+      "kind": "multi_invoice_payments",
+      "payments": [
+        "D6P9HVWJVQ"
+      ]
+    },
+    {
+      "invoices": [
+        "D15SMTB8KA",
+        "DYWRB8FA4C",
+        "DNDQRS9346"
+      ],
+      "kind": "multi_invoice_payments",
+      "payments": [
+        "DE62SFF7WJ"
+      ]
+    },
+    {
+      "invoices": [
+        "DRDN8012HV",
+        "D56YPK8FVK"
+      ],
+      "kind": "multi_invoice_payments",
+      "payments": [
+        "D557NRYHXS"
+      ]
+    },
+    {
+      "invoice": "DAFW4XP6XV",
+      "kind": "refund_pairs",
+      "payments": [
+        "D6ECZP6ET2",
+        "DVND5Y0JJZ",
+        "DD3M6RAXP8"
+      ]
+    },
+    {
+      "kind": "cross_currency_payments",
+      "payments": [
+        "DVB9DHYKGS"
+      ]
+    },
+    {
+      "kind": "cross_currency_payments",
+      "payments": [
+        "DPWSM1G83X"
+      ]
+    },
+    {
+      "kind": "cross_currency_payments",
+      "payments": [
+        "DMZP8S3AQ5"
+      ]
+    },
+    {
+      "kind": "unidentified_receipts",
+      "payments": [
+        "D90KQ10BA4"
+      ]
+    },
+    {
+      "doc": "D8055YX4Y1",
+      "in_period": false,
+      "kind": "boundary_documents",
+      "side": "end"
+    },
+    {
+      "doc": "D971DTCPSF",
+      "in_period": false,
+      "kind": "boundary_documents",
+      "side": "start"
+    },
+    {
+      "doc": "DAY702SDFZ",
+      "in_period": true,
+      "kind": "boundary_documents",
+      "side": "start"
+    },
+    {
+      "doc": "D5Z2ZX9PXY",
+      "in_period": false,
+      "kind": "boundary_documents",
+      "side": "end"
+    },
+    {
+      "doc": "DA7EC1E1HS",
+      "in_period": true,
+      "kind": "boundary_documents",
+      "side": "end"
+    }
+  ],
+  "env_version": "1.0.0",
+  "episode_id": "EP-D5DF9A303C26",
+  "generator_version": "1.0.0",
+  "removed_ledger_rows": [
+    {
+      "account": "1100-AR",
+      "credit_minor": 271500125,
+      "currency": "KZT",
+      "debit_minor": 0,
+      "entity_id": "C-AJ34V0",
+      "invoice_id": "ZM000490",
+      "payment_id": "TX5755145706",
+      "row_id": "L-7ZCDREDB",
+      "timestamp": "2026-02-12T07:02:20+05:30"
+    },
+    {
+      "account": "1100-AR",
+      "credit_minor": 1790400,
+      "currency": "GBP",
+      "debit_minor": 0,
+      "entity_id": "C-Q0SG8J",
+      "invoice_id": "ZM000479",
+      "payment_id": "TX3533795978",
+      "row_id": "L-MA6GV9PV",
+      "timestamp": "2026-02-18T14:05:07+05:30"
+    },
+    {
+      "account": "1000-BANK",
+      "credit_minor": 0,
+      "currency": "GBP",
+      "debit_minor": 1790400,
+      "entity_id": "C-Q0SG8J",
+      "invoice_id": null,
+      "payment_id": "TX3533795978",
+      "row_id": "L-MPYRWRJ7",
+      "timestamp": "2026-02-18T14:05:07+05:30"
+    },
+    {
+      "account": "1950-FX-CLEARING",
+      "credit_minor": 0,
+      "currency": "KZT",
+      "debit_minor": 271500125,
+      "entity_id": "C-AJ34V0",
+      "invoice_id": "ZM000490",
+      "payment_id": "TX5755145706",
+      "row_id": "L-TSG2A092",
+      "timestamp": "2026-02-12T07:02:20+05:30"
+    }
+  ],
+  "sampled": {
+    "distractors": {
+      "boundary_documents": 5,
+      "boundary_per_cutoff": 2,
+      "cross_currency_payments": 3,
+      "legit_partial_payments": 1,
+      "multi_invoice_payments": 3,
+      "on_account_payments": 0,
+      "recurring_customers": 1,
+      "refund_pairs": 1,
+      "split_payments": 3,
+      "unidentified_receipts": 1
+    },
+    "errors": {
+      "duplicate_invoice": 1,
+      "fx_conversion": 1,
+      "payment_allocation": 1,
+      "period_cutoff": 0
+    },
+    "foreign_count": 3,
+    "interactions": {
+      "duplicate_misapplied": 0,
+      "fx_partial_boundary": 0
+    },
+    "size": {
+      "customers": 6,
+      "invoices": 49,
+      "max_documents": 200,
+      "max_ledger_rows": 1200,
+      "min_ledger_rows": 200,
+      "prior_invoices": 3
+    }
+  },
+  "schema_version": "1.0",
+  "secret_used": false,
+  "seed": 1001
+}

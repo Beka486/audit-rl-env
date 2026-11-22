@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "one line of trajectories.jsonl",
+  "type": "object",
+  "required": [
+    "episode_id",
+    "step",
+    "action",
+    "observation",
+    "reward",
+    "terminated",
+    "truncated"
+  ],
+  "properties": {
+    "episode_id": {
+      "type": "string"
+    },
+    "step": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "action": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "observation": {
+      "type": "object"
+    },
+    "reward": {
+      "type": "number"
+    },
+    "terminated": {
+      "type": "boolean"
+    },
+    "truncated": {
+      "type": "boolean"
+    },
+    "policy": {
+      "type": "string"
+    },
+    "split": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

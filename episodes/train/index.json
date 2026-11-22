@@ -1,0 +1,129 @@
+{
+  "split": "train",
+  "env_version": "1.0.0",
+  "generator_version": "1.0.0",
+  "schema_version": "1.0",
+  "config_file": "configs/splits/train.json",
+  "episodes": [
+    {
+      "index": 1,
+      "dir": "01_EP-D5DF9A303C26",
+      "episode_id": "EP-D5DF9A303C26",
+      "seed": 1001,
+      "config_name": "train-01-default",
+      "public_sha256": "b91953af839172b16efc3f7b361d7a685f500fd0acf47b80bc3d4ec21e037de8",
+      "full_sha256": "8e112b274cb5cc4a5a16ce63c71b09c88be9d9f651af99b8d8d3aab053d17eaf",
+      "ledger_rows": 270,
+      "documents": 95,
+      "issues": 3
+    },
+    {
+      "index": 2,
+      "dir": "02_EP-BE079F81E69E",
+      "episode_id": "EP-BE079F81E69E",
+      "seed": 1002,
+      "config_name": "train-02-clean",
+      "public_sha256": "91df7d33b7ce5b8d43a8e107bc487b74fb9de5f46ce622510e188219dd7631b3",
+      "full_sha256": "3d38224a54099b7c15e2344aca3a6cadec034f730db121e7e08e329311932cb4",
+      "ledger_rows": 385,
+      "documents": 137,
+      "issues": 0
+    },
+    {
+      "index": 3,
+      "dir": "03_EP-50CF4185DE4E",
+      "episode_id": "EP-50CF4185DE4E",
+      "seed": 1003,
+      "config_name": "train-03-duplicates-allocation",
+      "public_sha256": "d70c55c1a8c076a8fb5c627d437ed1d4f8dacfada6cbbd1b4f1f2d19f5d9dfe6",
+      "full_sha256": "186bcef002401cca0df46307ff84da6cec2c948acd273b8694d71fe21c5cd64e",
+      "ledger_rows": 314,
+      "documents": 119,
+      "issues": 3
+    },
+    {
+      "index": 4,
+      "dir": "04_EP-EADF6F4FDAFA",
+      "episode_id": "EP-EADF6F4FDAFA",
+      "seed": 1004,
+      "config_name": "train-04-fx-cutoff",
+      "public_sha256": "6ab008d2401be884f589d2b10767de47ac23c25841b20ddb0c550e33b119c3b2",
+      "full_sha256": "17d7eaaf2620f9db208a13f5a5bc60aaffe278e3e29b62aecddc3ed14246f801",
+      "ledger_rows": 284,
+      "documents": 103,
+      "issues": 4
+    },
+    {
+      "index": 5,
+      "dir": "05_EP-0A2931A182E5",
+      "episode_id": "EP-0A2931A182E5",
+      "seed": 1005,
+      "config_name": "train-05-fx-partial-boundary",
+      "public_sha256": "1b99cf192d2e5688f2b2de30528eb768f81cd9a49112b396e77ae980b10362f9",
+      "full_sha256": "1b16bd9fc3a8dafbb261b212ffed254308eddc3011a15369642882128cdf5127",
+      "ledger_rows": 254,
+      "documents": 89,
+      "issues": 3
+    },
+    {
+      "index": 6,
+      "dir": "06_EP-74B55724EF52",
+      "episode_id": "EP-74B55724EF52",
+      "seed": 1006,
+      "config_name": "train-06-duplicate-misapplied",
+      "public_sha256": "9f45b881f6d2e93cb1bb6f9001ed377c83f3c9ab64ef9aba09c6e3606c82b31a",
+      "full_sha256": "5e9a5de0209f1b3bf63efd3594a5a0d0f32268e5074d3e99174dd8e696609f1b",
+      "ledger_rows": 391,
+      "documents": 144,
+      "issues": 3
+    },
+    {
+      "index": 7,
+      "dir": "07_EP-DEE32C4D5D26",
+      "episode_id": "EP-DEE32C4D5D26",
+      "seed": 1007,
+      "config_name": "train-07-max-issues",
+      "public_sha256": "fe9a418e7e22672fd8909be5e06127657f40c7ade84e9dfed0ab95c067e83e05",
+      "full_sha256": "fb6fb10859d82c8ed0fab034851246de1de165ad1e12b23845f8f7d3e02164e9",
+      "ledger_rows": 301,
+      "documents": 107,
+      "issues": 12
+    },
+    {
+      "index": 8,
+      "dir": "08_EP-376D95ACEEFB",
+      "episode_id": "EP-376D95ACEEFB",
+      "seed": 1008,
+      "config_name": "train-08-clean-many-distractors",
+      "public_sha256": "eb78f5dfa560e842bdd1177b765dd313802849fe1077de380a65fffd0f89e363",
+      "full_sha256": "2c86612e34868af4d15fbeba51fa34ee035e04aebd0cb55543d8e3176219a45a",
+      "ledger_rows": 280,
+      "documents": 118,
+      "issues": 0
+    },
+    {
+      "index": 9,
+      "dir": "09_EP-768458800731",
+      "episode_id": "EP-768458800731",
+      "seed": 1009,
+      "config_name": "train-09-exotic-currencies",
+      "public_sha256": "4cf2bb8624d07c29b98158fb4e726ad96ed503794a4b7e22ccf2466d4588bae4",
+      "full_sha256": "bbd2986fa6cdc206468ac4175f335aa84e6ef1ce457933a00d00daeef7e4206e",
+      "ledger_rows": 279,
+      "documents": 100,
+      "issues": 10
+    },
+    {
+      "index": 10,
+      "dir": "10_EP-6B272AF5D617",
+      "episode_id": "EP-6B272AF5D617",
+      "seed": 1010,
+      "config_name": "train-10-large",
+      "public_sha256": "645e8aa3f08b03d68f2e1b1b4b61df88b2141ce6f0a784b4966206b5630f5407",
+      "full_sha256": "5d799e17064458cb5476ca50ff05e325586e23ffa1ab19ecb01a897ac0fd37fc",
+      "ledger_rows": 496,
+      "documents": 182,
+      "issues": 6
+    }
+  ]
+}

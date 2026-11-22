@@ -1,0 +1,3 @@
+# auditenv has NO third-party runtime or test dependencies.
+# Everything (generator, environment, evaluator, tests) uses the Python 3.11 standard library only.
+# Pinned toolchain: Python 3.11 (see .python-version) and the Docker base image digest in Dockerfile.

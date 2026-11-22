@@ -1,0 +1,698 @@
+{
+  "split": "holdout_sim",
+  "config_version": "1.0",
+  "description": "local imitation of the closed evaluation: new seeds, new parameter ranges, secret salt; 5 clean + 5 interacting + 10 mixed",
+  "secret": "local-holdout-sim-salt",
+  "episodes": [
+    {
+      "seed": 900000,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-clean-1",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 900001,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-clean-2",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 900002,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-clean-3",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 900003,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-clean-4",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 900004,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-clean-5",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 900100,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-interacting-1",
+        "errors": {
+          "duplicate_invoice": [
+            0,
+            1
+          ],
+          "payment_allocation": [
+            0,
+            1
+          ],
+          "fx_conversion": [
+            0,
+            1
+          ],
+          "period_cutoff": [
+            0,
+            1
+          ]
+        },
+        "interactions": {
+          "fx_partial_boundary": 1,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 900101,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-interacting-2",
+        "errors": {
+          "duplicate_invoice": [
+            0,
+            1
+          ],
+          "payment_allocation": [
+            0,
+            1
+          ],
+          "fx_conversion": [
+            0,
+            1
+          ],
+          "period_cutoff": [
+            0,
+            1
+          ]
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 1
+        }
+      }
+    },
+    {
+      "seed": 900102,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-interacting-3",
+        "errors": {
+          "duplicate_invoice": [
+            0,
+            1
+          ],
+          "payment_allocation": [
+            0,
+            1
+          ],
+          "fx_conversion": [
+            0,
+            1
+          ],
+          "period_cutoff": [
+            0,
+            1
+          ]
+        },
+        "interactions": {
+          "fx_partial_boundary": 1,
+          "duplicate_misapplied": 1
+        }
+      }
+    },
+    {
+      "seed": 900103,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-interacting-4",
+        "errors": {
+          "duplicate_invoice": [
+            0,
+            1
+          ],
+          "payment_allocation": [
+            0,
+            1
+          ],
+          "fx_conversion": [
+            0,
+            1
+          ],
+          "period_cutoff": [
+            0,
+            1
+          ]
+        },
+        "interactions": {
+          "fx_partial_boundary": 1,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 900104,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-interacting-5",
+        "errors": {
+          "duplicate_invoice": [
+            0,
+            1
+          ],
+          "payment_allocation": [
+            0,
+            1
+          ],
+          "fx_conversion": [
+            0,
+            1
+          ],
+          "period_cutoff": [
+            0,
+            1
+          ]
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 1
+        }
+      }
+    },
+    {
+      "seed": 900200,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-mixed-1",
+        "errors": {
+          "duplicate_invoice": [
+            0,
+            3
+          ],
+          "payment_allocation": [
+            0,
+            3
+          ],
+          "fx_conversion": [
+            0,
+            3
+          ],
+          "period_cutoff": [
+            0,
+            3
+          ]
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "size": {
+          "customers": [
+            5,
+            16
+          ],
+          "invoices": [
+            30,
+            95
+          ],
+          "prior_invoices": [
+            2,
+            8
+          ],
+          "min_ledger_rows": 200,
+          "max_ledger_rows": 1500,
+          "max_documents": 200
+        }
+      }
+    },
+    {
+      "seed": 900201,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-mixed-2",
+        "errors": {
+          "duplicate_invoice": [
+            0,
+            3
+          ],
+          "payment_allocation": [
+            0,
+            3
+          ],
+          "fx_conversion": [
+            0,
+            3
+          ],
+          "period_cutoff": [
+            0,
+            3
+          ]
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "size": {
+          "customers": [
+            5,
+            16
+          ],
+          "invoices": [
+            30,
+            95
+          ],
+          "prior_invoices": [
+            2,
+            8
+          ],
+          "min_ledger_rows": 200,
+          "max_ledger_rows": 1500,
+          "max_documents": 200
+        }
+      }
+    },
+    {
+      "seed": 900202,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-mixed-3",
+        "errors": {
+          "duplicate_invoice": [
+            0,
+            3
+          ],
+          "payment_allocation": [
+            0,
+            3
+          ],
+          "fx_conversion": [
+            0,
+            3
+          ],
+          "period_cutoff": [
+            0,
+            3
+          ]
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "size": {
+          "customers": [
+            5,
+            16
+          ],
+          "invoices": [
+            30,
+            95
+          ],
+          "prior_invoices": [
+            2,
+            8
+          ],
+          "min_ledger_rows": 200,
+          "max_ledger_rows": 1500,
+          "max_documents": 200
+        }
+      }
+    },
+    {
+      "seed": 900203,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-mixed-4",
+        "errors": {
+          "duplicate_invoice": [
+            0,
+            3
+          ],
+          "payment_allocation": [
+            0,
+            3
+          ],
+          "fx_conversion": [
+            0,
+            3
+          ],
+          "period_cutoff": [
+            0,
+            3
+          ]
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "size": {
+          "customers": [
+            5,
+            16
+          ],
+          "invoices": [
+            30,
+            95
+          ],
+          "prior_invoices": [
+            2,
+            8
+          ],
+          "min_ledger_rows": 200,
+          "max_ledger_rows": 1500,
+          "max_documents": 200
+        }
+      }
+    },
+    {
+      "seed": 900204,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-mixed-5",
+        "errors": {
+          "duplicate_invoice": [
+            0,
+            3
+          ],
+          "payment_allocation": [
+            0,
+            3
+          ],
+          "fx_conversion": [
+            0,
+            3
+          ],
+          "period_cutoff": [
+            0,
+            3
+          ]
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "size": {
+          "customers": [
+            5,
+            16
+          ],
+          "invoices": [
+            30,
+            95
+          ],
+          "prior_invoices": [
+            2,
+            8
+          ],
+          "min_ledger_rows": 200,
+          "max_ledger_rows": 1500,
+          "max_documents": 200
+        }
+      }
+    },
+    {
+      "seed": 900205,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-mixed-6",
+        "errors": {
+          "duplicate_invoice": [
+            0,
+            3
+          ],
+          "payment_allocation": [
+            0,
+            3
+          ],
+          "fx_conversion": [
+            0,
+            3
+          ],
+          "period_cutoff": [
+            0,
+            3
+          ]
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "size": {
+          "customers": [
+            5,
+            16
+          ],
+          "invoices": [
+            30,
+            95
+          ],
+          "prior_invoices": [
+            2,
+            8
+          ],
+          "min_ledger_rows": 200,
+          "max_ledger_rows": 1500,
+          "max_documents": 200
+        }
+      }
+    },
+    {
+      "seed": 900206,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-mixed-7",
+        "errors": {
+          "duplicate_invoice": [
+            0,
+            3
+          ],
+          "payment_allocation": [
+            0,
+            3
+          ],
+          "fx_conversion": [
+            0,
+            3
+          ],
+          "period_cutoff": [
+            0,
+            3
+          ]
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "size": {
+          "customers": [
+            5,
+            16
+          ],
+          "invoices": [
+            30,
+            95
+          ],
+          "prior_invoices": [
+            2,
+            8
+          ],
+          "min_ledger_rows": 200,
+          "max_ledger_rows": 1500,
+          "max_documents": 200
+        }
+      }
+    },
+    {
+      "seed": 900207,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-mixed-8",
+        "errors": {
+          "duplicate_invoice": [
+            0,
+            3
+          ],
+          "payment_allocation": [
+            0,
+            3
+          ],
+          "fx_conversion": [
+            0,
+            3
+          ],
+          "period_cutoff": [
+            0,
+            3
+          ]
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "size": {
+          "customers": [
+            5,
+            16
+          ],
+          "invoices": [
+            30,
+            95
+          ],
+          "prior_invoices": [
+            2,
+            8
+          ],
+          "min_ledger_rows": 200,
+          "max_ledger_rows": 1500,
+          "max_documents": 200
+        }
+      }
+    },
+    {
+      "seed": 900208,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-mixed-9",
+        "errors": {
+          "duplicate_invoice": [
+            0,
+            3
+          ],
+          "payment_allocation": [
+            0,
+            3
+          ],
+          "fx_conversion": [
+            0,
+            3
+          ],
+          "period_cutoff": [
+            0,
+            3
+          ]
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "size": {
+          "customers": [
+            5,
+            16
+          ],
+          "invoices": [
+            30,
+            95
+          ],
+          "prior_invoices": [
+            2,
+            8
+          ],
+          "min_ledger_rows": 200,
+          "max_ledger_rows": 1500,
+          "max_documents": 200
+        }
+      }
+    },
+    {
+      "seed": 900209,
+      "config": {
+        "config_version": "1.0",
+        "name": "holdout-mixed-10",
+        "errors": {
+          "duplicate_invoice": [
+            0,
+            3
+          ],
+          "payment_allocation": [
+            0,
+            3
+          ],
+          "fx_conversion": [
+            0,
+            3
+          ],
+          "period_cutoff": [
+            0,
+            3
+          ]
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "size": {
+          "customers": [
+            5,
+            16
+          ],
+          "invoices": [
+            30,
+            95
+          ],
+          "prior_invoices": [
+            2,
+            8
+          ],
+          "min_ledger_rows": 200,
+          "max_ledger_rows": 1500,
+          "max_documents": 200
+        }
+      }
+    }
+  ]
+}

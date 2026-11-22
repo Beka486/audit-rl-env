@@ -1,0 +1,40 @@
+{
+  "base_currency": "AED",
+  "company_name": "Ulboka Trading Ltd",
+  "counts": {
+    "documents": 118,
+    "fx_rates": 132,
+    "invoices": 73,
+    "ledger_rows": 324,
+    "payments": 45
+  },
+  "currencies": {
+    "AED": {
+      "exponent": 2
+    },
+    "GBP": {
+      "exponent": 2
+    }
+  },
+  "env_version": "1.0.0",
+  "episode_id": "EP-35D5A9DBF4CB",
+  "files": {
+    "fx": "fx.csv",
+    "invoices": "invoices.jsonl",
+    "ledger": "ledger.csv",
+    "payments": "payments.jsonl",
+    "policy": "policy.json"
+  },
+  "generator_version": "1.0.0",
+  "null_policy": "missing references are explicit null (JSON null; the literal 'null' in CSV)",
+  "period_end": "2026-11-30T23:59:59+01:00",
+  "period_start": "2026-11-01T00:00:00+01:00",
+  "rounding": {
+    "amount_tolerance": "exact: a claimed amount matches if |claimed - expected| <= tau with tau = 0 minor units for every finding type",
+    "fx_conversion": "target_minor = round_half_even(amount_minor * 10^-exp(source) * rate * 10^exp(target))",
+    "mode": "ROUND_HALF_EVEN",
+    "money": "integers in minor units; minor = major * 10^exponent (see currencies)"
+  },
+  "schema_version": "1.0",
+  "timezone": "+01:00"
+}

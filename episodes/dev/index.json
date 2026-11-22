@@ -1,0 +1,129 @@
+{
+  "split": "dev",
+  "env_version": "1.0.0",
+  "generator_version": "1.0.0",
+  "schema_version": "1.0",
+  "config_file": "configs/splits/dev.json",
+  "episodes": [
+    {
+      "index": 1,
+      "dir": "01_EP-31BA5EA6DAAC",
+      "episode_id": "EP-31BA5EA6DAAC",
+      "seed": 2001,
+      "config_name": "dev-01-default",
+      "public_sha256": "d78b0908f9ef8a93727743ed63a5fcd4d9e8b5ca46b5bbfac8da68fbebf2ee9e",
+      "full_sha256": "4b29b4f760ac40a990aa7bc2255762dea120c8c9a14b427c2c9249c1a855306c",
+      "ledger_rows": 292,
+      "documents": 105,
+      "issues": 2
+    },
+    {
+      "index": 2,
+      "dir": "02_EP-4BF7C3470116",
+      "episode_id": "EP-4BF7C3470116",
+      "seed": 2002,
+      "config_name": "dev-02-clean",
+      "public_sha256": "b9b344787c04bb6f63b88fcb930ce0ad84c6126b60304b2040bc17bd2db66d25",
+      "full_sha256": "a4f857f791cd856d840561c35797f3197c9d58e1bfde847a97562f72cd2fd3d1",
+      "ledger_rows": 324,
+      "documents": 120,
+      "issues": 0
+    },
+    {
+      "index": 3,
+      "dir": "03_EP-26F533AB304D",
+      "episode_id": "EP-26F533AB304D",
+      "seed": 2003,
+      "config_name": "dev-03-cutoff-heavy",
+      "public_sha256": "d5e3c27b8bc57a12350e61acb516bcead3ffc98be467bf09fde7caa1bb12f819",
+      "full_sha256": "2ffcd4e3bc2bed5e37d43e0430108ff455fe4e3f0b8e05544f1c4cd9d18d9106",
+      "ledger_rows": 280,
+      "documents": 112,
+      "issues": 4
+    },
+    {
+      "index": 4,
+      "dir": "04_EP-35D5A9DBF4CB",
+      "episode_id": "EP-35D5A9DBF4CB",
+      "seed": 2004,
+      "config_name": "dev-04-allocation-fx",
+      "public_sha256": "93aa92af600f14a7d3be6983668f5004a881b8d3014f4710e9e0c7aa11d378e7",
+      "full_sha256": "69c159ee487782b5951f03ec9deb3305631cd400b1246355133af65b7b610fbc",
+      "ledger_rows": 324,
+      "documents": 118,
+      "issues": 4
+    },
+    {
+      "index": 5,
+      "dir": "05_EP-434114113CE2",
+      "episode_id": "EP-434114113CE2",
+      "seed": 2005,
+      "config_name": "dev-05-both-interactions",
+      "public_sha256": "6ff596aa0c83b0af09438ddea17cda2d76d8fffdb411df88560cf3667cc726b0",
+      "full_sha256": "88b63bbdded82eb33d5522f029ca8082e0f03e74bcf256bcb6bf12d7a57a0bea",
+      "ledger_rows": 403,
+      "documents": 141,
+      "issues": 4
+    },
+    {
+      "index": 6,
+      "dir": "06_EP-5F0AD6708BCE",
+      "episode_id": "EP-5F0AD6708BCE",
+      "seed": 2006,
+      "config_name": "dev-06-fx-partial-boundary-plus",
+      "public_sha256": "a47b8893fc34afebcdac9891d6e0d883afea649b8b82b09f5cd338916aad0ab5",
+      "full_sha256": "6cdd6083fbf443374fd68dbb43e265e530a85b99338f6d6a64df584396392973",
+      "ledger_rows": 353,
+      "documents": 133,
+      "issues": 4
+    },
+    {
+      "index": 7,
+      "dir": "07_EP-6E1CF3657322",
+      "episode_id": "EP-6E1CF3657322",
+      "seed": 2007,
+      "config_name": "dev-07-clean-distractors",
+      "public_sha256": "9afd5dd085af938cce12a5df879f906ba25cfa30cdd3358a1fa5872e79b1ca1e",
+      "full_sha256": "eed51c9c72cd0d81571fa7e83c315fa7e2d80d18362c5c7ae88e3897f6d443cd",
+      "ledger_rows": 323,
+      "documents": 122,
+      "issues": 0
+    },
+    {
+      "index": 8,
+      "dir": "08_EP-EBC949F3A2F8",
+      "episode_id": "EP-EBC949F3A2F8",
+      "seed": 2008,
+      "config_name": "dev-08-duplicates",
+      "public_sha256": "aa962e442d9d9e02dbc2b9b2083977915d70f8eaab37b925dff04a4e7d53e382",
+      "full_sha256": "f03bcdee134d477747e7facff075644aedcb6257a817c59231930295897476ec",
+      "ledger_rows": 313,
+      "documents": 116,
+      "issues": 5
+    },
+    {
+      "index": 9,
+      "dir": "09_EP-1BB45075339D",
+      "episode_id": "EP-1BB45075339D",
+      "seed": 2009,
+      "config_name": "dev-09-mixed-currencies",
+      "public_sha256": "7c169890000e0697f9926901919d76d9448ff68a2b208e1f82b3faaef1444c94",
+      "full_sha256": "97cc823b14b9bdf80eb84ff283eb17cb204bfcf6c1ab9a541f5811f1beac2f9f",
+      "ledger_rows": 353,
+      "documents": 143,
+      "issues": 6
+    },
+    {
+      "index": 10,
+      "dir": "10_EP-34CBCC8899E8",
+      "episode_id": "EP-34CBCC8899E8",
+      "seed": 2010,
+      "config_name": "dev-10-all-types",
+      "public_sha256": "ff6297adc7018b071e4c7992ec66dcce09a1ec25f939b047b26e94d08c6b41d8",
+      "full_sha256": "ae31cbdf9ac5c3a675285c0948201185544160c7a43322a809f20f960ae42576",
+      "ledger_rows": 326,
+      "documents": 123,
+      "issues": 6
+    }
+  ]
+}

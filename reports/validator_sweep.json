@@ -1,0 +1,27 @@
+{
+ "configs": 28,
+ "episodes": 5600,
+ "ok": 5600,
+ "retried_builds": 0,
+ "issues": 16294,
+ "evidence_sets_checked": 77213,
+ "variants": {
+  "duplicate_invoice:None": 4106,
+  "fx_conversion:document_wall_clock_date": 1359,
+  "fx_conversion:invoice_issue_date": 548,
+  "fx_conversion:next_business_day": 591,
+  "fx_conversion:previous_business_day": 558,
+  "fx_conversion:reverse_pair_rate": 1111,
+  "payment_allocation:misapplied": 1106,
+  "payment_allocation:missing": 1371,
+  "payment_allocation:partial": 2749,
+  "period_cutoff:early_end_invoice": 419,
+  "period_cutoff:early_end_payment": 440,
+  "period_cutoff:early_start_invoice": 435,
+  "period_cutoff:late_end_invoice": 519,
+  "period_cutoff:late_end_payment": 498,
+  "period_cutoff:late_start_invoice": 484
+ },
+ "seconds": 54.9,
+ "failures": []
+}

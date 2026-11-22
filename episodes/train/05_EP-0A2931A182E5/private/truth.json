@@ -1,0 +1,82 @@
+{
+  "episode_id": "EP-0A2931A182E5",
+  "issues": [
+    {
+      "affected_ids": [
+        "INV-2025-02071",
+        "TX3385744722"
+      ],
+      "currency": "TRY",
+      "description": "Boundary cross-currency payment: only part of the remittance was applied.",
+      "evidence_sets": [
+        [
+          "DOC-7DZ1RGY3",
+          "GL500952050"
+        ],
+        [
+          "DOC-7DZ1RGY3",
+          "GL962838321"
+        ]
+      ],
+      "expected_amount_minor": 8041499,
+      "interaction_id": "G1",
+      "issue_id": "ISS-01",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "partial"
+    },
+    {
+      "affected_ids": [
+        "INV-2025-02106",
+        "TX7011384967"
+      ],
+      "currency": "TRY",
+      "description": "Only part of the referenced allocation was applied to the invoice; the rest sits in unapplied cash.",
+      "evidence_sets": [
+        [
+          "DOC-HG8JCVAZ",
+          "GL282536350"
+        ],
+        [
+          "DOC-HG8JCVAZ",
+          "GL673910672"
+        ]
+      ],
+      "expected_amount_minor": 5658900,
+      "interaction_id": null,
+      "issue_id": "ISS-02",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "partial"
+    },
+    {
+      "affected_ids": [
+        "INV-2025-02071",
+        "TX3385744722"
+      ],
+      "currency": "INR",
+      "description": "Boundary cross-currency payment: the applied part was converted at the rate of the wall-clock date of the bank timestamp instead of the company-timezone date.",
+      "evidence_sets": [
+        [
+          "DOC-7DZ1RGY3",
+          "FX:2025-08-01:TRY:INR",
+          "GL607278653",
+          "GL962838321"
+        ],
+        [
+          "DOC-7DZ1RGY3",
+          "FX:2025-08-01:TRY:INR",
+          "GL664375410",
+          "GL962838321"
+        ]
+      ],
+      "expected_amount_minor": 24545,
+      "interaction_id": "G1",
+      "issue_id": "ISS-03",
+      "tolerance_minor": 0,
+      "type": "fx_conversion",
+      "variant": "document_wall_clock_date"
+    }
+  ],
+  "schema_version": "1.0"
+}

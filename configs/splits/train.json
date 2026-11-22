@@ -1,0 +1,189 @@
+{
+  "split": "train",
+  "config_version": "1.0",
+  "description": "open training split (seeds and configs published)",
+  "secret": "",
+  "episodes": [
+    {
+      "seed": 1001,
+      "config": {
+        "config_version": "1.0",
+        "name": "train-01-default"
+      }
+    },
+    {
+      "seed": 1002,
+      "config": {
+        "config_version": "1.0",
+        "name": "train-02-clean",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 1003,
+      "config": {
+        "config_version": "1.0",
+        "name": "train-03-duplicates-allocation",
+        "errors": {
+          "duplicate_invoice": 2,
+          "payment_allocation": 1,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 1004,
+      "config": {
+        "config_version": "1.0",
+        "name": "train-04-fx-cutoff",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 2,
+          "period_cutoff": 2
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "timezone": "+05:00"
+      }
+    },
+    {
+      "seed": 1005,
+      "config": {
+        "config_version": "1.0",
+        "name": "train-05-fx-partial-boundary",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 1,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 1,
+          "duplicate_misapplied": 0
+        }
+      }
+    },
+    {
+      "seed": 1006,
+      "config": {
+        "config_version": "1.0",
+        "name": "train-06-duplicate-misapplied",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 1
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 1
+        }
+      }
+    },
+    {
+      "seed": 1007,
+      "config": {
+        "config_version": "1.0",
+        "name": "train-07-max-issues",
+        "errors": {
+          "duplicate_invoice": 2,
+          "payment_allocation": 2,
+          "fx_conversion": 2,
+          "period_cutoff": 2
+        },
+        "interactions": {
+          "fx_partial_boundary": 1,
+          "duplicate_misapplied": 1
+        }
+      }
+    },
+    {
+      "seed": 1008,
+      "config": {
+        "config_version": "1.0",
+        "name": "train-08-clean-many-distractors",
+        "errors": {
+          "duplicate_invoice": 0,
+          "payment_allocation": 0,
+          "fx_conversion": 0,
+          "period_cutoff": 0
+        },
+        "interactions": {
+          "fx_partial_boundary": 0,
+          "duplicate_misapplied": 0
+        },
+        "distractors": {
+          "split_payments": 4,
+          "refund_pairs": 2,
+          "recurring_customers": 3,
+          "unidentified_receipts": 3,
+          "on_account_payments": 2,
+          "boundary_documents": 5,
+          "cross_currency_payments": 5,
+          "legit_partial_payments": 3,
+          "multi_invoice_payments": 3
+        }
+      }
+    },
+    {
+      "seed": 1009,
+      "config": {
+        "config_version": "1.0",
+        "name": "train-09-exotic-currencies",
+        "currencies": {
+          "base": "KZT",
+          "foreign_count": 3,
+          "pool": [
+            "KZT",
+            "JPY",
+            "KWD",
+            "EUR",
+            "USD"
+          ]
+        },
+        "timezone": "+05:30"
+      }
+    },
+    {
+      "seed": 1010,
+      "config": {
+        "config_version": "1.0",
+        "name": "train-10-large",
+        "size": {
+          "customers": [
+            14,
+            18
+          ],
+          "invoices": [
+            90,
+            110
+          ],
+          "prior_invoices": [
+            5,
+            8
+          ],
+          "min_ledger_rows": 200,
+          "max_ledger_rows": 1200,
+          "max_documents": 200
+        }
+      }
+    }
+  ]
+}

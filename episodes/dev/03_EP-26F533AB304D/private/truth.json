@@ -1,0 +1,88 @@
+{
+  "episode_id": "EP-26F533AB304D",
+  "issues": [
+    {
+      "affected_ids": [
+        "B26-02721"
+      ],
+      "currency": "EUR",
+      "description": "A document dated inside the period (company timezone) is missing from this period's ledger.",
+      "evidence_sets": [
+        [
+          "DOC-RD20S5P7"
+        ]
+      ],
+      "expected_amount_minor": 57920,
+      "interaction_id": null,
+      "issue_id": "ISS-01",
+      "tolerance_minor": 0,
+      "type": "period_cutoff",
+      "variant": "late_start_invoice"
+    },
+    {
+      "affected_ids": [
+        "B26-02783"
+      ],
+      "currency": "KZT",
+      "description": "A document dated inside the period (company timezone) is missing from this period's ledger.",
+      "evidence_sets": [
+        [
+          "DOC-ATSPG3ZN"
+        ]
+      ],
+      "expected_amount_minor": 116000000,
+      "interaction_id": null,
+      "issue_id": "ISS-02",
+      "tolerance_minor": 0,
+      "type": "period_cutoff",
+      "variant": "late_end_invoice"
+    },
+    {
+      "affected_ids": [
+        "PAY-8YE4YFFWE"
+      ],
+      "currency": "EUR",
+      "description": "A document dated outside the period (company timezone) is booked in this period.",
+      "evidence_sets": [
+        [
+          "DOC-TSBDNZ33",
+          "L-1MZPAH9T"
+        ],
+        [
+          "DOC-TSBDNZ33",
+          "L-NX94PN1S"
+        ]
+      ],
+      "expected_amount_minor": 1243800,
+      "interaction_id": null,
+      "issue_id": "ISS-03",
+      "tolerance_minor": 0,
+      "type": "period_cutoff",
+      "variant": "early_end_payment"
+    },
+    {
+      "affected_ids": [
+        "PAY-WQ0VZCDGK"
+      ],
+      "currency": "EUR",
+      "description": "A document dated outside the period (company timezone) is booked in this period.",
+      "evidence_sets": [
+        [
+          "DOC-VMBZ68YV",
+          "L-9AT2F6G9"
+        ],
+        [
+          "DOC-VMBZ68YV",
+          "L-HTJFZG5M"
+        ]
+      ],
+      "expected_amount_minor": 580800,
+      "interaction_id": null,
+      "issue_id": "ISS-04",
+      "tolerance_minor": 0,
+      "type": "period_cutoff",
+      "variant": "early_end_payment"
+    }
+  ],
+  "schema_version": "1.0"
+}

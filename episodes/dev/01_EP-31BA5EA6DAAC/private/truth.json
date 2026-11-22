@@ -1,0 +1,138 @@
+{
+  "episode_id": "EP-31BA5EA6DAAC",
+  "issues": [
+    {
+      "affected_ids": [
+        "SF/2025/01455",
+        "SF/2025/01466"
+      ],
+      "currency": "USD",
+      "description": "The same invoice (same customer, currency, line items and total) is booked twice.",
+      "evidence_sets": [
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-EAVGSCAW",
+          "L-P36R40JJ"
+        ],
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-EAVGSCAW",
+          "L-PM4G6YGN"
+        ],
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-EAVGSCAW",
+          "L-WFABZJ3M"
+        ],
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-EAVGSCAW",
+          "L-XXCVE8C0"
+        ],
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-EQ69NZVA",
+          "L-P36R40JJ"
+        ],
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-EQ69NZVA",
+          "L-PM4G6YGN"
+        ],
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-EQ69NZVA",
+          "L-WFABZJ3M"
+        ],
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-EQ69NZVA",
+          "L-XXCVE8C0"
+        ],
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-FSW0R134",
+          "L-P36R40JJ"
+        ],
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-FSW0R134",
+          "L-PM4G6YGN"
+        ],
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-FSW0R134",
+          "L-WFABZJ3M"
+        ],
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-FSW0R134",
+          "L-XXCVE8C0"
+        ],
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-KGB5D48B",
+          "L-P36R40JJ"
+        ],
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-KGB5D48B",
+          "L-PM4G6YGN"
+        ],
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-KGB5D48B",
+          "L-WFABZJ3M"
+        ],
+        [
+          "DOC-2VNM9SWS",
+          "DOC-PADS2F6V",
+          "L-KGB5D48B",
+          "L-XXCVE8C0"
+        ]
+      ],
+      "expected_amount_minor": 1276800,
+      "interaction_id": null,
+      "issue_id": "ISS-01",
+      "tolerance_minor": 0,
+      "type": "duplicate_invoice",
+      "variant": null
+    },
+    {
+      "affected_ids": [
+        "SF/2025/01489",
+        "TX9800082739"
+      ],
+      "currency": "JPY",
+      "description": "The remittance references an invoice but the payment was left entirely as unapplied cash.",
+      "evidence_sets": [
+        [
+          "DOC-HK413B26",
+          "L-57E81J1Y"
+        ]
+      ],
+      "expected_amount_minor": 75800,
+      "interaction_id": null,
+      "issue_id": "ISS-02",
+      "tolerance_minor": 0,
+      "type": "payment_allocation",
+      "variant": "missing"
+    }
+  ],
+  "schema_version": "1.0"
+}

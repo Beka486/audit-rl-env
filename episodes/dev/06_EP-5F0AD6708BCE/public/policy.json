@@ -1,0 +1,109 @@
+{
+  "accounts": {
+    "ar": "1100-AR",
+    "bank": "1000-BANK",
+    "fx_clearing": "1950-FX-CLEARING",
+    "revenue_goods": "4200-REVENUE-GOODS",
+    "revenue_services": "4000-REVENUE-SERVICES",
+    "revenue_subscriptions": "4100-REVENUE-SUBSCRIPTIONS",
+    "unapplied": "2400-UNAPPLIED-CASH"
+  },
+  "booking_rules": [
+    "Invoice in the period: Dr 1100-AR total_minor; Cr the revenue_account of each line item amount_minor. Rows carry entity_id and invoice_id, payment_id null.",
+    "Payment in the period (amount_minor > 0): Dr 1000-BANK amount_minor; for each invoice_refs allocation in the invoice currency: Cr 1100-AR with that invoice_id; any amount not covered by invoice_refs: Cr 2400-UNAPPLIED-CASH (invoice_id null).",
+    "Allocation in another currency (single reference): Cr 1950-FX-CLEARING allocation (payment currency); Dr 1950-FX-CLEARING and Cr 1100-AR the converted amount (invoice currency), all with that invoice_id.",
+    "Payment with invoice_refs = null (unidentified receipt): Dr 1000-BANK, Cr 2400-UNAPPLIED-CASH; entity_id null.",
+    "Refund (amount_minor < 0, negative allocation): Cr 1000-BANK |amount|, Dr 1100-AR |amount|.",
+    "Every booked journal balances per currency; rows of one payment share payment_id."
+  ],
+  "finding_types": {
+    "duplicate_invoice": {
+      "affected_ids": "both invoice_ids",
+      "amount": "total_minor of one copy",
+      "currency": "invoice currency",
+      "evidence": "both invoice documents + one ledger row of each invoice's booking",
+      "meaning": "The same invoice (same entity_id, currency, total and identical line_items) is booked twice."
+    },
+    "fx_conversion": {
+      "affected_ids": "[payment_id, invoice_id]",
+      "amount": "|booked invoice-currency amount - correct conversion of the applied payment-currency amount|",
+      "currency": "invoice currency",
+      "evidence": "the payment document + the fx record of the policy rate date + the ledger row with the booked invoice-currency amount; if only part of the payment was applied, also the 1950-FX-CLEARING row in payment currency that shows the applied part",
+      "meaning": "A cross-currency allocation was converted with a rate other than the policy rate (rate of another date, or the rate of the reverse currency pair)."
+    },
+    "payment_allocation": {
+      "affected_ids": "[payment_id, invoice_id of the referenced invoice]",
+      "amount": "referenced allocation minus the part applied to that invoice, in payment currency",
+      "currency": "payment currency",
+      "evidence": "the payment document + one ledger row of that payment that shows the unapplied, partially applied or misapplied amount",
+      "meaning": "A payment's invoice_refs allocation was not (fully) applied to the referenced invoice: left as unapplied cash, applied only in part, or applied to a different invoice."
+    },
+    "period_cutoff": {
+      "affected_ids": "[invoice_id] or [payment_id]",
+      "amount": "|total_minor| of the invoice or |amount_minor| of the payment",
+      "currency": "document currency",
+      "evidence": "the document (+ one of its ledger rows if it is booked in this ledger)",
+      "meaning": "A document is booked in this period although its timestamp is outside the period, or a document inside the period is missing from this period's ledger."
+    }
+  },
+  "fx": {
+    "pair": "use the row with source_currency = payment currency and target_currency = invoice currency; never invert a rate",
+    "publication": "rates are published for every Monday-Friday date covered by fx.csv and never on Saturday or Sunday",
+    "rate_date": "the calendar date of the payment timestamp in the company timezone; if no rate is published for that date use the most recent earlier published date",
+    "rate_definition": "rate = units of target_currency per 1 unit of source_currency (major units)",
+    "record_id": "FX:<date>:<source_currency>:<target_currency>"
+  },
+  "limits": {
+    "max_action_bytes": 1000000,
+    "max_action_depth": 64,
+    "max_evidence_ids": 10,
+    "max_explanation_chars": 1000,
+    "max_findings": 30,
+    "max_steps": 100,
+    "page_limit": 50,
+    "time_limit_s": 60
+  },
+  "matching": {
+    "amount_tolerance": "exact: a claimed amount matches if |claimed - expected| <= tau with tau = 0 minor units for every finding type",
+    "canonical_affected_ids": {
+      "duplicate_invoice": "both invoice_ids",
+      "fx_conversion": "[payment_id, invoice_id]",
+      "payment_allocation": "[payment_id, invoice_id of the referenced invoice]",
+      "period_cutoff": "[invoice_id] or [payment_id]"
+    },
+    "duplicates": "repeated findings are separate findings; once the issue is matched they are false positives",
+    "invalid_structure": "wrong value type, missing field, unknown field, more than 30 findings, more than 10 evidence ids in one finding (before de-duplication), explanation longer than 1000 code points, or an episode_id of another episode: the whole submission is invalid",
+    "normalisation": "none: ids, type and currency are compared as exact strings (case and whitespace matter, no aliases); affected_ids and evidence_ids are sets (order and repeats inside one list do not matter); limits are checked on the raw lists before that",
+    "one_to_one": true,
+    "record_ids": "row_id, doc_id, invoice_id, payment_id, FX:<date>:<source_currency>:<target_currency>",
+    "tau_minor": 0,
+    "tie_break": "maximum-cardinality matching; among maximum matchings the lexicographically smallest sequence of (reference issue id, finding index from 0) pairs, reference issues ordered by their ids in Unicode code-point order",
+    "true_positive_requires": [
+      "same type (exact string)",
+      "set(affected_ids) equals the canonical set",
+      "|claimed_amount_minor - expected| <= tau",
+      "same currency (exact string)",
+      "set(evidence_ids) contains at least one complete acceptable evidence set",
+      "every evidence id is an existing public record id"
+    ]
+  },
+  "period": {
+    "end": "2025-04-30T23:59:59+00:00",
+    "rule": "A document belongs to the period iff its timestamp (issued_at for invoices, timestamp for payments), compared as an instant, lies in [start, end]. Ledger rows of the period carry timestamps inside the period. Calendar dates are taken in the company timezone.",
+    "start": "2025-04-01T00:00:00+00:00"
+  },
+  "reward": {
+    "exploration_reward": 0,
+    "f1": "2TP/(2TP+FP+FN); 1 if there are no issues and no findings; 0 if there are no issues but findings",
+    "inspection_steps": "all step calls before submit, including erroneous ones; submit counts toward the 100-step limit but not toward inspection_steps (all steps if the episode is truncated)",
+    "invalid_submission": -1,
+    "terminal": "clip(2*F1 - 1 - 0.002*inspection_steps, -1, 1)"
+  },
+  "rounding": {
+    "applies_to": "only the final converted amount",
+    "formula": "target_minor = round_half_even(amount_minor * 10^-exp(source) * rate * 10^exp(target))",
+    "mode": "ROUND_HALF_EVEN"
+  },
+  "schema_version": "1.0",
+  "timezone": "+00:00"
+}
